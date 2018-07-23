@@ -1,0 +1,54 @@
+// CORE BANNERS - MODELO 3
+// ====================================================================
+&.banners{
+    width: 100%;
+    max-width: $page-w;
+    margin: 0px auto;
+    float: none;
+    >ul {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        li {
+            float: left;
+            width: calc(25% - 20px) !important;
+            margin: 0 10px 20px 10px;
+            position: relative;
+            overflow: hidden;
+            &.posicao1 {
+                width: calc(50% - 20px) !important;
+                height: 550px;
+                img {
+                    width: 100%;
+                    height: 550px;
+                }
+            }
+            &.posicao2 {
+                width: calc(50% - 20px) !important;
+                height: 260px;
+                img {
+                    width: 100%;
+                    height: 260px;
+                }
+            }
+            &.posicao3 {
+                width: calc(25% - 20px) !important;
+                height: 270px;
+                img {
+                    width: 100%;
+                    height: 270px;
+                }
+            }
+            &.posicao4 {
+                width: calc(25% - 20px) !important;
+                height: 270px;
+                img {
+                    width: 100%;
+                    height: 270px;
+                }
+            }
+        }
+    }
+    @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {}
+}

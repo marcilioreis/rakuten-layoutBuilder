@@ -1,0 +1,136 @@
+
+@model QuickViewDetailModel
+
+<input type="hidden" name="ImagemAmpliadaAux" id="ImagemAmpliadaAux" value="" />
+<input type="hidden" name="ImagemZoomV2" id="ImagemZoomV2" value="@(Model.MagicZoomV2Enabled ? "enable" : "disable")" />
+<div class="photo @(Model.MagicZoomV2Enabled ? "photo-zoom" : "")">
+
+    <img name="ProdutoImagemAux" id="ProdutoImagemAux" src="@Model.Images.DetailImageURL" Width="180" Height="180" Style="display: none;" />
+    
+    <div id="ajaxVideoContainer">                        
+        @if (@Model.Images.ShowVideo)
+        {
+            <div id="big_video_container" class="big_video_container">
+                <div id="big_video_yt"></div>
+            </div>
+        }
+    </div>
+             
+    <div id="big_photo_container">
+        @if (Model.Images.ZoomEnabled)
+        {
+            if (!string.IsNullOrWhiteSpace(Model.Images.EnlargeImageURL))
+            {
+                <a id="Zoom1" href="@Model.Images.EnlargeImageURL" style="cursor:hand" rel="zoom-width:383px;zoom-height:392px;zoom-position:right;" class="MagicZoom" title="@Model.Product.Name">
+                    <img name="ProdutoImagem" src="@Model.Images.DetailImageURL" alt="@Model.Product.Name" class="main" id="ProdutoImagem" itemprop="image" />
+                </a>
+            }
+            else
+            {
+                if(Model.MagicZoomV2Enabled){
+                    <a id="Zoom1" href="@Url("~/static/locales/global/img/px.gif")" style="cursor:default" rel="disable-zoom: true; zoom-width:383px;zoom-height:392px;zoom-position:right;" class="MagicZoom" title="@Model.Product.Name">
+                        <img name="ProdutoImagem" src="@Model.Images.DetailImageURL" alt="@Model.Product.Name" class="main" id="ProdutoImagem" itemprop="image" />
+                    </a>
+                }else{
+                    <a id="Zoom1" href="@Url("~/static/locales/global/img/px.gif")" style="cursor:default" disabled="true"  rel="zoom-width:383px;zoom-height:392px;zoom-position:right;" class="MagicZoom" title="@Model.Product.Name">
+                        <img name="ProdutoImagem" src="@Model.Images.DetailImageURL" alt="@Model.Product.Name" class="main" id="ProdutoImagem" itemprop="image" />
+                    </a>
+                }
+            }
+        }
+        else
+        {
+            <a id="Zoom1"  rel="zoom-width:383px;zoom-height:392px;zoom-position:right;" class="MagicZoom" title="@Model.Product.Name">
+                <img name="ProdutoImagem" alt="@Model.Product.Name" class="main" id="ProdutoImagem" itemprop="image" />
+            </a>
+        }
+    </div>
+    
+
+    @if (!Model.Images.ZoomEnabled)
+    {
+        <a id="hplImgAmpliada" href="@(!string.IsNullOrWhiteSpace(Model.Images.EnlargeImageURL) ? "javascript:MostraImagemAmpliada()" : "")">
+            <img id="imgLook" Width="180" Height="180" name="ProdutoImagem" src="@Model.Images.DetailImageURL" imgAmp="@Model.Images.EnlargeImageURL" onload="carregaImgAux(this);" />
+        </a>
+    }
+</div>
+
+@if (!String.IsNullOrWhiteSpace(Model.Images.EnlargeImageURL) && !Model.MagicZoomV2Enabled)
+{
+    <div id="panZoom" class="zoom">
+        <span class="mouseover ico">Passe o mouse na imagem para ver detalhes</span>
+    </div>
+}
+else
+{
+    <div id="panZoom" class="zoom" style="display:none">
+        <span class="mouseover ico">Passe o mouse na imagem para ver detalhes</span>
+    </div>
+}
+
+@if (Model.Images.ThumbImagesUrl.Count > 0)
+{
+    <ul class="thumbs">
+
+    @if(Model.MagicZoomV2Enabled){
+        <li id="liImgDetalhe0" name="liImgDetalhe0" style="display:@(!String.IsNullOrWhiteSpace(Model.Images.EnlargeImageURL) ? "block" : "none")">
+            <a href="#" rel="zoom-id:Zoom1; disable-zoom: false;" rev="@Model.Images.DetailImageURL" id="hlkImgDetalhe0" title="@Model.Product.Name">
+                <img id="ImgDetalhe0" src="@Model.Images.DetailImageURL" title="@Model.Product.Name" alt="@Model.Product.Description.RemoveHtmlTags().LimitString(163)" />
+            </a>
+        </li> 
+    }
+
+    @foreach (var thumb in Model.Images.ThumbImagesUrl.Select((image, i) => new { i, image }))
+	{
+        if (!string.IsNullOrWhiteSpace(thumb.image))
+        {         
+            if(Model.MagicZoomV2Enabled){
+                <li id="liImgDetalhe@(thumb.i + 1)" name="liImgDetalhe@(thumb.i + 1)" style="display:block">
+                    <a href="#" rel="zoom-id:Zoom1; disable-zoom: false;" rev="@thumb.image" id="hlkImgDetalhe@(thumb.i + 1)" title="@Model.Product.Name">
+                        <img id="ImgDetalhe@(thumb.i + 1)" src="@thumb.image" title="@Model.Product.Name" alt="@Model.Product.Description.RemoveHtmlTags().LimitString(163)" />
+                    </a>
+                </li> 
+            }else{                   
+                <li id="liImgDetalhe@(thumb.i + 1)" name="liImgDetalhe@(thumb.i + 1)" style="display:block">
+                    <a href="#" id="hlkImgDetalhe@(thumb.i + 1)" title="@Model.Product.Name">
+                        <img id="ImgDetalhe@(thumb.i + 1)" src="@thumb.image" alt="@Model.Product.Name" />
+                    </a>
+                </li> 
+            }
+        }
+        else
+        {
+            if(Model.MagicZoomV2Enabled)
+            {
+                <li id="liImgDetalhe@(thumb.i + 1)" name="liImgDetalhe@(thumb.i + 1)" style="display:none">
+                    <a href="#" rel="zoom-id:Zoom1; disable-zoom: false;" rev="@thumb.image" id="hlkImgDetalhe@(thumb.i + 1)" title="@Model.Product.Name">
+                        <img id="ImgDetalhe@(thumb.i + 1)" src="@Url("~/static/locales/global/img/px.gif")" alt="@Model.Product.Name" />
+                    </a>
+                </li> 
+            }else{
+                <li id="liImgDetalhe@(thumb.i + 1)" name="liImgDetalhe@(thumb.i + 1)" style="display:none">
+                    <a href="#" id="hlkImgDetalhe@(thumb.i + 1)" title="@Model.Product.Name">
+                        <img id="ImgDetalhe@(thumb.i + 1)" src="@Url("~/static/locales/global/img/px.gif")" alt="@Model.Product.Name" />
+                    </a>
+                </li> 
+            }
+        }   
+    }
+    @if (Model.Images.ShowVideo)
+    {
+        <li class="thumbs" ID="videoDetalhe">
+            <a id="hlkVideoDetalhe" title="Vídeo" href="#" youtube="@Model.Images.YoutubeCode">
+                <img id="imgVideoDetalhe" BorderWidth="0px" title="Vídeo" src="@Url("~/static/imagens/thumb_video.gif")" />
+            </a>
+        </li>  
+    }
+    else
+    {
+        <li class="thumbs" id="videoDetalhe" style="display:none">
+            <a id="hlkVideoDetalhe" title="Vídeo">
+                <img id="imgVideoDetalhe" BorderWidth="0px" title="Vídeo" src="@Url("~/static/locales/global/img/px.gif")" />
+            </a>
+        </li>  
+    }
+    </ul>
+}

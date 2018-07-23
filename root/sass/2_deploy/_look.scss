@@ -1,0 +1,1114 @@
+// LOOK - NOME
+// ====================================================================
+%g_look-nome {
+    #main .collum.details .name {
+        @include fonte($font-one, bold, 22px, #000);
+    }
+}
+
+%d_look-nome {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-nome {
+    #main .collum.details .name {
+        text-align: center;
+    }
+}
+
+// LOOK - FAB-COD
+// ====================================================================
+%g_look-fabcod {
+    #main .fab-cod {
+        >li,
+        #contentPartNumber {
+            @include fonte($font-one, bold, 12px, rgb(39, 39, 39));
+        }
+        >li {
+            border-color: rgb(39, 39, 39);
+            >a,
+            span,
+            span>span {
+                @include fonte($font-one, normal, 12px, rgb(102, 102, 102));
+            }
+        }
+    }
+}
+
+%d_look-fabcod {
+    #main .fab-cod {
+        margin-bottom: 10px;
+    }
+}
+
+%m_look-fabcod {
+    #main .fab-cod {
+        text-align: center;
+        #liCodigoInterno+li {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+// LOOK - REVIEWAGREGGATE
+// ====================================================================
+%g_look-reviewagreggate {
+    #main .reviewaggregate {
+        border: 0px;
+        #hplRating,
+        #lblRating {
+            @include bgimg("star.png");
+            background-repeat: repeat-x;
+        }
+        #lblRating {
+            background-position: 0 -18px;
+        }
+        .count,
+        .iframe,
+        .anchor-opinion {
+            @include fonte($font-one, normal, 14px, rgb(88, 88, 88));
+        }
+    }
+}
+
+%d_look-reviewagreggate {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-reviewagreggate {
+    #main .reviewaggregate {
+        text-align: center;
+    }
+}
+
+// LOOK - SELOS
+// ====================================================================
+%g_look-selos {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-selos {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-selos {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - OFFERS
+// ====================================================================
+%g_look-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-offers {
+    #infoPrices {
+        text-align: center;
+        >* {
+            display: block;
+            margin: 0px auto;
+        }
+    }
+}
+
+// LOOK - PREÇO DE
+// ====================================================================
+%g_look-precoDe {
+    .collum.details {
+        .regular.price-from,
+        .regular.price-from span,
+        .regular.price-from em {
+            @include fonte($font-one, normal, 14px, rgb(128, 128, 128));
+            text-decoration: line-through;
+            text-transform: uppercase;
+        }
+    }
+}
+
+%d_look-precoDe {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-precoDe {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - PREÇO POR
+// ====================================================================
+%g_look-precoPor {
+    .collum.details {
+        .sale.price-to,
+        .sale.price-to em,
+        .sale.price-to strong,
+        .sale.price-to strong>span {
+            @include fonte($font-one, bold, 18px, rgb(0, 0, 0));
+            text-transform: uppercase;
+        }
+    }
+}
+
+%d_look-precoPor {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-precoPor {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - DESCONTO A VISTA
+// ====================================================================
+%g_look-desconto {
+    .collum.details .desconto-avista {
+        * {
+            font-style: normal;
+        }
+        @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        .value-sight,
+        .value-percentage {
+            @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+        }
+    }
+}
+
+%d_look-desconto {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-desconto {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - PARCELAMENTO
+// ====================================================================
+%g_look-parcel {
+    .collum.details .parcel {
+        @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        strong {
+            @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+        }
+    }
+}
+
+%d_look-parcel {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-parcel {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - QUANTITY
+// ====================================================================
+%g_look-quantity {
+    #lblQuantity {
+        #txtQuantity {
+            width: 40px;
+            text-align: center;
+        }
+    }
+}
+
+%d_look-quantity {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-quantity {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - SAVE (ECONOMIZE)
+// ====================================================================
+%g_look-save {
+    #main .save {
+        em {
+            @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        }
+        strong {
+            @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+        }
+    }
+}
+
+%d_look-save {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-save {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - TOOLS
+// ====================================================================
+%g_look-tools {
+    #main .tools {
+        >li,
+        >div>li,
+        >div>div,
+        >div>p {
+            padding: 0px;
+            margin: 0px;
+            background: none;
+            width: auto;
+            line-height: inherit;
+            a {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+                @include fonte($font-one, 400, 10px, rgb(56, 56, 56));
+                @include transition;
+                @include box-sizing();
+                border: 1px solid #CCC;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 5px;
+                height: 25px;
+                &:before {
+                    margin-right: 10px;
+                }
+                &:hover {
+                    background: rgb(80, 80, 80);
+                    border-color: rgb(80, 80, 80);
+                    color: rgb(255, 255, 255);
+                    &:before {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+        #lnkWishList:before {
+            @include set-icon($fa-var-heart, 14px, 900, #CCC);
+        }
+        #firstToReview:before,
+        #liAvalie>a:before {
+            @include set-icon($fa-var-star, 14px, 900, #CCC);
+        }
+        #hypShippingSimulation:before {
+            @include set-icon($fa-var-truck-moving, 14px, 900, #CCC);
+        }
+        .padrao-brasileiro a:before {
+            @include set-icon($fa-var-ruler-combined, 14px, 900, #CCC);
+        }
+        #list-container {
+            background: #FFF;
+            top: 30px;
+            right: 0px;
+            left: auto;
+            .ok,
+            .cancel {
+                margin: 5px 0px;
+                color: #FFF;
+                width: 100%;
+            }
+            .ok {
+                @extend %helper_bt--alt;
+            }
+        }
+    }
+}
+
+%d_look-tools {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-tools {
+    #main .tools {
+        > li{
+            @include flexbox(flex, row, nowrap, center, center, center);
+        }
+        >li,
+        >div>li,
+        >div>div,
+        >div>p {
+            &:before {
+                display: none;
+            }
+            a {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+// LOOK - PHOTO
+// ====================================================================
+%g_look-photo {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-photo {
+    .photo {
+        .MagicZoomBigImageCont {
+            @include box-sizing;
+            @include box-shadow(1px, 1px, 10px, rgb(87, 87, 87));
+            border: 0px;
+            .MagicZoomHeader {
+                display: none !important;
+            }
+        }
+        .MagicBoxShadow {
+            background: rgb(87, 87, 87);
+            border: 0px;
+        }
+    }
+}
+
+%m_look-photo {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - ZOOM
+// ====================================================================
+%g_look-zoom {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-zoom {
+    #info-look .zoom {
+        @include flexbox(flex, row, nowrap, space-between, center, center);
+        @include box-sizing;
+        @extend %helper_box-border;
+        padding: 0px 10px;
+        width: 100%;
+        background: #FFF;
+        margin-top: 10px;
+        .mouseover,
+        #hplAmpliar {
+            @include box-sizing;
+            background: none;
+            padding: 0px;
+            margin: 0px;
+            line-height: 0;
+            float: none;
+            width: auto;
+            height: auto;
+        }
+        .mouseover {
+            @include fonte($font-one, 400, 12px, rgb(82, 82, 82));
+            text-transform: uppercase;
+        }
+        #hplAmpliar {
+            @include center-cont;
+            font-size: 0px;
+            width: 25px;
+            height: 25px;
+            &:before {
+                @include set-icon($fa-var-search-plus, 20px, 900, rgb(75, 75, 75));
+            }
+            &:hover {
+                text-decoration: none;
+                &:before {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+%m_look-zoom {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - THUMBS
+// ====================================================================
+%g_look-thumbs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-thumbs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-thumbs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - SOCIAL
+// ====================================================================
+%g_look-social {
+    #main .social {
+        height: 35px;
+        >.media {
+            @include box-sizing;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            margin-right: 10px;
+            position: relative;
+            overflow: hidden;
+            padding: 0px;
+            >*,
+            >*>* {
+                @include opacity(0.01);
+                display: inline-block;
+                float: none;
+                display: block;
+                margin: 0px auto;
+                z-index: 1;
+            }
+            &:before {
+                @include transition;
+                @include center-cont;
+                @include border-radius;
+                text-align: center;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            &#Social_pnlFbButton {
+                &:before {
+                    @include set-icon($fa-var-facebook-f, 22px, 900, rgb(85, 85, 85), "Brands");
+                    background-color: #CCC;
+                }
+                &:hover:before {
+                    background-color: $facebook_color;
+                    color: #FFF;
+                }
+            }
+            &#Social_pnlTwitterButton {
+                &:before {
+                    @include set-icon($fa-var-twitter, 22px, 900, rgb(85, 85, 85), "Brands");
+                    background-color: #CCC;
+                }
+                &:hover:before {
+                    background-color: $twitter_color;
+                    color: #FFF;
+                }
+            }
+            &#Social_pnlGooglePlusButton {
+                &:before {
+                    @include set-icon($fa-var-google-plus-g, 22px, 900, rgb(85, 85, 85), "Brands");
+                    background-color: #CCC;
+                }
+                &:hover:before {
+                    background-color: $google_plus_color;
+                    color: #FFF;
+                }
+            }
+            &#Social_pnlPinterestButton {
+                &:before {
+                    @include set-icon($fa-var-pinterest-p, 22px, 900, rgb(85, 85, 85), "Brands");
+                    background-color: #CCC;
+                }
+                &:hover:before {
+                    background-color: $pinterest_color;
+                    color: #FFF;
+                }
+            }
+            &#Social_pnlTumblrButton {
+                &:before {
+                    @include set-icon($fa-var-tumblr, 22px, 900, rgb(85, 85, 85), "Brands");
+                    background-color: #CCC;
+                }
+                &:hover:before {
+                    background-color: $tumblr_color;
+                    color: #FFF;
+                }
+            }
+            &.invite {
+                &:before {
+                    @include set-icon($fa-var-envelope, 22px, 900, rgb(85, 85, 85));
+                    background-color: #CCC;
+                }
+                &:hover:before {
+                    background-color: rgb(85, 85, 85);
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}
+
+%d_look-social {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-social {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - STAMPS
+// ====================================================================
+%g_look-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-stamps {
+    .stamp {
+        margin: 10px 0px;
+        #ulSelos {
+            text-align: center;
+            >a {
+                margin: 2px;
+            }
+        }
+    }
+}
+
+// LOOK LONGPAGE - DESCRIÇÃO
+// ====================================================================
+%g_look-descricao {
+    #description {
+        >span {
+            @include fonte($font-one, normal, 12px, rgb(73, 73, 73));
+        }
+    }
+}
+
+%d_look-descricao {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-descricao {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK LONGPAGE - CARACTERISTICA
+// ====================================================================
+%g_look-carac {
+    #panCaracteristica {
+        #specificationContent {
+            @include fonte($font-one, normal, 12px, rgb(73, 73, 73));
+        }
+    }
+}
+
+%d_look-carac {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-carac {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK LONGPAGE - COMBO
+// ====================================================================
+%g_look-combo {
+    #main .list-looks {
+        &.triple,
+        &.double {
+            .result {
+                text-align: left;
+                .regular:not(.percent-a-vista) {
+                    @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                    text-transform: uppercase;
+                    text-decoration: line-through;
+                    font-style: normal;
+                }
+                .price.sale:not(.percent-a-vista),
+                .price.sale:not(.percent-a-vista) strong {
+                    @include fonte($font-one, bold, 14px, #000);
+                    text-transform: uppercase;
+                    font-style: normal;
+                }
+                .parcel {
+                    @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                    strong {
+                        @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+                    }
+                }
+                .percent-a-vista {
+                    * {
+                        font-style: normal;
+                    }
+                    @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                    .value-sight,
+                    .value-percentage {
+                        @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_look-combo {
+    #main .list-looks {
+        &.triple {
+            @include flexbox(flex, row, nowrap, space-between, center, center);
+        }
+        &.double {
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            >li:before {
+                margin-left: 50px;
+            }
+        }
+        &.triple,
+        &.double {
+            >li {
+                margin: 0px;
+                padding: 0px;
+                width: auto;
+                background: none;
+                @include flexbox(flex, row, nowrap, space-between, center, center);
+                &:not(:first-of-type):not(.result) {
+                    &:before {
+                        @include set-icon($fa-var-plus, 30px, 900, #CCC);
+                        margin-right: 35px;
+                    }
+                }
+                &.result {
+                    min-width: 250px;
+                    &:before {
+                        @include set-icon($fa-var-equals, 30px, 900, #CCC);
+                        margin-right: 35px;
+                    }
+                }
+            }
+            .hlook {
+                display: block;
+                .details {
+                    width: 100%;
+                }
+                .skus-cross {
+                    .field {
+                        text-align: left;
+                    }
+                    * {
+                        margin: 0px;
+                    }
+                }
+            }
+            .result {
+                .details {
+                    .percent-a-vista {
+                        max-width: 150px;
+                        margin: 3px 0px;
+                    }
+                    >* {
+                        margin: 10px 0px;
+                        padding: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_look-combo {
+    #main .list-looks {
+        &.triple,
+        &.double {
+            .open-combo {
+                span {
+                    @include fonte($font-one, bold, 18px, rgb(88, 88, 88));
+                }
+            }
+        }
+    }
+}
+
+// LOOK LONGPAGE - LIST look
+// ====================================================================
+%g_look-listProd {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look-listProd {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look-listProd {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK ASIDE - CONTAINER
+// ====================================================================
+%g_look_aside-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look_aside-container {
+    #main #piecesLook {
+        >a {}
+        background: transparent;
+        >ul {
+            >li {
+                background: none;
+            }
+        }
+    }
+}
+
+%m_look_aside-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK ASIDE - CONTAINER
+// ====================================================================
+%g_look_aside-title {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look_aside-title {
+    #piecesLook .title {
+        @include fonte($font-one, normal, 14px, rgb(88, 88, 88));
+        @include box-sizing;
+        border: 1px solid #CCC;
+        text-transform: uppercase;
+        background: none;
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+%m_look_aside-title {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK ASIDE - SKU
+// ====================================================================
+%g_look_aside-sku {
+    #main #piecesLook .field:not(.name):not(.txtQuantity) {
+        @include box-sizing;
+        width: 163px;
+        margin: 10px 0;
+        position: relative;
+        .jcarousel-skin-tango {
+            &:not(.owl-carousel) {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+            }
+            position: relative;
+            padding: 0px 20px;
+            margin: 0px;
+            width: calc(100% - 40px);
+            >li {
+                margin: 0px 5px;
+                display: inherit;
+                float: none;
+                border: 1px solid transparent;
+            }
+            li,
+            li a,
+            img {
+                width: 33px;
+                height: 33px;
+                border: 0px;
+            }
+        }
+        .owl-wrapper-outer {
+            width: 100%;
+            overflow: hidden;
+            .owl-wrapper {
+                .owl-item {
+                    text-align: center;
+                    >li {
+                        width: auto;
+                        float: none;
+                        border: 1px solid transparent !important;
+                        display: inline-block;
+                        margin: 0px;
+                        &.selected {
+                            border-color: #505050 !important;
+                            margin: 0px;
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        .owl-theme .owl-controls {
+            @include box-sizing;
+            width: 100%;
+            top: calc(50% - 12.5px);
+            left: 0px;
+            margin-top: 0px;
+            .owl-buttons {
+                @include box-sizing;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                >div {
+                    @include opacity();
+                    background: transparent;
+                    text-indent: 0;
+                    font-size: 0px;
+                    top: 0px;
+                    width: 15px;
+                    height: 25px;
+                    &:hover:before {
+                        color: #505050;
+                    }
+                }
+                .owl-prev {
+                    left: 0px;
+                    &:before {
+                        @include set-icon($fa-var-chevron-left, 24px, 900, #000);
+                    }
+                }
+                .owl-next {
+                    right: 0px;
+                    left: auto !important;
+                    &:before {
+                        @include set-icon($fa-var-chevron-right, 24px, 900, #000);
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_look_aside-sku {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_look_aside-sku {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK ASIDE - PROD-NAME
+// ====================================================================
+%g_look_aside-name {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_look_aside-name {
+    #main #piecesLook .name {
+        @include flexbox(flex, row, nowrap, flex-start, center, center);
+        @include box-sizing();
+        border: 1px solid #CCC;
+        background: transparent;
+        line-height: inherit;
+    }
+}
+
+%m_look_aside-name {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK ASIDE - PROD-OFFERS
+// ====================================================================
+%g_look_aside-offers {
+    #main #piecesLook .offers {
+        .regular:not(.percent-a-vista) {
+            @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+            text-transform: uppercase;
+            text-decoration: line-through;
+            font-style: normal;
+        }
+        .price.sale:not(.percent-a-vista),
+        .price.sale:not(.percent-a-vista) strong,
+        .price.sale:not(.percent-a-vista) strong span {
+            @include fonte($font-one, bold, 14px, #000);
+            text-transform: uppercase;
+            font-style: normal;
+        }
+        .parcel {
+            @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+            strong {
+                @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+            }
+        }
+        .percent-a-vista {
+            * {
+                font-style: normal;
+            }
+            @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+            .value-sight,
+            .value-percentage {
+                @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+            }
+        }
+    }
+}
+
+%d_look_aside-offers {
+    #main #piecesLook .offers {
+        text-align: left;
+        padding-left: 10px;
+    }
+}
+
+%m_look_aside-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK ASIDE - NOTIFYME
+// ====================================================================
+%g_look_aside-notifyme {
+    #main #piecesLook #lblUnavailableSku {
+        #lblStamp {
+            &:before {
+                @include fonte($font-one, bold, 14px, #000);
+                content: "INDISPONÍVEL";
+            }
+            img {
+                display: none;
+            }
+        }
+    }
+    .notifyLabel {
+        span {
+            @include fonte($font-one, normal, 11px, rgb(80, 80, 80));
+            text-transform: uppercase;
+        }
+    }
+}
+
+%d_look_aside-notifyme {
+    #main #piecesLook #lblUnavailableSku {
+        width: auto;
+        .notifyme {
+            .notifyme-field {}
+            .btn {
+                margin-top: -40px;
+                width: 100px;
+                min-width: inherit;
+            }
+        }
+    }
+}
+
+%m_look_aside-notifyme {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOOK - COMPONENTS
+// ====================================================================
+%d_look-components{
+    @extend %g_look-nome, %d_look-nome;
+    @extend %g_look-fabcod, %d_look-fabcod;
+    @extend %g_look-reviewagreggate, %d_look-reviewagreggate;
+    @extend %g_look-selos, %d_look-selos;
+    @extend %g_look-offers, %d_look-offers;
+    @extend %g_look-precoDe, %d_look-precoDe;
+    @extend %g_look-precoPor, %d_look-precoPor;
+    @extend %g_look-desconto, %d_look-desconto;
+    @extend %g_look-parcel, %d_look-parcel;
+    @extend %g_look-quantity, %d_look-quantity;
+    @extend %g_look-save, %d_look-save;
+    @extend %g_look-thumbs, %d_look-thumbs;
+    @extend %g_look-social, %d_look-social;
+    @extend %g_look-tools, %d_look-tools;
+    @extend %g_look_aside-container, %d_look_aside-container;
+    @extend %g_look_aside-title, %d_look_aside-title;
+    @extend %g_look_aside-sku, %d_look_aside-sku;
+    @extend %g_look_aside-name, %d_look_aside-name;
+    @extend %g_look_aside-offers, %d_look_aside-offers;
+    @extend %g_look_aside-notifyme, %d_look_aside-notifyme;
+}
+%m_look-components{
+    @extend %g_look-nome, %m_look-nome;
+    @extend %g_look-fabcod, %m_look-fabcod;
+    @extend %g_look-reviewagreggate, %m_look-reviewagreggate;
+    @extend %g_look-selos, %m_look-selos;
+    @extend %g_look-offers, %m_look-offers;
+    @extend %g_look-precoDe, %m_look-precoDe;
+    @extend %g_look-precoPor, %m_look-precoPor;
+    @extend %g_look-desconto, %m_look-desconto;
+    @extend %g_look-parcel, %m_look-parcel;
+    @extend %g_look-quantity, %m_look-quantity;
+    @extend %g_look-save, %m_look-save;
+    @extend %g_look-thumbs, %m_look-thumbs;
+    @extend %g_look-social, %m_look-social;
+    @extend %g_look-tools, %m_look-tools;
+    @extend %g_look_aside-container, %m_look_aside-container;
+    @extend %g_look_aside-title, %m_look_aside-title;
+    @extend %g_look_aside-sku, %m_look_aside-sku;
+    @extend %g_look_aside-name, %m_look_aside-name;
+    @extend %g_look_aside-offers, %m_look_aside-offers;
+    @extend %g_look_aside-notifyme, %m_look_aside-notifyme;
+}

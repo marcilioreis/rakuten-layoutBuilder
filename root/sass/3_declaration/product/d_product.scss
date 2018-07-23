@@ -1,0 +1,15 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/core/core_product";
+@import "../../2_deploy/product";
+
+
+//DECLARATIONS
+//----------------------------------------------
+body.product{
+    //CORE
+    @extend %d_core_product-components;
+    //IMPLANTACAO
+    @extend %d_product-components;
+}

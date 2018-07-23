@@ -1,0 +1,60 @@
+@model QuickViewDetailModel
+
+<div class="content">
+    <div class="main-content">
+        <div id="info-product" class="hproduct">
+
+            <div class="collum images">
+                @Include("quickview.images", Model, ViewBag)
+
+                @Include("quickview.socialmedia", Model, ViewBag)
+            </div>                        
+
+            <div class="collum details">
+
+                <div class="row">
+                    @Include("quickview.name", Model, ViewBag)
+                    @Include("quickview.brand", Model, ViewBag)
+                </div>
+
+                <div class="col">
+                    @Include("quickview.prices", Model, ViewBag)
+                    @Include("quickview.skus", Model, ViewBag)
+                    @Include("quickview.descriptionpreview", Model, ViewBag)
+                </div>
+
+                <div class="col">
+                     @Include("quickview.stamps", Model, ViewBag)
+                     @Include("quickview.buypanel", Model, ViewBag)
+                </div>
+                
+                            
+                
+                            
+                @Include("quickview.collection", Model, ViewBag)
+                
+                <div id="reviewaggregate" class="reviewaggregate hreview-aggregate"></div>
+
+                @Include("quickview.drug", Model, ViewBag)
+           
+                @Include("quickview.catalogmessage", Model, ViewBag)
+            
+
+                @Include("quickview.calculatorsm", Model, ViewBag)
+
+                @Include("quickview.calculatorwl", Model, ViewBag)
+
+                
+                @Include("product.installments.list", Model.Product.Payments, ViewBag)
+
+                @Include("quickview.parameterizedlink", Model, ViewBag)
+                            
+                @Include("quickview.shippingestimation", Model, ViewBag)
+
+            </div>
+
+            @Include("quickview.productservice", Model, ViewBag)
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+@model StorefrontCatalogModel
+
+<div>
+    @Include("general.bannerarea", Model.BannerArea1, ViewBag)
+    
+    @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+    
+    @Include("storefrontcatalog.chaordicfeature", Model, ViewBag)
+
+    <div class="aside">
+        @Include("general.bannerarea", Model.BannerArea3, ViewBag)
+        
+        @Include("general.navigationmenu", Model.NavigationModel, ViewBag)
+        
+        @Include("general.bannerarea", Model.BannerArea4, ViewBag)
+    
+        @Include("general.bannerarea", Model.BannerArea4Mobile, ViewBag)
+
+        @Include("newsLetter", ViewBag.NewsLetterModel, ViewBag)
+
+        @Include("general.bannerarea", Model.BannerAreaBottom3, ViewBag)
+
+        @Include("storefrontcatalog.chaordicvertical", Model, ViewBag)
+    </div>
+    <div class="content">
+
+        @Include("storefrontcatalog.chaordicstorefront", Model, ViewBag)
+
+        @Include("general.breadcrumb", Model.Breadcrumb, ViewBag)
+        
+        <div class="vitrine-promo">
+            @Include("general.bannerarea", Model.BannerArea2, ViewBag)
+    
+            @Include("general.bannerarea", Model.BannerArea2Mobile, ViewBag)
+
+            @Include("storefrontcatalog.storefrontProducts", Model.Type1, ViewBag, new { FixedCssSection = "section vitrine-1", ShowThumb = false, ShowBuy = false, ShowSeeMore = false, RenderReview = false, PurchaseQuantityCatalog = Model.PurchaseQuantityCatalog, ShowSkuCatalog = Model.ShowSkuCatalog, PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU, PackageModule = Model.PackageModule, MessageProductCatalog = Model.MessageProductCatalog, LabelPackage = Model.LabelPackage })
+        </div>
+
+       
+        
+        <div class="main-content">
+           <div class="aside">
+                @Include("general.bannerarea", Model.BannerArea5, ViewBag)
+            </div>
+
+            @Include("storefrontcatalog.storefrontProducts", Model.Type1, ViewBag, new { FixedCssSection = "section vitrine-1", RenderReview = Model.RenderReview, PurchaseQuantityCatalog = Model.PurchaseQuantityCatalog, ShowSkuCatalog = Model.ShowSkuCatalog, PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU, PackageModule = Model.PackageModule, MessageProductCatalog = Model.MessageProductCatalog, LabelPackage = Model.LabelPackage })
+            
+            @Include("storefrontcatalog.storefrontProducts", Model.Type2, ViewBag, new { FixedCssSection = "section vitrine-2", RenderReview = Model.RenderReview, PurchaseQuantityCatalog = Model.PurchaseQuantityCatalog, ShowSkuCatalog = Model.ShowSkuCatalog, PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU, PackageModule = Model.PackageModule, MessageProductCatalog = Model.MessageProductCatalog, LabelPackage = Model.LabelPackage })
+            
+            @Include("general.bannerarea", Model.BannerArea6_Storefront1, ViewBag)
+            @Include("general.bannerarea", Model.BannerArea6_Storefront1Mobile, ViewBag)
+            
+            @Include("storefrontcatalog.storefrontProducts", Model.Type3, ViewBag, new { FixedCssSection = "section vitrine-3", RenderReview = Model.RenderReview, PurchaseQuantityCatalog = Model.PurchaseQuantityCatalog, ShowSkuCatalog = Model.ShowSkuCatalog, PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU, PackageModule = Model.PackageModule, MessageProductCatalog = Model.MessageProductCatalog, LabelPackage = Model.LabelPackage })
+            
+            @Include("general.bannerarea", Model.BannerArea6_Storefront2, ViewBag)
+            @Include("general.bannerarea", Model.BannerArea6_Storefront2Mobile, ViewBag)
+            
+            @Include("storefrontcatalog.storefrontProducts", Model.Type4, ViewBag, new { FixedCssSection = "section vitrine-4", RenderReview = Model.RenderReview, PurchaseQuantityCatalog = Model.PurchaseQuantityCatalog, ShowSkuCatalog = Model.ShowSkuCatalog, PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU, PackageModule = Model.PackageModule, MessageProductCatalog = Model.MessageProductCatalog, LabelPackage = Model.LabelPackage })
+            
+            @Include("general.bannerarea", Model.BannerArea6_Storefront3, ViewBag)
+            @Include("general.bannerarea", Model.BannerArea6_Storefront3Mobile, ViewBag)
+                    
+            @Include("storefrontcatalog.storefrontProducts", Model.General, ViewBag, new { FixedCssSection = "section vitrine-6", RenderReview = Model.RenderReview, PurchaseQuantityCatalog = Model.PurchaseQuantityCatalog, ShowSkuCatalog = Model.ShowSkuCatalog, PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU, PackageModule = Model.PackageModule, MessageProductCatalog = Model.MessageProductCatalog, LabelPackage = Model.LabelPackage })
+              
+            @Include("general.bannerarea", Model.BannerArea6_Storefront4, ViewBag)
+            @Include("general.bannerarea", Model.BannerArea6_Storefront4Mobile, ViewBag)
+
+            @Include("storefrontcatalog.storefrontLooks", Model.Looks, ViewBag, new { FixedCssSection = "section vitrine-5", RenderReview= Model.RenderReview })
+                        
+            @if (!string.IsNullOrEmpty(Model.SeeMoreUrl))
+            {
+                <a class="see-category" id="hypVitrineVejaMais" href="@Model.SeeMoreUrl"><em class="see-more-txt">Veja mais em:</em> @Model.SeeMoreText</a>
+            }
+                        
+            <p class="categ-desc">
+                @Raw(Model.SEOContent)
+            </p>
+        </div>
+    </div>
+    @Include("general.bannerarea", Model.BannerArea7, ViewBag)
+    
+    @Include("general.bannerarea", Model.BannerArea7Mobile, ViewBag)
+    
+    @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+
+    @Include("general.instagram", Model.Instagram, ViewBag)
+</div>
+
+

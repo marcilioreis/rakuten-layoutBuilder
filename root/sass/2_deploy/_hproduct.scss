@@ -1,0 +1,433 @@
+//HPRODUCT
+// ====================================================================
+%g_hproduct {
+    .hproduct {
+        display: inherit;
+        &:hover {
+            border-color: $border-master-color;
+        }
+    }
+}
+
+%d_hproduct {
+    .hproduct {
+        width: 250px;
+        padding: 10px;
+    }
+}
+
+%m_hproduct {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - FOTO
+// ====================================================================
+%g_hproduct-photo {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_hproduct-photo {
+    .hproduct {
+        .link,
+        .figure,
+        .photo {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+%m_hproduct-photo {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - QUICKVIEW BUTTON
+// ====================================================================
+%g_hproduct-quickbutton {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_hproduct-quickbutton {
+    .hproduct .quick-look-container {
+        a.bt-quick-look {
+            @include fonte($font-one, 400, 12px, rgb(255, 255, 255));
+            text-transform: uppercase;
+            background: rgb(59, 59, 59);
+            &:before {
+                @include set-icon($fa-var-eye, 20px, 900, #FFF);
+                margin-right: 5px;
+            }
+            &:hover {
+                background: rgb(24, 24, 24);
+            }
+        }
+    }
+}
+
+%m_hproduct-quickbutton {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - TOOLS (CAROUSEL)
+// ====================================================================
+%g_hproduct-tools {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_hproduct-tools {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-tools {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - NAME
+// ====================================================================
+%g_hproduct-name {
+    .hproduct .name {
+        @include fonte($font-one, normal, 14px, #000);
+        font-style: normal;
+        text-transform: none;
+    }
+}
+
+%d_hproduct-name {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-name {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - OFFERS
+// ====================================================================
+%g_hproduct-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_hproduct-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - PRICE FROM
+// ====================================================================
+%g_hproduct-pricefrom {
+    .hproduct .offers .regular,
+    .hproduct .offers .regular em,
+    #spanPrecoDe {
+        @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        text-transform: uppercase;
+        text-decoration: line-through;
+        font-style: normal;
+    }
+}
+
+%d_hproduct-pricefrom {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-pricefrom {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - PRICE TO
+// ====================================================================
+%g_hproduct-priceto {
+    .hproduct .offers .price.sale:not(.percent-a-vista),
+    .hproduct .offers .price.sale:not(.percent-a-vista) strong,
+    .hproduct .offers .price.sale:not(.percent-a-vista) em,
+    #spanPrecoPor,
+    #spanPrecoPor strong {
+        @include fonte($font-one, bold, 14px, #000);
+        text-transform: uppercase;
+        font-style: normal;
+    }
+}
+
+%d_hproduct-priceto {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-priceto {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - DESCONTO A VISTA
+// ====================================================================
+%g_hproduct-discount {
+    .hproduct .percent-a-vista {
+        * {
+            font-style: normal;
+        }
+        @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        .value-sight,
+        .value-percentage {
+            @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+        }
+    }
+}
+
+%d_hproduct-discount {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-discount {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - PARCELAMENTO
+// ====================================================================
+%g_hproduct-parcel {
+    .hproduct .parcel {
+        @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        strong {
+            @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+        }
+    }
+}
+
+%d_hproduct-parcel {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-parcel {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - SELOS
+// ====================================================================
+%g_hproduct-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_hproduct-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - TEXTO INDISPONIVEL
+// ====================================================================
+%g_hproduct-unavailable {
+    .hproduct .unavailable {
+        @include fonte($font-one, bold, 12px, rgb(165, 34, 34));
+        text-transform: uppercase;
+    }
+}
+
+%d_hproduct-unavailable {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-unavailable {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - REVIEWAGREGATE
+// ====================================================================
+%g_hproduct-reviewaggregate {
+    .hproduct .reviewaggregate {
+        #hypRating {
+            background-repeat: repeat-x;
+            .rating{
+                background-repeat: repeat-x;
+                background-position: 0px -18px;
+            }
+        }
+        .count {
+            @include fonte($font-one, normal, 14px, rgb(88, 88, 88));
+        }
+    }
+}
+
+%d_hproduct-reviewaggregate {
+    .hproduct .reviewaggregate {
+        #hypRating {
+            @include bgimage("star.png");
+            .rating{
+                @include bgimage("star.png");
+            }
+        }
+    }
+}
+
+%m_hproduct-reviewaggregate {
+    .hproduct .reviewaggregate {
+        #hypRating {
+            @include bgimage("star-mobile.png");
+            .rating{
+                @include bgimage("star-mobile.png");
+            }
+        }
+    }
+}
+
+//HPRODUCT - COMPARATIVO
+// ====================================================================
+%g_hproduct-compare {
+    .hproduct .compare {
+        label {
+            @include flexbox(flex, row, nowrap, center, center, center);
+        }
+        label,
+        input {
+            @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+        }
+    }
+}
+
+%d_hproduct-compare {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-compare {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - BT-COMPRAR
+// ====================================================================
+%g_hproduct-buy {
+    .hproduct .buy {
+        @include fonte($font-one, normal, 12px, rgb(255, 255, 255));
+        background: rgb(59, 59, 59);
+        &:hover {
+            background: rgb(24, 24, 24);
+        }
+    }
+}
+
+%d_hproduct-buy {
+    .hproduct .buy {
+        max-width: 165px;
+        height: 45px;
+    }
+}
+
+%m_hproduct-buy {
+    .hproduct .buy {
+        width: 100%;
+    }
+}
+
+//HPRODUCT - SEE-MORE (VITRINE)
+// ====================================================================
+%g_hproduct-seeMore {
+    .hproduct .see-more {
+        display: none;
+    }
+}
+
+%d_hproduct-seeMore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_hproduct-seeMore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - COMPONENTS
+// ====================================================================
+%d_hproduct-components{
+    @extend %g_hproduct, %d_hproduct;
+    @extend %g_hproduct-photo, %d_hproduct-photo;
+    @extend %g_hproduct-quickbutton, %d_hproduct-quickbutton;
+    @extend %g_hproduct-tools, %d_hproduct-tools;
+    @extend %g_hproduct-name, %d_hproduct-name;
+    @extend %g_hproduct-offers, %d_hproduct-offers;
+    @extend %g_hproduct-pricefrom, %d_hproduct-pricefrom;
+    @extend %g_hproduct-priceto, %d_hproduct-priceto;
+    @extend %g_hproduct-discount, %d_hproduct-discount;
+    @extend %g_hproduct-parcel, %d_hproduct-parcel;
+    @extend %g_hproduct-stamps, %d_hproduct-stamps;
+    @extend %g_hproduct-unavailable, %d_hproduct-unavailable;
+    @extend %g_hproduct-reviewaggregate, %d_hproduct-reviewaggregate;
+    @extend %g_hproduct-compare, %g_hproduct-compare;
+    @extend %g_hproduct-buy, %d_hproduct-buy;
+    @extend %g_hproduct-seeMore, %d_hproduct-seeMore;
+}
+
+%m_hproduct-components{
+    @extend %g_hproduct, %m_hproduct;
+    @extend %g_hproduct-photo, %m_hproduct-photo;
+    @extend %g_hproduct-quickbutton, %m_hproduct-quickbutton;
+    @extend %g_hproduct-tools, %m_hproduct-tools;
+    @extend %g_hproduct-name, %m_hproduct-name;
+    @extend %g_hproduct-offers, %m_hproduct-offers;
+    @extend %g_hproduct-pricefrom, %m_hproduct-pricefrom;
+    @extend %g_hproduct-priceto, %m_hproduct-priceto;
+    @extend %g_hproduct-discount, %m_hproduct-discount;
+    @extend %g_hproduct-parcel, %m_hproduct-parcel;
+    @extend %g_hproduct-stamps, %m_hproduct-stamps;
+    @extend %g_hproduct-unavailable, %m_hproduct-unavailable;
+    @extend %g_hproduct-reviewaggregate, %m_hproduct-reviewaggregate;
+    @extend %g_hproduct-compare, %g_hproduct-compare;
+    @extend %g_hproduct-buy, %m_hproduct-buy;
+    @extend %g_hproduct-seeMore, %d_hproduct-seeMore;
+}

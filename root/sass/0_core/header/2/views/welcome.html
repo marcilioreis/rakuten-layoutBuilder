@@ -1,0 +1,42 @@
+@model WelcomeBaseModel
+
+       
+    @if(Model.HasNameCookie)
+    { 
+        <li class="welcome" id="identificacao">
+            
+             <span>  @Raw("Olá") <strong>@Model.UserName</strong> </span>
+           	 @* POINTS *@
+        	 @Include("points", Model, ViewBag)
+          
+        </li>
+
+        <li class="myacc">
+            <a id="hypMinhaConta" href="@UrlSecure("/minhaconta.aspx")">
+                Minha Conta
+            </a>
+        </li>
+
+        <li class="exit">
+            <a href="javascript:ExcluiCookieLogin();" title="Sair" rel="nofollow">Sair</a>
+        </li>     
+       
+    }
+    else
+    {
+        <li class="welcome cadastre" id="identificacao">
+            <a href="@UrlSecure("/cadastro/index.aspx")" title="Cadastre-se" rel="nofollow">CADASTRAR-SE</a>
+
+            @if (Model.ShowWholesaleLink)
+            {
+                @:| <a href="@Url("~/cadastro/index.aspx?rev=s")" title="Revendedor" rel="nofollow">Revendedor</a>
+            }
+        </li>
+        <li class="myacc">
+            <a id="hypMinhaConta" href="@UrlSecure("/minhaconta.aspx")">
+                Minha Conta
+            </a>
+        </li>
+    }
+
+

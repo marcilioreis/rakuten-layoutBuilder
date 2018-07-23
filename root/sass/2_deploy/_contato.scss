@@ -1,0 +1,167 @@
+// CONTATO - CONTAINER
+// ====================================================================
+%g_contato-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_contato-container {
+    #main .main-content {
+        .contactsAtentions+.form.box {
+            border: 1px solid #CCC;
+            background: #FFF;
+        }
+    }
+}
+
+%m_contato-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CONTATO - TEXTS
+// ====================================================================
+%g_contato-texts {
+    #main .main-content {
+        .contactsSubTitle {
+            @include fonte($font-one, bold, 20px, #000);
+        }
+        .contactsInformation {
+            @include fonte($font-one, normal, 14px, rgb(75, 75, 75));
+        }
+        .contactsAtentions {
+            @include fonte($font-one, normal, 12px, rgb(189, 15, 15));
+        }
+    }
+}
+
+%d_contato-texts {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_contato-texts {
+    #main .main-content {
+        .contactsSubTitle,
+        .contactsInformation,
+        .contactsAtentions {
+            text-align: center;
+        }
+    }
+}
+
+// CONTATO - FORM
+// ====================================================================
+%g_contato-form {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_contato-form {
+    #main .main-content {
+        .contactsAtentions+.form.box {
+            >div {
+                margin: 10px 10px;
+                display: inline-block;
+                width: calc(40% - 10px);
+                &:first-of-type{
+                    width: 80%;
+                    select{
+                        background-position: 98% center;
+                        padding-right: 0;
+                    }
+                }
+                &:nth-last-child(3){
+                    width: 80%;
+                    textarea{
+                        width: 100%;
+                    }
+                }
+                input,
+                select {
+                    width: 100%;
+                }
+                .phone {
+                    width: 100%;
+                    > div{
+                        display: inline-block;
+                    }
+                    .ddd {
+                        width: 25%;
+                    }
+                    .number {
+                        width: 70%;
+                    }
+                }
+                .validacao {
+                    @include box-sizing();
+                    width: 80%;
+                    display: block;
+                    margin: 5px 0px;
+                    &.alert{
+                        display: block;
+                        position: relative;
+                    }
+                }
+                &.actions{
+                    width: 80%;
+                    a{
+                        margin: 10px 0px;
+                    }
+                }
+            }
+            label {
+                @include flexbox(flex, column, nowrap, flex-start, flex-start, flex-start);
+                span {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+%m_contato-form {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CONTATO - ACTION
+// ====================================================================
+%g_contato-action {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_contato-action {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_contato-action {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CONTATO - COMPONENTS
+// ====================================================================
+%d_contato-components{
+    @extend %g_contato-container, %d_contato-container;
+    @extend %g_contato-texts, %d_contato-texts;
+    @extend %g_contato-form, %d_contato-form;
+    @extend %g_contato-action, %d_contato-action;
+}
+
+%m_contato-components{
+    @extend %g_contato-container, %m_contato-container;
+    @extend %g_contato-texts, %m_contato-texts;
+    @extend %g_contato-form, %m_contato-form;
+    @extend %g_contato-action, %m_contato-action;
+}

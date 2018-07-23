@@ -1,0 +1,337 @@
+//ENDERECOS
+// ====================================================================
+%g_enderecos-container {
+    #main .content {
+        .main-content {
+            #pnlHomeDelivery {
+                .box {
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 15px !important;
+                }
+                .address {
+                    @include flexbox(flex, row, wrap, flex-start, initial, flex-start);
+                    &:before {
+                        display: none;
+                    }
+                    >li {
+                        @include box-sizing();
+                        @include transition();
+                        @media #{$res-xs} {
+                            width: 100%;
+                        }
+                        @media #{$res-sm} {
+                            width: calc(100% - 20px);
+                        }
+                        @media #{$res-md} {
+                            width: calc(50% - 20px);
+                        }
+                        @media #{$res-lg} {
+                            width: calc(25% - 20px);
+                        }
+                        @media #{$res-xl} {
+                            width: calc(20% - 20px);
+                        }
+                        height: auto !important;
+                        border: 1px solid $border-master-color;
+                        padding: 15px;
+                        margin: 10px auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_enderecos-container {
+    #main .content{
+        > h1{
+            margin-top: 10px;
+        }
+        .delivery-opt {
+            margin: 10px 0px;
+        }
+    }
+}
+
+%m_enderecos-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//ENDEREÇOS - BOXES
+//====================================================================
+%g_enderecos-boxes {
+    #main #pnlHomeDelivery {
+        .address.box {
+            >li {
+                background: transparent;
+                .info {
+                    padding: 0px;
+                    .details {
+                        .name {
+                            @include fonte($font-one, bold, 14px, #424344);
+                            text-transform: uppercase;
+                        }
+                        .adr {
+                            >span>strong {
+                                @include fonte($font-one, bold, 12px, #424344);
+                            }
+                            >span {
+                                @include fonte($font-one, normal, 12px, #6a6d70);
+                            }
+                        }
+                    }
+                    .actions {
+                        @include flexbox(flex, row, wrap, space-between, initial, flex-start);
+                        .edit {
+                            &:before {
+                                @include set-icon($fa-var-edit, 18px, 900, #FFF);
+                                margin-right: 5px;
+                            }
+                        }
+                        .delete {
+                            @extend %helper_bt--alt;
+                            &:before {
+                                @include set-icon($fa-var-times, 18px, 900, #FFF);
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_enderecos-boxes {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_enderecos-boxes {
+    #main #pnlHomeDelivery {
+        .address.box {
+            >li {
+                .info {
+                    .actions {
+                        width: 100%;
+                        > li{
+                            width: 100%;
+                        }
+                        a{
+                            background-image: none;
+                            text-indent: 0;
+                            margin: 0px;
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+                        .edit {
+                           
+                        }
+                        .delete {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//ENDERECOS - FORM
+// ====================================================================
+%g_enderecos-form {
+    #main .cadaster fieldset {
+        @include box-sizing();
+        width: 100%;
+        .field {
+            @include box-sizing();
+            height: auto;
+            width: 100%;
+            padding: 0;
+            margin: 0 !important;
+            float: none;
+            label {
+                @include box-sizing();
+                width: 100%;
+                padding: 0px 10px;
+                display: block;
+                float: none;
+                input[type="text"],
+                input[type="tel"],
+                select {
+                    width: 100%;
+                }
+                .validacao {
+                    position: inherit;
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .phone {
+                @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+                width: 100%;
+                padding: 0px;
+                input {
+                    position: inherit;
+                }
+                .ddd {
+                    width: 30%;
+                }
+                .number {
+                    width: 65%;
+                }
+            }
+            #txtCidade,
+            #txtBairro {
+                width: 100% !important;
+            }
+        }
+
+    }
+}
+
+%d_enderecos-form { 
+    #main .cadaster fieldset {
+        padding: 10px;
+        >.fl,
+        >.fr-dados {
+            @include box-sizing();
+            margin: 0px;
+            padding: 10px;
+            width: 50%;
+            display: -ms-grid;
+            display: grid;
+            grid-gap: 10px;
+            -ms-grid-columns: calc(33% - 10px) 10px calc(33% - 10px) 10px calc(33% - 10px);
+            -ms-grid-rows: auto 10px auto;
+            grid-template-columns: calc(33% - 10px) calc(33% - 10px) calc(33% - 10px);
+        }
+        .fl>.field {
+            &:nth-of-type(1) {
+                -ms-grid-row: 1;
+                -ms-grid-column: 1;
+            }
+            &:nth-of-type(2) {
+                -ms-grid-row: 1;
+                -ms-grid-column: 3;
+            }
+            &:nth-of-type(3) {
+                -ms-grid-row: 1;
+                -ms-grid-column: 5;
+            }
+            &:nth-of-type(4) {
+                -ms-grid-row: 3;
+                -ms-grid-column: 1;
+            }
+            &:nth-of-type(5) {
+                -ms-grid-row: 3;
+                -ms-grid-column: 4;
+            }
+            &:nth-of-type(6) {
+                -ms-grid-row: 3;
+                -ms-grid-column: 6;
+            }
+            &:nth-of-type(7) {
+                -ms-grid-row: 4;
+                -ms-grid-column: 1;
+            }
+        }
+        .fr-dados>.field {
+            &:nth-of-type(1) {
+                -ms-grid-row: 1;
+                -ms-grid-column: 1;
+            }
+            &:nth-of-type(2) {
+                -ms-grid-row: 1;
+                -ms-grid-column: 3;
+            }
+            &:nth-of-type(3) {
+                -ms-grid-row: 1;
+                -ms-grid-column: 5;
+            }
+            &:nth-of-type(4) {
+                -ms-grid-row: 3;
+                -ms-grid-column: 1;
+            }
+            &:nth-of-type(5) {
+                -ms-grid-row: 3;
+                -ms-grid-column: 3;
+            }
+            &:nth-of-type(6) {
+                -ms-grid-row: 3;
+                -ms-grid-column: 5;
+            }
+            &:nth-of-type(7) {
+                -ms-grid-row: 5;
+                -ms-grid-column: 1;
+            }
+            &:nth-of-type(8) {
+                -ms-grid-row: 5;
+                -ms-grid-column: 3;
+            }
+        }
+    }
+}
+
+%m_enderecos-form {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//ENDERECOS - ACTIONS
+// ====================================================================
+%g_enderecos-action {
+    #main #pnlHomeDelivery .cadaster+.actions {
+        @include box-sizing;
+        height: auto;
+        a {
+           &.cancel{
+                @extend %helper_bt--alt;
+           }
+        }
+    }
+}
+
+%d_enderecos-action {
+    #main #pnlHomeDelivery .cadaster+.actions {
+        @include flexbox(flex, row, wrap, flex-end, inherit, flex-end);
+        padding: 10px 60px;
+        a {
+            position: inherit;
+            margin-left: 10px;
+            left: auto;
+            right: auto;
+        }
+    }
+}
+
+%m_enderecos-action {
+    #main #pnlHomeDelivery .cadaster+.actions {
+        a {
+           width: 100%;
+           margin-bottom: 10px;
+        }
+    }
+}
+
+//ENDERECOS - COMPONENTS
+// ====================================================================
+%d_enderecos-components{
+    @extend %g_enderecos-container, %d_enderecos-container;
+    @extend %g_enderecos-boxes, %d_enderecos-boxes;
+    @extend %g_enderecos-form, %d_enderecos-form;
+    @extend %g_enderecos-action, %d_enderecos-action;
+}
+
+%m_enderecos-components{
+    @extend %g_enderecos-container, %m_enderecos-container;
+    @extend %g_enderecos-boxes, %m_enderecos-boxes;
+    @extend %g_enderecos-form, %m_enderecos-form;
+    @extend %g_enderecos-action, %m_enderecos-action;
+}

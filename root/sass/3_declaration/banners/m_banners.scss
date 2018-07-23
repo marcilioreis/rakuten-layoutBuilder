@@ -1,0 +1,64 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/banners";
+
+
+//BANNERS HOME - DECLARATIONS
+//----------------------------------------------
+body.home{
+    .b-top{
+        @import "../../2_deploy/core/banner_home_top/core_banners";
+        @extend %g_banner_home-top, %m_banner_home-top;
+    }
+    .b-main{
+        @import "../../2_deploy/core/banner_home_main/core_banners";
+        @extend %g_banner_home-main, %m_banner_home-main;
+    }
+    .b-betweenvit{
+        @import "../../2_deploy/core/banner_home_betweenvit/core_banners";
+        @extend %g_banner_home-betweenvit, %m_banner_home-betweenvit;
+    }
+    .b-bottom{
+        @import "../../2_deploy/core/banner_home_bottom/core_banners";
+        @extend %g_banner_home-bottom, %m_banner_home-bottom;
+    }
+}
+
+body.catalog {
+    .b-top{
+        @import "../../2_deploy/core/banner_cat_top/core_banners";
+        @extend %g_banner_cat-top, %m_banner_cat-top;
+    }
+    .b-main{
+        @import "../../2_deploy/core/banner_cat_main/core_banners";
+        @extend %g_banner_cat-main, %m_banner_cat-main;
+    }
+    .b-bottom{
+        @import "../../2_deploy/core/banner_cat_bottom/core_banners";
+        @extend %g_banner_cat-bottom, %m_banner_cat-bottom;
+    }
+}
+
+
+body.vitrine {
+    .b-top{
+        @import "../../2_deploy/core/banner_vit_top/core_banners";
+        @extend %g_banner_vit-top, %m_banner_vit-top;
+    }
+    .b-main{
+        @import "../../2_deploy/core/banner_vit_main/core_banners";
+        @extend %g_banner_vit-main, %m_banner_vit-main;
+    }
+    .b-bottom{
+        @import "../../2_deploy/core/banner_vit_bottom/core_banners";
+        @extend %g_banner_vit-bottom, %m_banner_vit-bottom;
+    }
+}
+
+body.product {
+    .b-top{
+        @import "../../2_deploy/core/banner_product_top/core_banners";
+        @extend %g_banner_product-top, %m_banner_product-top;
+    }
+}

@@ -1,0 +1,11 @@
+//DEPENDENCIAS
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/minha_conta";
+
+
+//DECLARAÇÕES
+//----------------------------------------------
+body.account.internal{
+    @extend %m_minha_conta-components;
+}

@@ -1,0 +1,222 @@
+// CHECKOUT - ICONS
+// ====================================================================
+%g_checkout-icons {
+    .opc .opc-content {
+        .boxes{
+            .box-title {
+                &.icon{
+                    &:before {
+                        border: 2px solid rgb(170, 170, 170);
+                        border-radius: 30px;
+                        line-height: 20px;
+                        padding: 5px;
+                        text-align: center;
+                        top: 7px;
+                        height: 20px;
+                        width: 20px;
+                        @include set-icon($fa-var-user, 18px, 900, rgb(102, 102, 102));
+                    }
+                }
+                &.user{
+                    &:before {
+                        content: $fa-var-user;
+                    }
+                }
+                &.address{
+                    &:before {
+                        content: $fa-var-envelope;        
+                    }
+                }
+                &.delivery{
+                    &:before {
+                        content: $fa-var-truck;        
+                    }
+                }
+                &.money{
+                    &:before {
+                        content: $fa-var-dollar-sign;
+                    }
+                }
+                &.pencil{
+                    &:before {
+                        content: $fa-var-pencil-alt;
+                    }
+                }
+            }
+            &.available{
+                .box-title{
+                    &:after {
+                        @include set-icon($fa-var-check, 20px, 900, rgb(102, 102, 102));
+                    }
+                }
+            }
+            .bt-edit {
+                @include border-radius(5px);
+                background: none;
+                border: 2px solid rgb(170, 170, 170);
+                width: 24px;
+                height: 24px;
+                top: 10px;
+                right: 10px;
+                &:before {
+                    @include set-icon($fa-var-pencil-alt, 26px, 900, rgb(102, 102, 102));
+                    float: right;
+                    position: relative;
+                    left: 3px;
+                    bottom: 4px;
+                }
+            }
+            .payment-accordion {
+                .accordion-item{
+                    .accordion-title{
+                        &.icon{
+                            &:before {
+                                padding: 5px;
+                                text-align: center;
+                                top: 7px;
+                                @include set-icon($fa-var-user, 25px, 900, rgb(102, 102, 102));
+                            }
+                            &:after{
+                                @include set-icon($fa-var-chevron-right, 20px, 900, rgb(102, 102, 102));
+                                line-height: 50px;
+                                text-align: center;
+                            }
+                        }
+                        &.pay-card{
+                            &:before{
+                                content: $fa-var-credit-card;
+                            }
+                        }
+                        &.pay-boleto{
+                            &:before{
+                                content: $fa-var-barcode;
+                            }
+                        }
+                    }
+                    &.active{
+                        .accordion-title {
+                            color: rgb(170, 170, 170);
+                            &.icon{
+                                &:before {
+                                    color: rgb(170, 170, 170);
+                                }
+                                &:after{
+                                    @include set-icon($fa-var-chevron-down, 20px, 900, rgb(102, 102, 102));
+                                }
+                            }
+                            
+                        }
+                    }
+                } 
+                
+            }
+        }
+    }
+}
+
+%d_checkout-icons {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_checkout-icons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CHECKOUT - BUTTONS
+// ====================================================================
+%g_checkout-buttons {
+    .opc .opc-content {
+        .boxes{
+            .bt-login, .bt-cadastro, .send-bt, .address-bt {
+                border: 0;
+                @include border-radius(0);
+                @extend %helper_bt;
+            }
+            .bt-cadastro, .bt-full {
+                @extend %helper_bt--alt;                
+            }
+        }
+    }
+}
+
+%d_checkout-buttons {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_checkout-buttons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CHECKOUT - ADDRESS
+// ====================================================================
+%g_checkout-address {
+    .opc .opc-content {
+        .boxes #boxAddress{
+            .abas-address .item-aba{
+                input:checked+label{
+                    border-top: solid 2px rgb(100, 100, 100);
+                }
+            }
+        }
+    }
+}
+
+%d_checkout-address {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_checkout-address {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CHECKOUT - SUMMARY
+// ====================================================================
+%g_checkout-summary {
+    .opc .opc-content {
+        .summary {
+            .total-price{                
+                color: rgb(100, 100, 100);
+            }
+        }
+    }
+}
+
+%d_checkout-summary {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_checkout-summary {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CHECKOUT - COMPONENTS
+// ====================================================================
+%d_checkout-components{
+    @extend %g_checkout-icons, %d_checkout-icons;
+    @extend %g_checkout-buttons, %d_checkout-buttons;
+    @extend %g_checkout-address, %d_checkout-address;
+    @extend %g_checkout-summary, %d_checkout-summary;
+}
+
+%m_checkout-components{
+    @extend %g_checkout-icons, %m_checkout-icons;
+    @extend %g_checkout-buttons, %m_checkout-buttons;
+    @extend %g_checkout-address, %m_checkout-address;
+    @extend %g_checkout-summary, %m_checkout-summary;
+}

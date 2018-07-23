@@ -1,0 +1,243 @@
+// PEDIDOS DETALHE - TEXT
+// ====================================================================
+%g_pedido_detalhe-text {
+    #main {
+        .main-content {
+            h1, h1 span{
+                @include fonte($font-one, 500, 28px, rgb(0, 0, 0));
+            }
+            p, span, label, li{
+                @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+                &.name{
+                    @include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+                }
+            }
+            .titulo{
+                @include fonte($font-one, 700, 16px, rgb(0, 0, 0));
+                padding: 5px 0px;
+            }
+            .number{
+                strong{
+                    @include fonte($font-one, 700, 40px, rgb(0, 0, 0));
+                }
+            }
+            a:not(.btn){
+                @include fonte($font-one, 500, 14px, rgb(100, 100, 100));
+            }
+            .title {
+                strong {
+                    @include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+                }
+            }
+        }
+    }
+}
+
+%d_pedido_detalhe-text {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pedido_detalhe-text {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// PEDIDOS DETALHE - STATUS
+// ====================================================================
+%g_pedido_detalhe-status {
+    #main {
+        .timeline{
+            li{
+                span{
+                    @include fonte($font-one, 700, 13px, rgb(0, 0, 0));
+                    &.date, &.hour{
+                        @include fonte($font-one, 400, 12px, rgb(0, 0, 0));
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_pedido_detalhe-status {
+	#main {
+        .timeline{
+            li{
+                span{
+                    &.status{
+                        background: none;
+                        &:after {
+                            background: #fff !important;
+                            border: 2px solid;
+                            border-radius: 30px;
+                            display: block;
+                            line-height: 30px;
+                            margin: 20px auto 0px;
+                            padding: 10px;
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                }
+                &.first{
+                    background-position-x: 70px;
+                }
+                &.complete{
+                    .status{
+                        &:after {
+                            border-color: rgb(0, 200, 0);
+                            @include set-icon($fa-var-circle, 30px, 900, rgb(0, 200, 0));
+                        }
+                    }
+                }
+                &.in-keep{
+                    .status{
+                        &:after {
+                            border-color: rgb(220, 220, 0);
+                            @include set-icon($fa-var-circle, 30px, 900, rgb(220, 220, 0));
+                        }
+                    }
+                }
+                &.cancel{
+                    .status{
+                        &:after {
+                            border-color: rgb(200, 0, 0);
+                            @include set-icon($fa-var-circle, 30px, 900, rgb(200, 0, 0));
+                        }
+                    }
+                }
+                &.last{
+                    background-position-x: -350px;
+                }
+            }
+        }
+    }
+}
+
+%m_pedido_detalhe-status {
+    #main {
+        .timeline{
+            li{
+                &:before {
+                    background: #fff !important;
+                    border: 1px solid;
+                    border-radius: 30px;
+                    display: block;
+                    line-height: 15px;
+                    margin: 0px auto 0px;
+                    padding: 5px;
+                    height: 15px;
+                    width: 15px;
+                }
+                &.complete{
+                    &:before {
+                        border-color: rgb(0, 200, 0);
+                        @include set-icon($fa-var-circle, 15px, 900, rgb(0, 200, 0));
+                    }
+                }
+                &.in-keep{
+                    &:before {
+                        border-color: rgb(220, 220, 0);
+                        @include set-icon($fa-var-circle, 15px, 900, rgb(220, 220, 0));
+                    }
+                }
+                &.cancel{
+                    &:before {
+                        border-color: rgb(200, 0, 0);
+                        @include set-icon($fa-var-circle, 15px, 900, rgb(200, 0, 0));
+                    }
+                }
+            }
+        }
+    }
+}
+
+// PEDIDOS DETALHE - PRODUTOS ADQUIRIDOS
+// ====================================================================
+%g_pedido_detalhe-result {
+    #main {
+        .basket.box {
+            th{
+                span{
+                    @include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+                }
+            }
+            td{
+                @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+                &:first-of-type{
+                    @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+                }
+                &.unit-value, &.subtotal{
+                    .regular {
+                        @include fonte($font-one, 500, 14px, rgb(102, 102, 102));                        
+                    }
+                    .price.sale{
+                        @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+                    }
+                }
+            }
+            .even{
+                td{
+                    background: #f7f7f7;
+                }
+            }
+        }
+    }
+}
+
+%d_pedido_detalhe-result {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pedido_detalhe-result {
+    #main {
+        .basket.box {
+            td{
+                &:before{
+                    @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+                }
+            }
+        }
+    }
+}
+
+// PEDIDOS DETALHE - ENDEREÇOS
+// ====================================================================
+%g_pedido_detalhe-address {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_pedido_detalhe-address {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pedido_detalhe-address {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// PEDIDOS DETALHE - COMPONENTS
+// ====================================================================
+%d_pedido_detalhe-components{
+    @extend %g_pedido_detalhe-text, %d_pedido_detalhe-text;
+    @extend %g_pedido_detalhe-status, %d_pedido_detalhe-status;
+    @extend %g_pedido_detalhe-result, %d_pedido_detalhe-result;
+    @extend %g_pedido_detalhe-address, %d_pedido_detalhe-address;
+}
+
+%m_pedido_detalhe-components{
+    @extend %g_pedido_detalhe-text, %m_pedido_detalhe-text;
+    @extend %g_pedido_detalhe-status, %m_pedido_detalhe-status;
+    @extend %g_pedido_detalhe-result, %m_pedido_detalhe-result;
+    @extend %g_pedido_detalhe-address, %m_pedido_detalhe-address;
+}

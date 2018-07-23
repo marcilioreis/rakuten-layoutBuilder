@@ -1,0 +1,138 @@
+@model StorefrontHomeModel
+
+
+@*HOME PADRAO*@
+
+@if (Model.ThemeType == 0)
+{
+    
+    <div>
+        @Include("general.bannerarea", Model.BannerArea1, ViewBag)
+
+        @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+
+        @Include("storefrontProducts", Model.Type1, ViewBag, new { FixedCssSection = "section vitrine-1", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type1", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+        @Include("general.bannerarea", Model.BannerArea2, ViewBag)
+
+        @Include("general.bannerarea", Model.BannerArea2Mobile, ViewBag)
+
+        <div class="aside">
+            @Include("general.bannerarea", Model.BannerArea3, ViewBag)
+
+            @Include("general.navigationmenu", Model.NavigationModel, ViewBag)
+
+            @Include("general.bannerarea", Model.BannerAreaBottom3, ViewBag)
+
+            @Include("newsLetter", ViewBag.NewsLetterModel, ViewBag)
+
+            @Include("chaordicvertical", Model, ViewBag)
+        </div>
+        <div class="content">
+            @Include("general.bannerarea", Model.BannerArea4, ViewBag)
+
+            @Include("general.bannerarea", Model.BannerArea4Mobile, ViewBag)
+
+            @Include("chaordicstorefront", Model, ViewBag)
+
+            <div class="main-content">
+
+                
+
+                @Include("general.bannerarea", Model.BannerArea6_Storefront1, ViewBag)
+                @Include("general.bannerarea", Model.BannerArea6_Storefront1Mobile, ViewBag)
+
+                @Include("storefrontProducts", Model.Type2, ViewBag, new { FixedCssSection = "section vitrine-2", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type2", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                @Include("general.bannerarea", Model.BannerArea6_Storefront2, ViewBag)
+                @Include("general.bannerarea", Model.BannerArea6_Storefront2Mobile, ViewBag)
+
+                @Include("storefrontProducts", Model.Type3, ViewBag, new { FixedCssSection = "section vitrine-3", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type3", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                @Include("general.bannerarea", Model.BannerArea6_Storefront3, ViewBag)
+                @Include("general.bannerarea", Model.BannerArea6_Storefront3Mobile, ViewBag)
+
+                @Include("storefrontProducts", Model.Type4, ViewBag, new { FixedCssSection = "section vitrine-4", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type4", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                @Include("general.bannerarea", Model.BannerArea6_Storefront4, ViewBag)
+                @Include("general.bannerarea", Model.BannerArea6_Storefront4Mobile, ViewBag)
+
+                @Include("storefrontLooks", Model.Looks, ViewBag, new { FixedCssSection = "section vitrine-5", RenderReview = Model.RenderReview })
+
+                @Include("facebookMoreComments", new { }, ViewBag, new { IsFacebookMoreCommentsEnabled = true })
+            </div>
+        </div>
+        @Include("general.bannerarea", Model.BannerArea7, ViewBag)
+
+        @Include("general.bannerarea", Model.BannerArea7Mobile, ViewBag)
+
+        @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+
+        @Include("general.instagram", Model.Instagram, ViewBag)
+    </div>
+
+}
+else
+{
+ 
+@*FIM HOME PADRAO*@
+
+
+@*HOME CUSTOM*@
+
+    <div class="custom-template template_@Model.ThemeType">
+        @*Alterar class template1, template2...*@
+        @Include("general.bannerarea", Model.BannerArea1, ViewBag)
+
+        @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+
+        <div class="inner-container">
+
+            @if (Model.ThemeType != 6)
+            {
+@*REMOVER NO MODELO 6*@
+                @Include("general.bannerarea", Model.BannerArea2, ViewBag)
+    
+                @Include("general.bannerarea", Model.BannerArea2Mobile, ViewBag)
+@*FIM REMOVER NO MODELO 6*@
+            }
+
+            <div class="aside">
+                @Include("general.bannerarea", Model.BannerArea3, ViewBag)
+
+                @Include("general.navigationmenu", Model.NavigationModel, ViewBag)
+
+                @Include("general.bannerarea", Model.BannerAreaBottom3, ViewBag)
+
+                @Include("newsLetter", ViewBag.NewsLetterModel, ViewBag)
+
+                @Include("chaordicvertical", Model, ViewBag)
+            </div>
+            <div class="content">fexportExcel
+
+                @Include("chaordicstorefront", Model, ViewBag)
+
+                <div class="main-content">
+                    @Include("storefrontProducts", Model.Type1, ViewBag, new { FixedCssSection = "section vitrine-1", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type1", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                    @Include("storefrontProducts", Model.Type2, ViewBag, new { FixedCssSection = "section vitrine-2", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type2", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                    @Include("storefrontProducts", Model.Type3, ViewBag, new { FixedCssSection = "section vitrine-3", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type3", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                    @Include("storefrontProducts", Model.Type4, ViewBag, new { FixedCssSection = "section vitrine-4", ShowThumb = true, RenderReview = Model.RenderReview, PurchaseQuantity = Model.PurchaseQuantity, ShowSkuCatalog = Model.ShowSkuCatalog, MessageProductCatalog = Model.MessageProductCatalog, StorefrontArea = "type4", PurchaseQuantityWithoutSKU = Model.PurchaseQuantityWithoutSKU })
+
+                    @Include("storefrontLooks", Model.Looks, ViewBag, new { FixedCssSection = "section vitrine-5", RenderReview = Model.RenderReview })
+
+                    @Include("facebookMoreComments", new { }, ViewBag, new { IsFacebookMoreCommentsEnabled = true })
+                </div>
+            </div>
+
+            @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+
+            @Include("general.instagram", Model.Instagram, ViewBag)
+
+        </div>
+    </div>
+}
+
+@*FIM HOME CUSTOM*@

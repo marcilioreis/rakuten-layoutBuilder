@@ -1,0 +1,137 @@
+// SITEMAP - CONTAINER
+// ====================================================================
+%g_sitemap-container {
+    #main_content {
+        .col {
+            >strong {
+                @include fonte($font-one, normal, 16px, rgb(54, 54, 54));
+                text-transform: uppercase;
+                border-bottom: dashed 1px #b3b3b3;
+            }
+        }
+    }
+}
+
+%d_sitemap-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_sitemap-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// SITEMAP - CATEGORIES
+// ====================================================================
+%g_sitemap-categories {
+    #main_content {
+        .col:not(.manuf) {
+            >ul>li>h2 {
+                @include flexbox(flex, row, wrap, flex-start, center, center);
+                padding: 10px;
+                background: rgb(233, 233, 233);
+                line-height: inherit;
+                >a {
+                    @include fonte($font-one, bold, 16px, rgb(54, 54, 54));
+                    padding: 0px;
+                    line-height: inherit;
+                    &:before {
+                        display: none;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                &:before {
+                    @include set-icon($fa-var-angle-right, 20px, 900, rgb(54, 54, 54));
+                    margin-right: 5px;
+                }
+            }
+            >ul>li>ul>li {
+                a {
+                    @include flexbox(flex, row, wrap, flex-start, center, center);
+                    @include fonte($font-one, 400, 12px, rgb(54, 54, 54));
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    &:before {
+                        @include set-icon($fa-var-circle, 4px, 900, rgb(54, 54, 54));
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_sitemap-categories {
+    #main_content {
+        .col:not(.manuf) {
+            >ul {
+                @include flexbox(flex, row, wrap, flex-start, inherit, flex-start);
+            }
+            >ul>li {
+                float: none;
+                border: 1px solid #CCC;
+                margin: 10px;
+            }
+            >ul>li>ul {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+%m_sitemap-categories {
+    #main_content .col:not(.manuf) {
+        >ul {
+            padding: 0px;
+        }
+    }
+}
+
+// SITEMAP - FAB
+// ====================================================================
+%g_sitemap-fab {
+    #main_content .col.manuf {
+        >ul>li>a {
+            @include flexbox(flex, row, wrap, flex-start, center, center);
+            @include fonte($font-one, 400, 12px, rgb(54, 54, 54));
+            &:hover {
+                text-decoration: none;
+            }
+            &:before {
+                @include set-icon($fa-var-circle, 4px, 900, rgb(54, 54, 54));
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+%d_sitemap-fab {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_sitemap-fab {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// SITEMAP - COMPONENTS
+// ====================================================================
+%d_sitemap-components{
+    @extend %g_sitemap-container, %d_sitemap-container;
+    @extend %g_sitemap-categories, %d_sitemap-categories;
+    @extend %g_sitemap-fab, %d_sitemap-fab;
+}
+%m_sitemap-components{
+    @extend %g_sitemap-container, %m_sitemap-container;
+    @extend %g_sitemap-categories, %m_sitemap-categories;
+    @extend %g_sitemap-fab, %m_sitemap-fab;
+}

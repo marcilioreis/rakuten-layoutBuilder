@@ -1,0 +1,120 @@
+@model CatalogModel
+
+<div class="container@(Model.IsSupermarket ? " catalog-spmkt" : "")">
+    @Include("catalog.chaordicfeature", Model, ViewBag)
+
+    @Include("general.bannerarea", Model.BannerArea1, ViewBag)
+    
+    @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+
+    @Include("general.bannerarea", Model.BannerArea2, ViewBag)
+    
+    @Include("general.bannerarea", Model.BannerArea2Mobile, ViewBag)
+
+    <div class="aside">
+        @Include("general.bannerarea", Model.BannerArea3, ViewBag)
+        
+        @if (Model.NavigationModel.Orientation == NavigationMenuModel.Orientations.Vertical)
+        {
+            <text>
+                @Include("general.navigationmenu", Model.NavigationModel, ViewBag)
+            </text>
+        }
+
+        @Include("general.bannerarea", Model.BannerArea4, ViewBag)
+    
+        @Include("general.bannerarea", Model.BannerArea4Mobile, ViewBag)
+
+        @Include("newsLetter", ViewBag.NewsLetterModel, ViewBag)
+
+        @Include("general.bannerarea", Model.BannerAreaBottom3, ViewBag)
+
+        @Include("catalog.chaordicvertical", Model, ViewBag)
+    </div>
+	<div class="content" catalog-infinit-enable="true">
+        
+        
+
+        @if (ViewBag.ShowFilter && ViewBag.FilterModel != null)
+        {
+            @Include("FilterCategory", ViewBag.FilterModel, ViewBag);
+            @Include("FilterData", ViewBag.FilterModel, ViewBag);
+        }
+
+        @if (Model.NavigationModel.Orientation == NavigationMenuModel.Orientations.Horizontal)
+        {
+            <text>
+                @Include("general.navigationmenu", Model.NavigationModel, ViewBag)
+            </text>
+        }
+        
+        @Include("catalog.sort", Model, ViewBag)
+
+        @Include("catalog.viewselection", Model, ViewBag)
+        
+        @Include("catalog.pagination", Model, ViewBag)
+
+        <div class="main-content">
+
+            @if (Model.IsSupermarket && Model.Products.Count > 0)
+            {
+                <!-- CUSTOM TABELA LISTA -->
+                <ul class="table-custom">
+                    <li class="desc">
+                        <strong>Descrição</strong>
+                    </li>
+                    <li class="preco">
+                        <strong>Preço</strong>
+                    </li>
+                    <li class="quantidade">
+                        <strong>Quantidade</strong>
+                    </li>
+                    <li class="status">
+                        <strong>Status</strong>
+                    </li>
+                    <li class="comprar">
+                        <strong>Comprar</strong>
+                    </li>
+                </ul>
+                <!-- FIM CUSTOM TABELA -->
+            }
+
+			<div class="section show-four">
+                
+                @Include("catalog.products", Model, ViewBag)
+                
+                @if(Model.IsInfinteScrollEnabled && Model.Pagination.CurrentPage < Model.Pagination.TotalPages)
+                {
+                    <a class="next-page" href="@Model.Pagination.NextPageUrl">carregar mais</a>
+                }
+			</div>	
+		</div>
+        
+        @if (Model.IsSupermarket && Model.Products.Count > 0)
+        {
+            <ul class="legenda-spmkt">
+                <li class="NP">Não Selecionado</li>
+                <li class="PS">Produto Selecionado</li>
+                <li class="PI">Produto Indisponível</li>
+            </ul>
+        }
+        
+        @Include("catalog.pagination", Model, ViewBag)
+
+        <p class="categ-desc">
+            @Raw(Model.SEOContent)		
+        </p>
+        
+        @Include("catalog.chaordicsearch", Model, ViewBag)
+    </div>
+    
+    @Include("general.bannerarea", Model.BannerArea7, ViewBag)
+
+    @Include("general.bannerarea", Model.BannerArea7Mobile, ViewBag)
+
+    @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+
+    @Include("general.instagram", Model.Instagram, ViewBag)
+</div>
+
+

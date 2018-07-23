@@ -1,0 +1,296 @@
+//FOOTER CONTAINER
+//-----------------------------------------------------------
+%g_core_footer-container {
+    background: #7d7d7d;
+    .title {
+        @include fonte($font-one, bold, 14px, #FFF);
+    }
+}
+
+%d_core_footer-container {
+    #remover_este_bloco {
+        display: none;
+    }
+    height: auto;
+    padding-top: 35px;
+    .container {
+        @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+        height: auto;
+        width: 100%;
+        max-width: $page-w;
+        margin: 0px auto;
+        .col {
+            @include box-sizing;
+            @include flexbox(flex, row, wrap, flex-start, flex-start, space-between);
+            &:nth-of-type(1) {
+                width: 60%;
+            }
+            &:nth-of-type(2) {
+                width: 40%;
+            }
+        }
+    }
+}
+
+%m_core_footer-container {
+    .container{
+        @include flexbox(flex, column, wrap, space-between, flex-start, flex-start); 
+        .col:last-of-type{
+            @include order(1);
+        }
+        .col:first-of-type{
+            @include order(2);
+        }
+        .copy{
+            @include order(3); 
+        }
+        .title{
+            width: 100%;
+            margin: 10px 0px;
+            text-align: center;
+        }
+    }
+}
+
+//FOOTER MENU
+//-----------------------------------------------------------
+%g_core_footer-menu {
+    .menu{
+        li {
+            @include transition;
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            a {
+                @include fonte($font-one, 400, 14px, #FFF);
+                &:hover {
+                    text-decoration: none;
+                    &:before {
+                        color: #FFF;
+                    }
+                }
+            }
+            &:before {
+                @include set-icon($fa-var-dot-circle, 12px, 900, #CCC);
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+%d_core_footer-menu {
+    .menu {
+        @include transition;
+        @media #{$res-lg} {
+            @include content-columns(2, 40px);
+        }
+        @media #{$res-xl} {
+            @include content-columns(3, 40px);
+        }
+        li {
+            @include transition;
+            margin-bottom: 14px;
+            height: 20px;
+        }
+    }
+}
+
+%m_core_footer-menu {
+    .menu {
+        padding: 10px;
+        > li{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+//FOOTER INFO CLIENTE
+//-----------------------------------------------------------
+%g_core_footer-infoCli {
+    .info-cli {
+        position: inherit;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10px;
+        span {
+            @include fonte($font-one, 400, 10px, #FFF);
+        }
+    }
+}
+
+%d_core_footer-infoCli {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_footer-infoCli {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FOOTER PAYMENTS
+//-----------------------------------------------------------
+%g_core_footer-payments {
+    /* 
+    • A ordem escrita na string será a ordem exibida.
+        Opções possíveis:
+        aura, bb, banrisul, boleto, bradesco, dinners, elo,
+        hipercard, hsbc, itau, mastercard, paypal, visa, amex,
+    */
+    $payments: ( boleto, elo, hipercard, mastercard, visa, amex);
+    .payments {
+        li {
+            background-repeat: no-repeat;
+            width: 45px;
+            height: 40px;
+            margin: 0px 10px 10px 0px;
+            display: none;
+            padding: 0px;
+            @each $pay in $payments {
+                $i: index($payments, $pay);
+                &.fpay.#{$pay} {
+                    @include bgimgpay($pay);
+                    @include order($i);
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: contain;
+                    display: inline-flex;
+                }
+                &.mastercard {
+                    width: 76px;
+                }
+                &.elo {
+                    width: 30px;
+                }
+                &.hipercard {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
+
+%d_core_footer-payments {
+    .payments {
+        text-align: left;
+        @include flexbox(inline-flex, row, wrap, flex-start, flex-start, flex-start);
+    }
+}
+
+%m_core_footer-payments {
+    .payments {
+        text-align: center;
+        padding: 10px;
+        @include flexbox(inline-flex, row, wrap, center, flex-start, flex-start);
+    }
+}
+
+//FOOTER PAYMENTS
+//-----------------------------------------------------------
+%g_core_footer-security {
+    .security {
+        .secure-shield {
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            width: 250px;
+            &:before {
+                @include set-icon($fa-var-shield-alt, 40px, 900, #CCC);
+            }
+            >div {
+                margin-left: 10px;
+            }
+            strong {
+                @include fonte($font-one, bold, 21px, #FFF);
+            }
+            span {
+                @include fonte($font-one, normal, 14px, #FFF);
+                display: block;
+                width: 100%;
+            }
+        }
+        .secure-info {
+            @include fonte($font-one, normal, 12px, #FFF);
+        }
+    }
+}
+
+%d_core_footer-security {
+    .secure-seals {
+        @include flexbox(flex, row, wrap, flex-start, center, center);
+        width: 100%;
+        li {
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    .security {
+        width: 100%;
+        .info {
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            width: 100%;
+        }
+    }
+   
+}
+
+%m_core_footer-security {
+    .secure-seals {
+        @include flexbox(flex, row, wrap, space-between, center, center);
+        width: 100%;
+    }
+    .security {
+        @include box-sizing;
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+//FOOTER COPY
+//-----------------------------------------------------------
+%g_core_footer-copy {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_footer-copy {
+    .copy {
+        width: 100%;
+        position: inherit;
+        text-align: center;
+        border: 0;
+        a {
+            width: 120px;
+            height: 30px;
+            float: none;
+            font-size: 0px;
+            display: inline-block;
+        }
+    }
+}
+
+%m_core_footer-copy {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FOOTER - FOOTERBUY
+//-----------------------------------------------------------
+%g_core_footer-footerBuy {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_footer-footerBuy {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_footer-footerBuy {
+    #remover_este_bloco {
+        display: none;
+    }
+}

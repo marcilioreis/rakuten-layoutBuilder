@@ -1,0 +1,10 @@
+//DEPENDENCIAS
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/lista_ocasioes";
+
+//DECLARAÇÕES
+//----------------------------------------------
+body.my-lists{
+    @extend %m_lista_ocasioes-components;
+}

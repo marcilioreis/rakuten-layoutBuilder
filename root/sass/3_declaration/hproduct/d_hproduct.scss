@@ -1,0 +1,16 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/core/core_hproduct";
+@import "../../2_deploy/hproduct";
+
+
+//DECLARATIONS
+//----------------------------------------------
+body .list-products{
+    //CORE - NÃO REMOVER
+    @extend %d_core_hproduct-components;
+
+    //IMPLANTAÇÃO
+    @extend %d_hproduct-components;
+}

@@ -1,0 +1,204 @@
+// BUSCA - AUTOCOMPLETE - MAIS BUSCADAS
+// ====================================================================
+%g_busca-autoComplete {
+    .autocomplete-mais-buscadas {
+        .title-maisbuscadas{
+            @include fonte($font-one, 700, 14px, rgb(255, 255, 255));
+            @include remove-textshadow();
+            background-color: rgb(50, 50, 50);
+            text-transform: uppercase;
+        }
+        .item-maisbuscados {
+            .count{
+                @include fonte($font-one, 700, 14px, rgb(255, 255, 255));
+                @include remove-textshadow();
+                background-color: rgb(50, 50, 50);
+                text-transform: uppercase;
+            }
+            .text-searched{
+                @include fonte($font-one, 500, 14px, rgb(50, 50, 50));
+                @include remove-textshadow();
+                text-transform: none;
+            }
+        }
+    }
+}
+
+%d_busca-autoComplete {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_busca-autoComplete {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BUSCA - MULTICOMPLETE - RESULTS
+// ====================================================================
+%g_busca-multiComplete {
+    .panel-multicomplete-results {
+        .result .group {
+            .group-title{
+                @include fonte($font-one, 700, 14px, rgb(255, 255, 255));
+                @include remove-textshadow();
+                background-color: rgb(50, 50, 50);
+                text-transform: uppercase;
+            }
+            &.palavras{
+                .group-items {
+                    .result>a {
+                        > span{
+                            @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+                            @include remove-textshadow();
+                            text-transform: uppercase;
+                            .highlight{
+                                @include fonte($font-one, 500, 14px, rgb(100, 100, 100));
+                                @include remove-textshadow();
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+            &.produtos{
+                .group-items {
+                    .result>a.autocomplete-product {
+                        .autocomplete-name{
+                            @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+                            @include remove-textshadow();
+                            text-transform: uppercase;
+                            display: inline-block;
+                            width: 70%;
+                        }
+                        .autocomplete-price{
+                            display: inline-block;
+                            @include fonte($font-one, 500, 14px, rgb(100, 100, 100));
+                            @include remove-textshadow();
+                            text-transform: uppercase;
+                            padding-top: 0px;
+                            vertical-align: top;
+                            width: 30%;
+                        }
+                    }
+                }
+
+            }
+        }
+        .panel-no-results{
+            @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+            padding: 10px;
+            @include remove-textshadow();
+            text-transform: uppercase;
+        }
+    }
+}
+
+%d_busca-multiComplete {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_busca-multiComplete {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BUSCA - CATÁLOGO - ASIDE
+// ====================================================================
+%g_busca-catalog-aside {
+    &.type-busca .aside{
+		&.sidebar {
+            .cp-search-side{
+                @include border-radius(0);
+                border: 1px solid #696969;
+            }
+            .clean-btn-por{
+                @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+            }
+        }
+	}
+}
+
+%d_busca-catalog-aside {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_busca-catalog-aside {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BUSCA - CATÁLOGO - CONTENT
+// ====================================================================
+%g_busca-catalog-content {
+    &.type-busca .content {
+        .refine-sua-busca{
+            .title-refine{
+                a{
+                    @include fonte($font-one, 500, 14px, rgb(50, 50, 50));
+                }
+            }
+            .form-refine{
+                background: rgb(150, 150, 150);
+                border: solid 1px rgb(50, 50, 50);
+                .form-button{
+                    background-image: none;
+                    background-color: rgb(50, 50, 50);
+                    margin: 22px 0 0 10px;
+                    @include remove-textshadow();
+                    text-indent: inherit;
+                    &:before{
+                        content: 'OK';
+                        @include fonte($font-one, 700, 12px, rgb(255, 255, 255));
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        .resumo-resultado{
+            p{
+                @include fonte($font-one, 500, 14px, rgb(50, 50, 50));
+                text-transform: none;
+                strong{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+%d_busca-catalog-content {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_busca-catalog-content {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BUSCA - IMPORT COMPONENTS
+// ====================================================================
+%d_busca-components{
+    @extend %g_busca-autoComplete, %d_busca-autoComplete;
+    @extend %g_busca-multiComplete, %d_busca-multiComplete;
+    @extend %g_busca-catalog-aside, %d_busca-catalog-aside;
+    @extend %g_busca-catalog-content, %d_busca-catalog-content;
+}
+
+%m_busca-components{
+    @extend %g_busca-autoComplete, %m_busca-autoComplete;
+    @extend %g_busca-multiComplete, %m_busca-multiComplete;
+    @extend %g_busca-catalog-aside, %m_busca-catalog-aside;
+    @extend %g_busca-catalog-content, %m_busca-catalog-content;
+}

@@ -1,0 +1,163 @@
+// LOGIN - CONTAINER
+// ====================================================================
+%g_login-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_login-container {
+    #main .form.login {
+        @include flexbox(flex, row, nowrap, center, center, center);
+    }
+}
+
+%m_login-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOGIN - FORM
+// ====================================================================
+%g_login-form {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_login-form {
+    #main .main-content {
+        .collum.box {
+            &:not(.even) {}
+            &.even {
+                #new {
+                    margin-right: 0px !important;
+                }
+            }
+        }
+    }
+}
+
+%m_login-form {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOGIN - TEXTS
+// ====================================================================
+%g_login-texts {
+    #main .main-content {
+        .collum.box {
+            #spanUsername,
+            .field>label>span {
+                @include fonte($font-one, 400, 14px, rgb(90, 90, 90));
+                text-transform: uppercase;
+            }
+            &:not(.even) {}
+            &.even {
+                #divClassicLogin {
+                    ul {
+                        li {
+                            @include fonte($font-one, normal, 12px, rgb(90, 90, 90));
+                            text-transform: uppercase;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            #ForgotPassword {
+                .remember {
+                    @include fonte($font-one, bold, 12px, rgb(90, 90, 90));
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+            .txt-secured-id {
+                @include fonte($font-one, 400, 12px, rgb(90, 90, 90));
+                text-transform: uppercase;
+                text-decoration: none;
+                strong{
+                    @include fonte($font-one, bold, 12px, rgb(90, 90, 90));
+                }
+            }
+        }
+    }
+}
+
+%d_login-texts {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_login-texts {
+    #main .main-content {
+        .collum.box {
+            .field>label>span {
+                text-align: center;
+            }
+            #ForgotPassword {
+                .remember {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// GLOBAL ID - NORMALIZE
+// ====================================================================
+%g_login-globalId {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_login-globalId {
+    &.globalId #main .main-content {
+        .collum.box {
+            .title {
+                background: none;
+                text-indent: 0;
+                line-height: inherit;
+                height: auto;
+            }
+            .email {
+                @include box-sizing;
+                width: 100% !important;
+            }
+            #txtSenha {
+                width: 265px !important;
+            }
+            #enter,
+            #new {
+                background-image: none;
+                text-indent: 0;
+            }
+        }
+    }
+}
+
+%m_login-globalId {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LOGIN - COMPONENTS
+// ====================================================================
+%d_login-components{
+    @extend %g_login-container, %d_login-container;
+    @extend %g_login-form, %d_login-form;
+    @extend %g_login-texts, %d_login-texts;
+    @extend %g_login-globalId, %d_login-globalId;
+}
+
+%m_login-components{
+    @extend %g_login-container, %m_login-container;
+    @extend %g_login-form, %m_login-form;
+    @extend %g_login-texts, %m_login-texts;
+    @extend %g_login-globalId, %m_login-globalId;
+}

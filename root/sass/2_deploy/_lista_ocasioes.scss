@@ -1,0 +1,787 @@
+// LISTA DE OCASIÕES - CONTAINERS
+//====================================================================
+%g_lista_ocasioes-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_lista_ocasioes-containers {
+    #main {
+        .pagination{
+            padding: 0px 10px;
+            margin: 5px 0px;
+        }
+        .list-occasions{
+            text-align: center;
+            .collum.box{
+                display: inline-block;
+                float: none;
+                text-align: left;
+                vertical-align: top;
+                min-height: 380px;
+                width: 47%;
+                &:first-of-type {
+                    margin-right: 20px;
+                }
+            }
+            ul{
+                list-style: none;
+            }
+        }
+        .my-list-box{
+            display: inline-block;
+            margin: 5px;
+            min-height: 400px;
+            vertical-align: top;
+            width: 44%;
+        }
+    }
+}
+
+%m_lista_ocasioes-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LISTA DE OCASIÕES - TEXT
+// ====================================================================
+%g_lista_ocasioes-text {
+    #main {
+        h1{
+            padding-bottom: 10px;
+            border-bottom: 1px solid #000;
+            margin: 10px 0px !important;
+        }
+        h2{
+            @include fonte($font-one, 500, 14px, rgb(100, 100, 100));
+        }
+        p, span, label, li, dl, small{
+            @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+        }
+        a:not(.btn):not(.editar-dados){
+            @include fonte($font-one, 500, 14px, rgb(100, 100, 100));
+            &:before{
+                color: rgb(0, 0, 0);
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-text {
+    #main {
+        h1{
+            span{
+                @include fonte($font-one, 500, 28px, rgb(0, 0, 0));
+            }
+        }
+        h3.name-list{
+            a{
+                @include fonte($font-one, 700, 20px, rgb(50, 50, 50));
+            }
+        }
+        .title {
+            strong {
+                @include fonte($font-one, 700, 16px, rgb(0, 0, 0));
+            }
+        }
+        span.title{
+            @include fonte($font-one, 700, 20px, rgb(0, 0, 0));
+        }
+    }
+}
+
+%m_lista_ocasioes-text {
+    #main {
+        h1{
+            text-align: center;
+            span{
+                @include fonte($font-one, 500, 20px, rgb(0, 0, 0));
+            }
+        }
+        h3.name-list{
+            a{
+                @include fonte($font-one, 700, 16px, rgb(50, 50, 50));
+            }
+        }
+        .title {
+            strong {
+                @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+            }
+        }
+        span.title{
+            @include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - INPUTS
+// ====================================================================
+%g_lista_ocasioes-inputs {
+    #main {
+        .radio{
+            span{
+                @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+                line-height: 20px;
+                vertical-align: bottom;
+            }
+        }
+        .contact-email{
+            span{
+                display: inline-block;
+            }
+        }
+        .date{
+            margin-bottom: 0px;
+        }
+        span.validacao{
+            @include fonte($font-one, 400, 14px, #c1272d);
+        }
+    }
+}
+
+%d_lista_ocasioes-inputs {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_lista_ocasioes-inputs {
+    #main {
+        .txt-field{
+            display: block;
+            min-width: 320px;
+        }
+        input[type="url"] {
+            width: 100%;
+        }
+        .radio{
+            input[type="radio"] {
+                display: inline-block;
+                margin: 0 auto;
+            }
+            label{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        .field-file{
+            position: relative;
+            height: 40px;
+            left: 0;
+            margin-bottom: -40px;
+            opacity: 0;
+            top: -40px;
+            width: 100%;
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - BUTTONS
+// ====================================================================
+%g_lista_ocasioes-buttons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_lista_ocasioes-buttons {
+	#main {
+        .msg-email{
+            .btn{
+                min-width: 200px;
+            }
+        }
+        .editar-dados{
+            text-transform: uppercase;
+            display: inline-block !important;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+        }
+        .btn {
+            min-width: 120px;
+            &.confirm-dados{
+                min-width: 160px;
+            }
+        }
+	}
+}
+
+%m_lista_ocasioes-buttons {
+    #main {
+        .msg-email{
+            .btn{
+                width: 100%;
+            }
+        }
+        .editar-dados{
+            text-transform: uppercase;
+        }
+        .btn {
+            width: 100%;
+            &.confirm-dados{
+                width: 100%;
+            }
+        }
+	}
+}
+
+// LISTA DE OCASIÕES - ASIDE
+//====================================================================
+%g_lista_ocasioes-aside {
+    #main .aside {
+        .side-list-details{
+            border-top: 0px;
+            text-align: center;
+            .side-name-list{
+                @include fonte($font-one, 700, 16px, rgb(0, 0, 0));
+            }
+            .side-date-list{
+                @include fonte($font-one, 500, 15px, rgb(0, 0, 0));
+            }
+            .side-url-list{
+                padding-bottom: 10px;
+                a{
+                    @include fonte($font-one, 700, 16px, rgb(100, 100, 100));
+                }
+            }
+            .side-local-list{
+                padding-top: 10px;
+                span{
+                    @include fonte($font-one, 500, 12px, rgb(0, 0, 0));
+                }
+            }
+            .side-list-details-helps{
+                padding-top: 10px;
+                text-align: left;
+            }
+        }
+        .block{
+            ul>li {
+                background: none;
+                border-top: 0;
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-aside {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_lista_ocasioes-aside {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// LISTA DE OCASIÕES - FILTER
+//====================================================================
+%g_lista_ocasioes-filter {
+    #BlocoOrdenar, #BlocoMoverCopiar {
+        @extend %helper_box-border;
+        background: transparent;
+        .field {
+            span {
+                @include fonte($font-one, normal, 16px, rgb(78, 78, 78));
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-filter {
+    #BlocoOrdenar, #BlocoMoverCopiar {
+        @include box-sizing;
+        @include flexbox(flex, row, nowrap, flex-start, center, center);
+        padding: 0px 15px;
+        height: 60px;
+        .field {
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            padding: 0;
+            span {
+                width: auto;
+                float: none;
+                line-height: inherit;
+                height: auto;
+                display: block;
+            }
+            label {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+                width: auto;
+            }
+            .search {
+                float: none !important;
+                position: inherit;
+            }
+        }
+        .actions{
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            .ok {
+                margin: auto !important;
+            }
+        }
+    }
+}
+
+%m_lista_ocasioes-filter {
+    #main .aside .block a::before,
+    #main .aside .block span::before,
+    #main .aside .block span::after {
+        color: #000;
+        content: "";
+    }
+    .filter-wish .field label.order>span,
+    .move-products .field label.order>span {
+        display: block;
+    }
+    #main #BlocoOrdenar {
+        select {
+            width: 100%;
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - PAGINAÇÃO
+//====================================================================
+%g_lista_ocasioes-pagination {
+    #main {
+        .main-content {
+            .pagination{
+                .set-prev, .prev,
+                .set-next, .next {
+                    >a, &.off{
+                        font-size: 0px;
+                    }
+                    &.off{
+                        &:before {
+                            @include set-icon("", 22px, 900, rgb(63, 63, 63));
+                        }
+                        &:hover {
+                            text-decoration: none;
+                            &:before {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+                .set-prev.off{
+                    &:before {
+                        content: $fa-var-angle-double-left;
+                    }
+                }
+                .prev.off{
+                    &:before {
+                        content: $fa-var-angle-left;
+                    }
+                }
+                .next.off{
+                    &:before {
+                        content: $fa-var-angle-right;
+                    }
+                }
+                .set-next.off{
+                    &:before {
+                        content: $fa-var-angle-double-right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-pagination {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_lista_ocasioes-pagination {
+    #remover_este_bloco {
+        display: none;
+    }
+
+}
+
+// LISTA DE OCASIÕES - LIST PRODUCT
+//====================================================================
+%g_lista_ocasioes-listProd {
+    #main {
+        .main-content {
+            #ListaItens {
+                >li {
+                    @include box-sizing();
+                    padding: 10px;
+                    margin: 10px 0px;
+                    border: 1px solid #CCC;
+                    overflow: visible;
+                    >* {
+                        @include box-sizing();
+                        margin: 0px;
+                        width: auto;
+                        height: auto;
+                        padding: 0px;
+                        float: none;
+                    }
+                    .hproduct{
+                        border: 0;
+                        display: block;
+                        .figure{
+                            display: block;
+                            margin: 0px 10px 0px 0px;
+                            padding: 0px;
+                            .quick-look-container {
+                                top: 115px;
+                                left: 45px;
+                                .bt-quick-look{
+                                    color: rgb(255, 255, 255);
+                                }
+                            }
+                        }
+                        .details{
+                            @include box-sizing();
+                            padding: 0px;
+                            height: auto;
+                            float: none;
+                            text-align: left;
+                            .parcel{
+                                text-align: left;
+                            }
+                            .stamp{
+                                position: static;
+                            }
+                            .buy{
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-listProd {
+    #main {
+        .main-content {
+            #ListaItens {
+                @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+                >li {
+                    @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+                    width: calc(50% - 10px);
+                    .figure {
+                        @include order(1);
+                        width: calc(50% - 5px);
+                        .link.url,
+                        .photo {
+                            @include box-sizing();
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .details.box {
+                        @include order(2);
+                        padding: 10px;
+                        width: calc(50% - 5px);
+                    }
+                    .details:not(.box) {
+                        @include order(3);
+                        width: 100%;
+                    }
+                    .coment {
+                        @include order(4);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_lista_ocasioes-listProd {
+    #main {
+        .main-content {
+            #ListaItens {
+                @include flexbox(flex, column, wrap, flex-start, flex-start, flex-start);
+                >li {
+                    @include flexbox(flex, column, wrap, flex-start, flex-start, flex-start);
+                    position: relative;
+                    .figure {
+                        @include order(1);
+                        margin: 0px auto;
+                        .link.url,
+                        .photo {
+                            @include box-sizing();
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .details:not(.box) {
+                        @include order(2);
+                        width: 100%;
+                    }
+                    .details.box {
+                        @include order(3);
+                        margin-top: 10px;
+                        padding: 10px;
+                        width: 100%;
+                        position: unset;
+                    }
+                    .coment {
+                        @include order(4);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - BOX DETAILS (PREÇOS, PARCELAS, BOTAO DE COMPRA ETC...)
+//====================================================================
+%g_lista_ocasioes-boxDetails {
+    #main #ListaItens .details.box {
+        background: transparent !important;
+        border: 1px solid #CCC;
+        .added {
+            @include fonte($font-one, 400, 12px, rgb(65, 65, 65));
+            strong {
+                @include fonte($font-one, bold, 12px, rgb(65, 65, 65));
+            }
+            >a {
+                @include transition;
+                position: absolute;
+                font-size: 0px;
+                line-height: inherit;
+                &:hover {
+                    text-decoration: none;
+                    &:before {
+                        color: #000;
+                    }
+                }
+                &:before {
+                    @include border-radius(100%);
+                    @include transition;
+                    @include set-icon($fa-var-times-circle, 30px, 900, rgb(43, 43, 43));
+                    background: #FFF;
+                }
+            }
+        }
+        .situation {
+            @include fonte($font-one, 400, 12px, rgb(65, 65, 65));
+            strong {
+                @include fonte($font-one, bold, 12px, rgb(65, 65, 65));
+            }
+            a {
+                @include fonte($font-one, bold, 12px, rgb(65, 65, 65));
+                text-transform: uppercase;
+                &:hover {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
+        .price{
+            font-size: 0px;
+            span:not(.price-atsight){
+                display: inline-block;
+                @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                text-transform: uppercase;
+                text-decoration: line-through;
+                width: 100%;
+                &:nth-of-type(2){
+                    @include fonte($font-one, bold, 14px, #000);
+                    text-decoration: none;
+                }
+            }
+            span.price-atsight {
+                display: inline-block;
+                @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                margin-right: 2px;
+                .value-sight,
+                .value-percentage {
+                    @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+                    margin-right: 2px;
+                }
+            }
+        }
+        .parcel{
+            height: auto;
+            span{
+                @include fonte($font-one, normal, 12px, rgb(0, 0, 0));
+                strong{
+                    color: rgb(0, 0, 0);
+                }
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-boxDetails {
+    #main #ListaItens .details.box {
+        text-align: left;
+        .added {
+            >a {
+                right: -2px;
+                top: -2px;
+            }
+        }
+    }
+}
+
+%m_lista_ocasioes-boxDetails {
+    #main #ListaItens .details.box {
+        .added {
+            >a {
+                width: auto;
+                height: auto;
+                text-indent: 0;
+                background: none;
+                right: -15px;
+                top: -15px;
+                &:before {
+                    font-size: 45px;
+                }
+            }
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - DETAILS (NOME, REVIEWAGGREGATE ETC...)
+//====================================================================
+%g_lista_ocasioes-details {
+    #main #ListaItens .details:not(.box) {
+        .name {
+            @include fonte($font-one, normal, 16px, #000);
+            font-style: normal;
+            text-transform: none;
+            height: auto;
+        }
+        .cod {
+            @include fonte($font-one, normal, 12px, rgb(85, 85, 85));
+            font-style: normal;
+            text-transform: none;
+        }
+        .reviewaggregate {
+            display: block;
+            float: none;
+            height: auto;
+            .lnkAvaliacao,
+            .rating {
+                @include bgimg("star.png");
+                background-repeat: repeat-x;
+            }
+            .rating {
+                background-position: 0 -18px;
+            }
+            .count {
+                @include fonte($font-one, normal, 14px, rgb(88, 88, 88));
+            }
+        }
+    }
+}
+
+%d_lista_ocasioes-details {
+    #main #ListaItens .details:not(.box) {
+        margin-top: 10px;
+        background: transparent !important;
+        text-align: left;
+        .name{
+            text-align: left;
+        }
+        .cod {
+            margin-top: 0px;
+        }
+        .stamp {
+            @include flexbox(flex, row, wrap, flex-start, center, center);
+            height: auto;
+            >a>span {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+            }
+            img {
+
+                margin-right: 10px;
+            }
+        }
+
+    }
+}
+
+%m_lista_ocasioes-details {
+    .reviewaggregate {
+        .lnkAvaliacao{
+            width: 125px;
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - DETAILS (NOME, REVIEWAGGREGATE ETC...)
+//====================================================================
+%g_lista_ocasioes-login {
+    #main #BlocoSenha {
+        .field{
+            margin: 20px auto;
+        }
+    }
+}
+
+%d_lista_ocasioes-login {
+    #main #BlocoSenha  {
+        .field{
+            width: 50%;
+            #fldsenhaAcessoLista{
+                width: 50%;
+            }
+        }
+    }
+}
+
+%m_lista_ocasioes-login {
+    #main #BlocoSenha  {
+        .field{
+            width: 90%;
+            label span{
+                text-align: center;
+                display: block;
+            }
+            #fldsenhaAcessoLista{
+                width: 100%;
+            }
+        }
+    }
+}
+
+// LISTA DE OCASIÕES - COMPONENTS
+//====================================================================
+%d_lista_ocasioes-components{
+    @extend %g_lista_ocasioes-containers, %d_lista_ocasioes-containers;
+    @extend %g_lista_ocasioes-buttons, %d_lista_ocasioes-buttons;
+    @extend %g_lista_ocasioes-text, %d_lista_ocasioes-text;
+    @extend %g_lista_ocasioes-inputs, %d_lista_ocasioes-inputs;
+    @extend %g_lista_ocasioes-aside, %d_lista_ocasioes-aside;
+    @extend %g_lista_ocasioes-filter, %d_lista_ocasioes-filter;
+    @extend %g_lista_ocasioes-pagination, %d_lista_ocasioes-pagination;
+    @extend %g_lista_ocasioes-listProd, %d_lista_ocasioes-listProd;
+    @extend %g_lista_ocasioes-boxDetails, %d_lista_ocasioes-boxDetails;
+    @extend %g_lista_ocasioes-details, %d_lista_ocasioes-details;
+    @extend %g_lista_ocasioes-login, %d_lista_ocasioes-login;
+}
+
+
+%m_lista_ocasioes-components{
+    @extend %g_lista_ocasioes-containers, %m_lista_ocasioes-containers;
+    @extend %g_lista_ocasioes-buttons, %m_lista_ocasioes-buttons;
+    @extend %g_lista_ocasioes-text, %m_lista_ocasioes-text;
+    @extend %g_lista_ocasioes-inputs, %m_lista_ocasioes-inputs;
+    @extend %g_lista_ocasioes-aside, %m_lista_ocasioes-aside;
+    @extend %g_lista_ocasioes-filter, %m_lista_ocasioes-filter;
+    @extend %g_lista_ocasioes-pagination, %m_lista_ocasioes-pagination;
+    @extend %g_lista_ocasioes-listProd, %m_lista_ocasioes-listProd;
+    @extend %g_lista_ocasioes-boxDetails, %m_lista_ocasioes-boxDetails;
+    @extend %g_lista_ocasioes-details, %m_lista_ocasioes-details;
+    @extend %g_lista_ocasioes-login, %m_lista_ocasioes-login;
+}

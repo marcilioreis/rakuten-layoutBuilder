@@ -1,0 +1,361 @@
+//FILTRO HORIZONTAL - CONTAINERS
+// ====================================================================
+%g_filtro_horizontal-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_horizontal-container {
+    #divSort,
+    #ordena_produtos {
+        @include flexbox(flex, row, wrap, flex-start, center, center);
+        @include box-sizing;
+        @extend %helper_box-border;
+        width: 100%;
+        padding: 10px;
+        height: auto;
+        line-height: inherit;
+        span {
+            float: none;
+        }
+        fieldset {
+            float: right;
+            width: calc(100% - 80px);
+            height: auto;
+            ul,
+            .itens-page {
+                position: inherit;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+            }
+            .itens-page {
+                height: auto;
+                line-height: inherit;
+                select {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+    #divSort {
+        fieldset {
+            ul {
+                margin-top: 8px;
+            }
+        }
+    }
+    #ordena_produtos {
+        fieldset {
+            ul {
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+%m_filtro_horizontal-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO HORIZONTAL - ORDERNAR
+// ====================================================================
+%g_filtro_horizontal-orderby {
+    #divSort,
+    #ordena_produtos {
+        >span {
+            @include fonte($font-one, bold, 12px, #000);
+        }
+        ul {
+            li {
+                >a {
+                    @include fonte($font-one, 400, 14px, rgb(102, 102, 102));
+                    text-decoration: none;
+                    &:hover,
+                    &.selected {
+                        @include fonte($font-one, 400, 14px, #000);
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_filtro_horizontal-orderby {
+    #divSort,
+    #ordena_produtos {
+        .itens-page {
+            margin-top: 5px;
+            >span {
+                @include fonte($font-one, bold, 12px, #000);
+            }
+            #ddlQuantityPage,
+            #ddlQtdPagina {
+                height: 30px;
+            }
+        }
+    }
+    #divSort {
+        .itens-page {
+            margin-top: 5px;
+        }
+    }
+    #ordena_produtos {
+        .itens-page {
+            margin-top: 0px;
+        }
+    }
+}
+
+%m_filtro_horizontal-orderby {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO HORIZONTAL - DETALHES DO FILTRO (VSMODE e Itens por pagina)
+// ====================================================================
+%g_filtro_horizontal-filterDetails {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_horizontal-filterDetails {
+    .filter-details {
+        @include flexbox(flex, row, nowrap, space-between, center, center);
+        @include box-sizing();
+        @extend %helper_box-border;
+        padding: 10px;
+        width: 100%;
+        .vs-mode {
+            >span {
+                @include fonte($font-one, bold, 12px, #000);
+            }
+            >ul {
+                >li {
+                    >a {
+                        @include fonte($font-one, normal, 12px, rgb(94, 94, 94));
+                        @include flexbox(flex, row, nowrap, space-between, center, center);
+                        padding: 0px;
+                        background: none;
+                        &.selected,
+                        &:hover {
+                            @include fonte($font-one, normal, 12px, #000);
+                        }
+                        &:before {
+                            margin-right: 5px;
+                        }
+                        &.selected:before,
+                        &:hover:before {
+                            color: #000;
+                        }
+                    }
+                    #table {
+                        &:before {
+                            @include set-icon($fa-var-th-large, 16px, 900, rgb(94, 94, 94));
+                        }
+                    }
+                    #list {
+                        &:before {
+                            @include set-icon($fa-var-th-list, 16px, 900, rgb(94, 94, 94));
+                        }
+                    }
+                }
+            }
+        }
+        >p {
+            @include fonte($font-one, normal, 12px, rgb(94, 94, 94));
+            strong {
+                @include fonte($font-one, normal, 12px, rgb(0, 0, 0));
+            }
+        }
+    }
+}
+
+%m_filtro_horizontal-filterDetails {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO HORIZONTAL - FILTRO [HABILITADO NO MANAGER]
+// ====================================================================
+%g_filtro_horizontal-divOptionsSearch {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_horizontal-divOptionsSearch {
+    .filtro-horizontal {
+        @include box-sizing();
+        width: 100%;
+        padding: 0px;
+        @extend %helper_box-border;
+        .content-filters {
+            @include box-sizing();
+            width: 100%;
+            padding: 0px;
+            .horizontal-title {
+                @include fonte($font-one, normal, 14px, rgb(235, 235, 235));
+                @include box-sizing();
+                background-color: #777;
+                width: 100%;
+                padding: 5px;
+                height: auto;
+                line-height: inherit;
+            }
+            .horizontal-list {
+                padding: 10px;
+            }
+            .spnFiltro {
+                &:after {
+                    background: #FFF;
+                    color: #000;
+                }
+            }
+            .filterSku1 {
+                .filterBlock.active {
+                    @include flexbox(flex, row, wrap, flex-start, flex-start, flex-start);
+                    >li {
+                        @include box-sizing;
+                        width: auto;
+                        height: auto;
+                        min-width: auto;
+                        margin: 5px;
+                        padding: 0px;
+                    }
+                    li>a {
+                        @include transition;
+                        @include box-sizing;
+                        @include center-cont;
+                        width: 25px;
+                        height: 25px;
+                        min-width: auto;
+                        @extend %helper_box-border;
+                        padding: 0px;
+                        line-height: inherit;
+                        text-align: center;
+                        &:hover {
+                            border: 1px solid rgb(78, 78, 78);
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_filtro_horizontal-divOptionsSearch {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO HORIZONTAL - FILTRO SELECIONADO [HABILITADO NO MANAGER]
+// ====================================================================
+%g_filtro_horizontal-selecionados {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_horizontal-selecionados {
+    .horizontal-selecionados {
+        @include box-sizing();
+        width: 100%;
+        padding: 0px;
+        @extend %helper_box-border;
+        .title {
+            @include fonte($font-one, normal, 14px, rgb(235, 235, 235));
+            @include box-sizing();
+            background-color: #777;
+            width: 100%;
+            padding: 5px;
+            height: auto;
+            line-height: inherit;
+        }
+        >fieldset,
+        >ul {
+            @include box-sizing();
+            width: 100%;
+            padding: 5px;
+            * {
+                line-height: normal;
+                text-decoration: none;
+                height: 20px;
+            }
+        }
+        >fieldset>ul,
+        >ul {
+            @include flexbox(flex, row, wrap, flex-start, center, center);
+            @include box-sizing();
+            width: 100%;
+            margin: 0px;
+        }
+        >fieldset>ul>li,
+        >ul>li {
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            &:before{
+                display: none;
+            }
+            .type {
+                @include center-cont;
+            }
+            .item {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+                > span:not(.item){
+                    @include flexbox(flex, row, wrap, flex-start, center, center);
+                }
+                .item{
+                    &:before{
+                        @include set-icon($fa-var-angle-right, 16px, 900, #000);
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .delete.ico.ir {
+                background: none;
+                font-size: 0;
+                text-indent: 0;
+                width: auto;
+                height: 19px;
+                margin: 0px 5px;
+                @include center-cont;
+                &:after {
+                    @include set-icon($fa-var-times-circle, 13px, 900, #000);
+                }
+            }
+        }
+    }
+}
+
+%m_filtro_horizontal-selecionados {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO HORIZONTAL - COMPONENTS
+// ====================================================================
+%d_filtro_horizontal-components {
+    @extend %g_filtro_horizontal-container, %d_filtro_horizontal-container;
+    @extend %g_filtro_horizontal-orderby, %d_filtro_horizontal-orderby;
+    @extend %g_filtro_horizontal-filterDetails, %d_filtro_horizontal-filterDetails;
+    @extend %g_filtro_horizontal-divOptionsSearch, %d_filtro_horizontal-divOptionsSearch;
+    @extend %g_filtro_horizontal-selecionados, %d_filtro_horizontal-selecionados;
+}
+
+%m_filtro_horizontal-components {
+    @extend %g_filtro_horizontal-container, %m_filtro_horizontal-container;
+    @extend %g_filtro_horizontal-orderby, %m_filtro_horizontal-orderby;
+    @extend %g_filtro_horizontal-filterDetails, %m_filtro_horizontal-filterDetails;
+    @extend %g_filtro_horizontal-divOptionsSearch, %m_filtro_horizontal-divOptionsSearch;
+    @extend %g_filtro_horizontal-selecionados, %m_filtro_horizontal-selecionados;
+}

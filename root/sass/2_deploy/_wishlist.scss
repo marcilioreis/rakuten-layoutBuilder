@@ -1,0 +1,448 @@
+//WISHLIST - CONTAINERS
+//====================================================================
+%g_wishlist-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_wishlist-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_wishlist-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//WISHLIST - FILTER
+//====================================================================
+%g_wishlist-filter {
+    #filter {
+        @extend %helper_box-border;
+        background: transparent;
+        .field {
+            span {
+                @include fonte($font-one, normal, 16px, rgb(78, 78, 78));
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+%d_wishlist-filter {
+    #filter {
+        @include box-sizing;
+        @include flexbox(flex, row, nowrap, flex-start, center, center);
+        padding: 0px 15px;
+        height: 60px;
+        .field {
+            @include flexbox(flex, row, nowrap, flex-start, center, center);
+            span {
+                width: auto;
+                float: none;
+                line-height: inherit;
+                height: auto;
+                display: block;
+            }
+            label {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+                width: auto;
+            }
+            .search {
+                float: none !important;
+                position: inherit;
+            }
+        }
+    }
+}
+
+%m_wishlist-filter {
+    #main .aside .block a::before,
+    #main .catalog-filters .block a::before,
+    #main .catalog-filters .content-filters .horizontal-list a::before,
+    #main .aside .block span::before,
+    #main .catalog-filters .block span::before,
+    #main .catalog-filters .content-filters .horizontal-list span::before {
+        color: #000;
+    }
+    .filter-wish .field label.order>span,
+    .move-products .field label.order>span {
+        display: block;
+    }
+    #main #filter {
+        select {
+            width: 100%;
+        }
+    }
+}
+
+//WISHLIST - LIST PRODUCT
+//====================================================================
+%g_wishlist-listProd {
+    #main {
+        .main-content {
+            #lblListaDesejos {
+                >li {
+                    @include box-sizing;
+                    padding: 10px;
+                    margin: 10px 0px;
+                    border: 1px solid #CCC;
+                    overflow: visible;
+                    >* {
+                        @include box-sizing();
+                        margin: 0px;
+                        width: auto;
+                        height: auto;
+                        padding: 0px;
+                        float: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_wishlist-listProd {
+    #main {
+        .main-content {
+            #lblListaDesejos {
+                @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+                >li {
+                    @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+                    width: calc(50% - 10px);
+                    .figure {
+                        @include order(1);
+                        width: calc(50% - 5px);
+                        .link.url,
+                        .photo {
+                            @include box-sizing();
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .details.box {
+                        @include order(2);
+                        padding: 10px;
+                        width: calc(50% - 5px);
+                    }
+                    .details:not(.box) {
+                        @include order(3);
+                        width: 100%;
+                    }
+                    .coment {
+                        @include order(4);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_wishlist-listProd {
+    #main {
+        .main-content {
+            #lblListaDesejos {
+                @include flexbox(flex, column, wrap, flex-start, flex-start, flex-start);
+                >li {
+                    @include flexbox(flex, column, wrap, flex-start, flex-start, flex-start);
+                    position: relative;
+                    .figure {
+                        @include order(1);
+                        margin: 0px auto;
+                        .link.url,
+                        .photo {
+                            @include box-sizing();
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .details:not(.box) {
+                        @include order(2);
+                        width: 100%;
+                    }
+                    .details.box {
+                        @include order(3);
+                        padding: 10px;
+                        width: 100%;
+                        position: unset;
+                    }
+                    .coment {
+                        @include order(4);
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//WISHLIST - BOX DETAILS (PREÇOS, PARCELAS, BOTAO DE COMPRA ETC...)
+//====================================================================
+%g_wishlist-boxDetails {
+    #main #lblListaDesejos .details.box {
+        background: transparent !important;
+        border: 1px solid #CCC;
+        .added {
+            @include fonte($font-one, 400, 12px, rgb(65, 65, 65));
+            strong {
+                @include fonte($font-one, bold, 12px, rgb(65, 65, 65));
+            }
+            >a {
+                @include transition;
+                position: absolute;
+                font-size: 0px;
+                line-height: inherit;
+                &:hover {
+                    text-decoration: none;
+                    &:before {
+                        color: #000;
+                    }
+                }
+                &:before {
+                    @include border-radius(100%);
+                    @include transition;
+                    @include set-icon($fa-var-times-circle, 30px, 900, rgb(43, 43, 43));
+                    background: #FFF;
+                }
+            }
+        }
+        .situation {
+            @include fonte($font-one, 400, 12px, rgb(65, 65, 65));
+            strong {
+                @include fonte($font-one, bold, 12px, rgb(65, 65, 65));
+            }
+            a {
+                @include fonte($font-one, bold, 12px, rgb(65, 65, 65));
+                text-transform: uppercase;
+                &:hover {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
+        .offers {
+            >* {
+                height: auto;
+            }
+            .regular,
+            .regular del {
+                @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                text-transform: uppercase;
+                text-decoration: line-through;
+                font-style: normal;
+            }
+            .price.sale:not(.percent-a-vista) {
+                margin-left: 10px;
+                @include fonte($font-one, bold, 14px, #000);
+                text-transform: uppercase;
+                font-style: normal;
+            }
+            .percent-a-vista {
+                width: 100%;
+                * {
+                    font-style: normal;
+                }
+                @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+                .value-sight,
+                .value-percentage {
+                    @include fonte($font-one, bold, 12px, rgb(44, 44, 44));
+                }
+            }
+        }
+        .parcel{
+            height: auto;
+            @include fonte($font-one, normal, 12px, rgb(0, 0, 0));
+            margin-bottom: 10px;
+            strong{
+                color: rgb(0, 0, 0);
+            }
+        }
+        .notifyme {
+            >span>strong {
+                @include fonte($font-one, bold, 14px, rgb(77, 77, 77));
+                text-transform: uppercase;
+            }
+            >label>span {
+                @include fonte($font-one, normal, 12px, rgb(109, 109, 109));
+            }
+            .notifyme-field {
+                @include box-sizing();
+            }
+            .btn.send.ir {
+                @include box-sizing();
+                min-width: inherit;
+            }
+        }
+    }
+}
+
+%d_wishlist-boxDetails {
+    #main #lblListaDesejos .details.box {
+        text-align: left;
+        .added {
+            >a {
+                right: -2px;
+                top: -2px;
+            }
+        }
+        .offers {
+            @include flexbox(flex, row, wrap, flex-start, flex-start, flex-start);
+            height: auto;
+            >* {
+                height: auto;
+            }
+        }
+        .notifyme {
+            .notifyme-field {
+                width: 60% !important;
+                margin-right: 10px;
+            }
+            .btn.send.ir {
+                width: calc(40% - 10px);
+            }
+        }
+    }
+}
+
+%m_wishlist-boxDetails {
+    #main #lblListaDesejos .details.box {
+        .added {
+            >a {
+                width: auto;
+                height: auto;
+                text-indent: 0;
+                background: none;
+                right: -15px;
+                top: -15px;
+                &:before {
+                    font-size: 45px;
+                }
+            }
+        }
+        .offers{
+            @include flexbox(flex, row, wrap, center, flex-start, flex-start);
+        }
+        .notifyme {
+            .notifyme-field {
+                width: 100% !important;
+            }
+            .btn.send.ir {
+                width: 100%;
+                min-width: inherit;
+            }
+        }
+    }
+}
+
+//WISHLIST - DETAILS (NOME, REVIEWAGGREGATE ETC...)
+//====================================================================
+%g_wishlist-details {
+    #main #lblListaDesejos .details:not(.box) {
+        .name {
+            @include fonte($font-one, normal, 16px, #000);
+            font-style: normal;
+            text-transform: none;
+            height: auto;
+        }
+        .cod {
+            @include fonte($font-one, normal, 12px, rgb(85, 85, 85));
+            font-style: normal;
+            text-transform: none;
+        }
+        .reviewaggregate {
+            height: auto;
+            .lnkAvaliacao,
+            .rating {
+                @include bgimg("star.png");
+                background-repeat: repeat-x;
+            }
+            .rating {
+                background-position: 0 -18px;
+            }
+            .count {
+                @include fonte($font-one, normal, 14px, rgb(88, 88, 88));
+            }
+        }
+    }
+}
+
+%d_wishlist-details {
+    #main #lblListaDesejos .details:not(.box) {
+        margin-top: 10px;
+        background: transparent !important;
+        text-align: left;
+        .cod {
+            margin-top: 0px;
+        }
+        .stamp {
+            @include flexbox(flex, row, wrap, flex-start, center, center);
+            height: auto;
+            >a>span {
+                @include flexbox(flex, row, nowrap, flex-start, center, center);
+            }
+            img {
+                margin-right: 10px;
+            }
+        }
+
+    }
+}
+
+%m_wishlist-details {
+    .reviewaggregate {
+        .lnkAvaliacao,
+        .rating {
+            width: 125px;
+        }
+    }
+}
+
+//WISHLIST - COMENT
+//====================================================================
+%g_wishlist-coment {
+    #main #lblListaDesejos .form.coment {
+        margin-top: 10px;
+    }
+}
+
+%d_wishlist-coment {
+    #main #lblListaDesejos .form.coment {
+        .field {
+            height: auto;
+            label>span {
+                text-align: left;
+            }
+        }
+    }
+}
+
+%m_wishlist-coment {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//WISHLIST - COMPONENTS
+//====================================================================
+%d_wishlist-components{
+    @extend %g_wishlist-containers, %d_wishlist-containers;
+    @extend %g_wishlist-filter, %d_wishlist-filter;
+    @extend %g_wishlist-listProd, %d_wishlist-listProd;
+    @extend %g_wishlist-boxDetails, %d_wishlist-boxDetails;
+    @extend %g_wishlist-details, %d_wishlist-details;
+    @extend %g_wishlist-coment, %d_wishlist-coment;
+}
+
+%m_wishlist-components{
+    @extend %g_wishlist-containers, %m_wishlist-containers;
+    @extend %g_wishlist-filter, %m_wishlist-filter;
+    @extend %g_wishlist-listProd, %m_wishlist-listProd;
+    @extend %g_wishlist-boxDetails, %m_wishlist-boxDetails;
+    @extend %g_wishlist-details, %m_wishlist-details;
+    @extend %g_wishlist-coment, %m_wishlist-coment;
+}

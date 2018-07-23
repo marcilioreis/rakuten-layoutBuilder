@@ -1,0 +1,122 @@
+//BREADCRUMB - RESET
+// ====================================================================
+%g_breadcrumb-container{
+    @include flexbox(flex, row, wrap, flex-start, center, center);
+    @include box-sizing;
+    @extend %helper_box-border;
+    padding: 5px 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background: transparent;
+    > span,
+    > span > a{
+        @include flexbox(flex, row, wrap, flex-start, center, center);
+    }
+    * {
+        line-height: inherit;
+    }
+}
+
+%d_breadcrumb-container{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_breadcrumb-container{
+    > span > a:after{
+        display: none;
+    }
+}
+
+
+//BREADCRUMB - DESC
+// ====================================================================
+%g_breadcrumb-desc{
+    .desc{
+        @include fonte($font-one, 400, 12px, rgb(128, 128, 128));
+        margin-right: 5px;
+        &:hover{
+            @include fonte($font-one, 400, 12px, rgb(128, 128, 128));
+        }
+    }
+}
+%d_breadcrumb-desc{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+%m_breadcrumb-desc{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//BREADCRUMB - ARROWS
+// ====================================================================
+%g_breadcrumb-arrow{
+    a span{
+        @include flexbox(flex, row, wrap, flex-start, center, center);
+        background: none;
+        padding: 0px;
+        &:after{
+            @include set-icon($fa-var-angle-right, 12px, 900, rgb(128, 128, 128));
+            margin-left: 5px;
+        }
+    }
+}
+%d_breadcrumb-arrow{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+%m_breadcrumb-arrow{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//BREADCRUMB - ITENS
+// ====================================================================
+%g_breadcrumb-itens{
+    span{
+        @include fonte($font-one, 400, 12px, rgb(128, 128, 128));
+        &:hover{
+            @include fonte($font-one, 400, 12px, rgb(24, 24, 24));
+        }
+    }
+
+    >h1 span,
+    >span:last-of-type > span{
+        @include fonte($font-one, bold, 12px, rgb(36, 36, 36));
+        &:hover{
+            @include fonte($font-one, bold, 12px, rgb(0, 0, 0));
+        } 
+    }
+}
+%d_breadcrumb-itens{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+%m_breadcrumb-itens{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+
+//BREADCRUMB - COMPONENTS
+// ====================================================================
+%d_breadcrumb-components{
+    @extend %g_breadcrumb-container, %d_breadcrumb-container;
+    @extend %g_breadcrumb-desc, %d_breadcrumb-desc;
+    @extend %g_breadcrumb-arrow, %d_breadcrumb-arrow;
+    @extend %g_breadcrumb-itens, %d_breadcrumb-itens;
+}
+%m_breadcrumb-components{
+    @extend %g_breadcrumb-container, %m_breadcrumb-container;
+    @extend %g_breadcrumb-desc, %m_breadcrumb-desc;
+    @extend %g_breadcrumb-arrow, %m_breadcrumb-arrow;
+    @extend %g_breadcrumb-itens, %m_breadcrumb-itens;
+}

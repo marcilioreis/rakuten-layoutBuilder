@@ -1,0 +1,12 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/busca";
+
+//DECLARATIONS
+//----------------------------------------------
+body {
+    //IMPLANTACAO
+    @extend %m_busca-components;
+}
+

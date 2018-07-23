@@ -1,0 +1,151 @@
+//MINHA CONTA - CONFIG
+//====================================================================
+//Colors
+$myacc-icon-color: #383838;
+$myacc-link-color: #383838;
+$myacc-link-hover-bg: #dddddd;
+$myacc-desc-color: #000;
+
+//Font
+$myacc-link-font: $font-one;
+$myacc-desc-font: $font-one;
+
+
+//MINHA CONTA - ICONS
+//====================================================================
+
+%g_minha_conta-icons{
+    .box{
+        .nav{
+            li{
+                border: 1px solid $border-master-color;
+                &:hover{
+                    a{
+                        background: $myacc-link-hover-bg;
+                    }
+                }
+                a{
+                    @include fonte($myacc-link-font, normal, 16px, $myacc-link-color);
+                    background: transparent;
+                    text-transform: uppercase;
+                    border-bottom: 1px solid $border-master-color;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                    &[href*="meucadastro"]:before {
+                        @include set-icon($fa-var-address-card, 18px, 400, $myacc-icon-color);
+                    }
+                    &[href*="senhaalteracao"]:before {
+                        @include set-icon($fa-var-user-shield, 18px, 900, $myacc-icon-color);
+                    }
+                    &[href*="enderecos"]:before {
+                        @include set-icon($fa-var-map-marker, 18px, 900, $myacc-icon-color);
+                    }
+                    &[href*="meuspedidos"]:before {
+                        @include set-icon($fa-var-shopping-cart, 18px, 900, $myacc-icon-color);
+                    }
+                    &[href*="contacorrente"]:before {
+                        @include set-icon($fa-var-credit-card, 18px, 400, $myacc-icon-color);
+                    }
+                    &[href*="lista"]:before, {
+                        @include set-icon($fa-var-heart, 18px, 900, $myacc-icon-color);
+                    }
+                }
+                span{
+                    @include fonte($myacc-desc-font, normal, 12px, $myacc-desc-color);
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+%d_minha_conta-icons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_minha_conta-icons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//MINHA CONTA - BOXES
+//====================================================================
+
+%g_minha_conta-boxes {
+    .box {
+        @include box-sizing();
+        transition: all 0.5s ease;
+        width: 100%;
+        background: transparent;
+        border: 0px;
+        .nav {
+            @include flexbox(flex, row, wrap, space-between, initial, flex-start);
+            li {
+                @include box-sizing();
+                transition: all 0.5s ease;
+                width: auto;
+                padding: 0px;
+                a {
+                    @include box-sizing();
+                    transition: all 0.5s ease;
+                    padding: 10px;
+                    display: block;
+                }
+                span {
+                    @include box-sizing();
+                    transition: all 0.5s ease;
+                    padding: 10px;
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+%d_minha_conta-boxes {
+    .box {
+        .nav {
+            li {
+                width: calc(33% - 10px);
+                margin: 10px 0px;
+            }
+        }
+    }
+}
+
+%m_minha_conta-boxes {
+    .box {
+        .nav {
+            li {
+                @media (max-width: 400px) {
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+                @media (min-width: 401px) {
+                    width: calc(50% - 10px);
+                    margin: 10px 0px;
+                }
+               
+            }
+        }
+    }
+}
+
+
+
+//MINHA CONTA - COMPONENTS
+//====================================================================
+%d_minha_conta-components{
+    @extend %g_minha_conta-icons, %d_minha_conta-icons;
+    @extend %g_minha_conta-boxes, %d_minha_conta-boxes;
+}
+
+%m_minha_conta-components{
+    @extend %g_minha_conta-icons, %m_minha_conta-icons;
+    @extend %g_minha_conta-boxes, %m_minha_conta-boxes;
+}

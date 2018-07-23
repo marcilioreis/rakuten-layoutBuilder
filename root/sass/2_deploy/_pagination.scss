@@ -1,0 +1,214 @@
+//PAGINAÇÃO - CONTAINER
+// ====================================================================
+%g_pagination-container {
+    @include box-sizing();
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    >ul {
+        @include flexbox(flex, row, wrap, center, center, center);
+        float: none;
+        height: 40px;
+        >li {
+            margin: 5px;
+            height: auto;
+            line-height: inherit;
+            a:not(.item) {
+                height: auto;
+                line-height: inherit;
+            }
+        }
+    }
+}
+
+%d_pagination-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pagination-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//PAGINAÇÃO - FIRST / LAST
+// ====================================================================
+%g_pagination-firstLast {
+    .set-prev>a,
+    li>#lnkPrimeira {
+        font-size: 0px;
+        &:before {
+            @include set-icon($fa-var-angle-double-left, 22px, 900, rgb(63, 63, 63));
+        }
+        &:hover {
+            text-decoration: none;
+            &:before {
+                color: #000;
+            }
+        }
+    }
+    .set-next>a,
+    li>#lnkUltima {
+        font-size: 0px;
+        &:before {
+            @include set-icon($fa-var-angle-double-right, 22px, 900, rgb(63, 63, 63));
+        }
+        &:hover {
+            text-decoration: none;
+            &:before {
+                color: #000;
+            }
+        }
+    }
+}
+
+%d_pagination-firstLast {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pagination-firstLast {
+    .set-prev>a,
+    li>#lnkPrimeira {
+        padding: 0px;
+        border: 0px;
+    }
+    .set-next>a,
+    li>#lnkUltima {
+        padding: 0px;
+        border: 0px;
+    }
+}
+
+//PAGINAÇÃO - TXT PÁGINA
+// ====================================================================
+%g_pagination-txtPage {
+    .page {
+        display: none;
+        height: auto;
+        line-height: inherit;
+        @include fonte($font-one, 400, 14px, #000);
+    }
+}
+
+%d_pagination-txtPage {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pagination-txtPage {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//PAGINAÇÃO - PREVIEWS / NEXT
+// ====================================================================
+%g_pagination-prevNext {
+    .prev>a,
+    li>#lnkAnterior {
+        font-size: 0px;
+        &:before {
+            @include set-icon($fa-var-angle-left, 22px, 900, rgb(63, 63, 63));
+        }
+        &:hover {
+            text-decoration: none;
+            &:before {
+                color: #000;
+            }
+        }
+    }
+    .next>a,
+    li>#lnkProxima {
+        font-size: 0px;
+        &:before {
+            @include set-icon($fa-var-angle-right, 22px, 900, rgb(63, 63, 63));
+        }
+        &:hover {
+            text-decoration: none;
+            &:before {
+                color: #000;
+            }
+        }
+    }
+}
+
+%d_pagination-prevNext {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pagination-prevNext {
+    .prev>a,
+    li>#lnkAnterior {
+        padding: 0px;
+        border: 0px;
+    }
+    .next>a,
+    li>#lnkProxima {
+        padding: 0px;
+        border: 0px;
+    }
+}
+
+//PAGINAÇÃO - NUMBERS
+// ====================================================================
+%g_pagination-number {
+    .numbers,
+    li {
+        height: auto;
+        line-height: inherit;
+        >.item {
+            @include box-sizing;
+            @include border-radius(3px);
+            @include fonte($font-one, 400, 12px, #FFF);
+            @include center-cont;
+            width: 21px;
+            height: 21px;
+            background: rgb(78, 78, 78);
+            line-height: inherit;
+            padding: 0px;
+            &:hover,
+            &.selected {
+                background: #000;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+%d_pagination-number {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pagination-number {
+    .numbers,
+    li {
+        @include display-flex;
+    }
+}
+
+//PAGINAÇÃO - COMPONENTS
+// ====================================================================
+%d_pagination-components{
+    @extend %g_pagination-container, %d_pagination-container;
+    @extend %g_pagination-firstLast, %d_pagination-firstLast;
+    @extend %g_pagination-txtPage,   %d_pagination-txtPage;
+    @extend %g_pagination-prevNext,  %d_pagination-prevNext;
+    @extend %g_pagination-number,    %d_pagination-number;
+}
+
+%m_pagination-components{
+    @extend %g_pagination-container, %m_pagination-container;
+    @extend %g_pagination-firstLast, %m_pagination-firstLast;
+    @extend %g_pagination-txtPage,   %m_pagination-txtPage;
+    @extend %g_pagination-prevNext,  %m_pagination-prevNext;
+    @extend %g_pagination-number,    %m_pagination-number;
+}

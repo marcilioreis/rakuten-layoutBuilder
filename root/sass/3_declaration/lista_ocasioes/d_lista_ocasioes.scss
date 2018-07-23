@@ -1,0 +1,30 @@
+//DEPENDENCIAS
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/lista_ocasioes";
+
+//DECLARAÇÕES
+//----------------------------------------------
+body.my-lists{
+    @extend %d_lista_ocasioes-components;
+}
+
+body.page-my-lists{
+    
+}
+
+body.page-main-lists{
+    // Página principal
+}
+
+body.page-confirmation-list{
+    // Página de confirmação
+}
+
+body.page-suggested-lists{
+    // Listas sugeridas
+}
+
+body.page-list-msg{
+    // Mensagens para a lista
+}

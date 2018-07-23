@@ -1,0 +1,10 @@
+//DEPENDENCIAS
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/wishlist";
+
+//DECLARAÇÕES
+//----------------------------------------------
+body.page-wishlist{
+    @extend %d_wishlist-components;
+}

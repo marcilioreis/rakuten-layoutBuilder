@@ -1,0 +1,27 @@
+// CORE BANNERS - MODELO 2
+// ====================================================================
+
+&.banners{
+    width: 100%;
+    max-width: $page-w;
+    margin: 0px auto;
+    float: none;
+    >ul {
+        width: 100%;
+        @include flexbox(flex, row, wrap, space-between, flex-start, flex-start);
+        >li {
+            margin: 0px 0px 10px 0px;
+            position: relative;
+            overflow: hidden;
+            width: ($page-w / 2) - 5 !important;
+        }
+    }
+    .owl-wrapper {
+        .owl-item {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

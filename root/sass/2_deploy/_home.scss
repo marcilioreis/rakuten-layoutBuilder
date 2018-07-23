@@ -1,0 +1,102 @@
+//HOME
+// ====================================================================
+%g_home {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_home {
+    #main {
+        .aside {
+            display: none;
+        }
+        .section {
+            max-width: $page-w;
+            width: 100%;
+            margin: 0px auto;
+        }
+        .container {
+            width: 100%;
+            max-width: unset;
+            .content {
+                max-width: $page-w;
+                width: 100%;
+                margin: 0px auto;
+            }
+        }
+    }
+}
+
+%m_home {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HOME - SPECIALSTORE
+// ====================================================================
+%g_home-specialstore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_home-specialstore {
+    .banners.special-store.b-specialstore {
+        width: $page-w;
+        margin: 10px auto;
+        border: 0px;
+        .title {
+            display: block;
+        }
+        .owl-carousel {
+            @include box-sizing();
+            padding: 0px 40px;
+            width: 100%;
+            position: relative;
+            .owl-wrapper-outer {
+                width: 100%;
+                overflow: hidden;
+                margin: 0px;
+                .owl-wrapper {
+                    .owl-item {
+                        text-align: center;
+                        >li {
+                            width: auto;
+                            float: none;
+                            img {
+                                margin: 0px auto;
+                            }
+                        }
+                    }
+                }
+            }
+            >.owl-controls {
+                top: 0px;
+                left: 0px;
+                .owl-pagination {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+%m_home-specialstore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HOME - COMPONENTS
+// ====================================================================
+%d_home-components{
+    @extend %g_home, %d_home;
+    @extend %g_home-specialstore, %d_home-specialstore;
+}
+
+%m_home-components{
+    @extend %g_home, %m_home;
+    @extend %g_home-specialstore, %m_home-specialstore;
+}

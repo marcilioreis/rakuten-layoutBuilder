@@ -1,0 +1,53 @@
+// AFILIADOS - CADASTRO
+// ====================================================================
+%g_afiliados_cadastro-container {
+    #main .main-content {
+        .form {
+            >div {
+                @include box-sizing;
+                width: 100%;
+                border: 1px solid #CCC;
+                margin-bottom: 10px;
+                padding: 10px;
+                background: #FFF;
+            }
+        }
+    }
+}
+
+%d_afiliados_cadastro-container {
+    #main .main-content {
+        .form {
+            >div {
+                .field {
+                    height: auto;
+                    margin-top: 5px;
+                    overflow: auto;
+                    > label{
+                        @include flexbox(flex, row, nowrap, flex-start, center, center);
+                        >*{
+                            position: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_afiliados_cadastro-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+
+//AFILIADOS - DECLARATIONS
+// ====================================================================
+%d_afiliados-components{
+    @extend %g_afiliados_cadastro-container, %d_afiliados_cadastro-container;
+}
+
+%m_afiliados-components{
+    @extend %g_afiliados_cadastro-container, %m_afiliados_cadastro-container;
+}

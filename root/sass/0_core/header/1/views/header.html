@@ -1,0 +1,122 @@
+@model HeadBaseModel
+<div class="wrapper">
+    <div id="header">
+
+        <div id="scrollingDiv" style="display: none">
+            <div class="tab-open">
+            </div>
+            <div class="comment-section">
+                <div class="fb-container">
+                    <div class="inner"></div>
+                    <a href="@Url("catalogofacebook.aspx")" class="see-more">Veja os + comentados</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-one">
+            <div class="cont">
+                <div id="logo">
+                    @if (ViewBag.IsHome)
+                    {
+                        <a rel="home" href="@Url()" title="@ViewBag.StoreName">
+                            <img src="@Url(String.Format("{0}?{1}", Model.LogoUrl, DateTime.Now.ToString("yyyyMMddHHmmssfff")))" alt="@ViewBag.StoreName" title="@ViewBag.StoreName" />
+                            <span>@ViewBag.StoreName</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a rel="home" href="@Url()" title="@ViewBag.StoreName">
+                            <img src="@Url(String.Format("{0}?{1}", Model.LogoUrl, DateTime.Now.ToString("yyyyMMddHHmmssfff")))" alt="@ViewBag.StoreName" title="@ViewBag.StoreName" />
+                            <span>@ViewBag.StoreName</span>
+                        </a>
+                    }
+                </div>
+
+            </div>
+            
+            <div id="header_busca_container" class="search onlyMobile">
+                @if (ViewBag.AdvancedSearchEnabled)
+                {
+                    <span>em</span>
+                    <select id="cabecalho_DropLojas" title="LOJAS">
+                        @foreach (var store in Model.Stores)
+                        {
+                            <option value="@store.Value">@store.Key</option>
+                        }
+                    </select>   
+                }
+
+                @if (Model.SLISearchModuleEnabled)
+                {
+                    <input type="text" id="sli_search_1" onkeydown="javascript:return fnTrapKD(event,this)" value="Digite o que você procura" default-text="Digite o que você procura" class="placeholder ico" />  
+                }
+                else
+                {
+                    <input type="text" id="cabecalho_txtBusca" value="Digite o que você procura" default-text="Digite o que você procura" class="placeholder ico" />
+                }
+                <a id="cabecalho_Buscar_Topo" class="@string.Concat("btn ir", ViewBag.CssClassSearch)" href="#" title="Buscar" rel="nofollow">Buscar</a>
+            </div>
+        </div>
+
+        <div class="container-two">
+            <div class="cont container">
+                @Include("horizontalCategories", Model, ViewBag)
+                <ul class="iconav">
+                    <li class="iconav-search">
+                        <ul id="header_busca_container" class="search">
+                            <li>
+                                @if (ViewBag.AdvancedSearchEnabled)
+                                {
+                                    <span>em</span>
+                                    <select id="cabecalho_DropLojas" title="LOJAS">
+                                        @foreach (var store in Model.Stores)
+                                        {
+                                            <option value="@store.Value">@store.Key</option>
+                                        }
+                                    </select>   
+                                }
+                        
+                                @if (Model.SLISearchModuleEnabled)
+                                {
+                                    <input type="text" id="sli_search_1" onkeydown="javascript:return fnTrapKD(event,this)" value="Digite o que você procura" default-text="Digite o que você procura" class="placeholder ico" />  
+                                }
+                                else
+                                {
+                                    <input type="text" id="cabecalho_txtBusca" value="Digite o que você procura" default-text="Digite o que você procura" class="placeholder ico" />
+                                }
+                                <a id="cabecalho_Buscar_Topo" class="@string.Concat("btn ir", ViewBag.CssClassSearch)" href="#" title="Buscar" rel="nofollow">Buscar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="iconav-user">
+                        <ul class="iconav-user-sub">
+                            @Include("welcome", Model.Welcome, ViewBag)
+                            <li class="wishlist">
+                                <a href="@Url(Model.ListUrl)">
+                                    Lista de desejos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="iconav-cart car">
+                        <a class="basket" href="@UrlSecure("basket/index.aspx")" title="Minhas Compras">
+                            <span class="basket-count-number @(Model.SummaryBasketItemsCount == 0 ? "zero-item" : "")">@(Model.SummaryBasketItemsCount > 0 ? Model.SummaryBasketItemsCount.ToString() : "0")</span>
+                        </a>
+                        @if (Model.SummaryBasketEnabled)
+                        {
+                            <ul class="mini-car" id="divSummaryBasket">
+                                @Include("summaryBasket", Model, ViewBag)
+                            </ul>
+                        }
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @*FILTRO AVANÇADO*@
+    @if (Model.AdvancedSearchFilterEnabled) 
+    {
+        @Include("advancedSearchFilter", Model, ViewBag)
+    }        
+        

@@ -1,0 +1,119 @@
+@model ProductDetailModel
+
+<div class="container">
+    @Include("general.bannerarea", Model.BannerArea1, ViewBag)
+    
+    @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+    
+    @Include("general.breadcrumb", Model.Breadcrumb, ViewBag)
+
+    <div class="content">
+        <div class="main-content">
+            <div id="info-product" class="hproduct" itemscope itemtype="http://schema.org/Product">
+
+                <div class="collum images">
+                    @Include("product.images", Model, ViewBag)
+
+                    @Include("product.socialmedia", Model, ViewBag)                       
+                </div>                        
+
+                <div class="collum details">
+
+                    <div class="row">
+                        @Include("product.name", Model, ViewBag)
+                        @Include("product.rating", Model, ViewBag)
+                        @Include("product.brand", Model, ViewBag)
+                    </div>
+
+                    @* Imgs Responsivo *@
+                    <div class="responsive-prod-images"></div>
+                    @*Fim IMG Responsivo*@
+
+                    <div class="col">
+                        @Include("product.prices", Model, ViewBag)
+                        @Include("product.skus", Model, ViewBag)
+                        @Include("product.tabs", Model, ViewBag)
+                        @Include("product.descriptionpreview", Model, ViewBag)
+                    </div>
+
+                    <div class="col">
+                        @Include("product.stamps", Model, ViewBag)
+                        @Include("product.buypanel", Model, ViewBag)
+                        @Include("product.tools", Model, ViewBag)
+                    </div>
+
+                    @Include("product.superpoints", Model, ViewBag)
+    
+                    @Include("product.collection", Model, ViewBag)
+                                 
+                    @Include("product.drug", Model, ViewBag)
+                     
+                    @Include("product.catalogmessage", Model, ViewBag)
+                    		
+					@if (Model.CanWriteName)
+                    {
+                        @Include("product.namewriting", new NameWritingModel
+                        {
+                            MainLabelHtml = "Gravação de nomes/data <b>Opcional</b>",
+                            Inputs = new List<NameWritingInputModel>
+                            {
+                                new NameWritingInputModel { Label = "Nome", InputId = "txtRingName1_" + Model.Product.Id }
+                            }
+                        }, ViewBag)
+                    }
+					
+                    
+
+                    @Include("product.calculatorsm", Model, ViewBag)
+
+                    @Include("product.calculatorwl", Model, ViewBag)
+                    
+                    @Include("product.installments.list", Model.Product.Payments, ViewBag)
+
+                    @Include("product.parameterizedlink", Model, ViewBag)
+       
+                    @Include("product.shippingestimation", Model, ViewBag)
+                </div>                        
+            </div>
+
+            @Include("product.productservice", Model, ViewBag)
+                    
+            @Include("product.longpage", Model, ViewBag)
+                    
+            @Include("product.chaordicpanel", Model, ViewBag)
+
+            @Include("product.personalization", Model, ViewBag)
+
+            @Include("product.customizationadvanced", Model, ViewBag)
+
+            @Include("product.promotioncrossselling", Model, ViewBag)
+                    
+            @Include("product.productcrossselling", Model, ViewBag)
+                    
+            @Include("product.categorycrossselling", Model, ViewBag)
+                    
+            @Include("product.looks", Model, ViewBag)
+                    
+            @Include("product.related", Model, ViewBag)
+
+            @Include("product.alsosaw", Model, ViewBag)
+
+            @Include("product.alsobought", Model, ViewBag)
+                                        
+            @Include("product.description", Model, ViewBag)
+
+            @Include("product.characteristics", Model, ViewBag)
+                    
+            @Include("product.sizetable", Model, ViewBag)
+
+            @Include("product.comments", Model, ViewBag)
+                
+        </div>
+
+        @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+
+        @Include("general.instagram", Model.Instagram, ViewBag)
+
+        @Include("product.chaordichistory", Model, ViewBag)
+    </div>
+</div>

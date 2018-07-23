@@ -1,0 +1,496 @@
+//BODY
+// ====================================================================
+%g_body {
+    background: $body-background !important;
+}
+
+%d_body {
+    #main .container,
+    #body_container,
+    #divHistoricoNavegacao {
+        @include box-sizing();
+        width: 100% !important;
+        max-width: $page-w;
+        padding: 0px;
+        margin: 0px auto;
+        .section {
+            border: 0px;
+        }
+    }
+}
+
+%m_body {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//NORMALIZE INPUT-TEXS e SELECTS
+// ====================================================================
+%g_body_normalize-inputs {
+    #main {
+        input[type="password"],
+        input[type="text"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="email"],
+        select,
+        textarea {
+            transition: all 0.5s ease;
+            @include box-sizing();
+            @include remove-shadow();
+            @include border-radius(0);
+            height: 40px;
+            color: #505050;
+            padding: 5px;
+            &:not(.error) {
+                border: 1px solid #696969;
+                &:focus,
+                &:active,
+                &:hover {
+                    border: 1px solid #505050;
+                }
+            }
+        }
+        textarea{
+            height: inherit;
+        }
+        select {
+            @include select-arrow("selectarrow.png", 8px, 95%);
+            padding: 5px 18px 5px 5px;
+        }
+        input[type="checkbox"],
+        input[type="radio"]{
+            border: 0;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            padding: 0px;
+            height: 20px;
+            width: 20px;
+            &:before{
+                display: block;
+                
+            }
+            &:checked{
+                &:before{
+                    display: block;                    
+                }
+            }
+        }
+        input[type="checkbox"]{
+            &:before{
+                @include set-icon($fa-var-square, 20px, 400, rgb(0, 0, 0));
+            }
+            &:checked{
+                &:before{
+                    @include set-icon($fa-var-check-square, 20px, 400, rgb(0, 0, 0));
+                }
+            }
+        }
+        input[type="radio"]{
+            &:before{
+                @include set-icon($fa-var-circle, 20px, 400, rgb(0, 0, 0));
+            }
+            &:checked{
+                &:before{
+                    @include set-icon($fa-var-check-circle, 20px, 400, rgb(0, 0, 0));
+                }
+            }
+        }
+        .validacao.alert {
+            @include fonte($font-one, 400, 12px, #c1272d);
+        }
+        span.validacao{
+            @include fonte($font-one, 400, 14px, #c1272d);
+        }
+    }
+}
+
+%d_body_normalize-inputs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_body_normalize-inputs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//NORMALIZE BUTTONS
+// ====================================================================
+%g_body_normalize-buttons {
+    .btn,
+    .btn.ir,
+    #header .btn,
+    #main .btn,
+    #main .btn.ir,
+    #main .bt-quick-look,
+    #main .editar-dados,
+    #basket_pop_container .mid #btn_checkout a,
+    .form .actions .btn,
+    #emptyBasket>div>a {
+        @include flexbox(flex !important, row, nowrap, center, center, center);
+        @include transition();
+        @include border-radius(0);
+        @extend %helper_bt;
+        vertical-align: middle;
+        border: 0;
+        padding: 0px;
+        min-height: 40px;
+        @media all and (-ms-high-contrast: none) {
+            height: 40px;
+        }
+        @media (min-width: 980px) {
+            min-width: 150px;
+        }
+    }
+}
+
+%d_body_normalize-buttons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_body_normalize-buttons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//NORMALIZE - FIX HEADER
+// ====================================================================
+%g_body_normalize-headerFixed {
+    #header {
+        &.hideHeader {
+            position: fixed;
+            top: 0px;
+            z-index: 999;
+        }
+        &.showHeader {
+            transform: translateY(0px);
+            position: fixed;
+            top: 0px;
+            z-index: 999;
+        }
+    }
+    &.fix:not(.quickview) {
+        @media (min-width: $breakpoint) {
+            overflow-x: hidden;
+            padding-top: $header-height;
+            #header:not(.headerbuy) {
+                height: auto;
+                position: fixed;
+                top: 0px;
+                z-index: 999;
+                transition: all 0.5s ease;
+            }
+        }
+        @media (max-width: $mobile-w) {
+            padding-top: 60px;
+            #header {
+                position: fixed;
+                top: 0px;
+            }
+        }
+    }
+}
+
+%d_body_normalize-headerFixed {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_body_normalize-headerFixed {
+    #header {
+        &.hideHeader,
+        &.hideHeader + .wrap-nav-mobile {
+            transform: translateY(-#{($mobile-header-height)});
+        }
+    }
+}
+
+//NORMALIZE - LIST PRODUCT CONTAINER
+// ====================================================================
+%g_body_normalize-listProducts {
+    #main {
+        #divHistoricoNavegacao .list-products.owl-carousel,
+        .vit-carousel {
+            >.owl-controls {
+                .owl-buttons {
+                    .owl-prev {
+                        left: 0px;
+                        &:before {
+                            @include set-icon($fa-var-chevron-left, 36px, 900, #000);
+                        }
+                    }
+                    .owl-next {
+                        right: 0px;
+                        left: auto;
+                        &:before {
+                            @include set-icon($fa-var-chevron-right, 36px, 900, #000);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_body_normalize-listProducts {
+    #main {
+        .list-products {
+            @include box-sizing();
+            padding: 0px;
+            width: 100%;
+            >li {
+                @include transition;
+                text-align: center;
+                @media #{$res-lg} {
+                    width: calc(100% / 3 - 10px);
+                }
+                @media #{$res-xl} {
+                    width: calc(100% / 4 - 10px);
+                }
+            }
+        }
+        #divHistoricoNavegacao .list-products.owl-carousel,
+        .vit-carousel {
+            padding: 0px 40px;
+            >.owl-controls {
+                width: 100%;
+                top: calc(50% - 17px);
+                left: 0px;
+                .owl-buttons {
+                    top: 0px;
+                    width: 100%;
+                    >div {
+                        @include opacity();
+                        background: transparent;
+                        text-indent: 0;
+                        font-size: 0px;
+                        &:hover:before {
+                            color: #505050;
+                        }
+                    }
+                }
+            }
+        }
+        .list-products>.owl-wrapper-outer {
+            @include box-sizing;
+            width: 100%;
+            overflow: hidden;
+            border: 0px solid $border-master-color;
+            padding: 25px 0px;
+            .owl-wrapper {
+                .owl-item {
+                    text-align: center;
+                    >li {
+                        width: auto;
+                        float: none;
+                    }
+                }
+            }
+        }
+        .show-one {
+            .hproduct {
+                @include box-sizing();
+                @extend %helper_box-border;
+                width: 100%;
+                overflow: hidden;
+                .figure {
+                    width: 25%;
+                }
+                .tools {
+                    width: 25%;
+                }
+                .link {
+                    * {
+                        text-align: left;
+                    }
+                }
+                .stamp {
+                    width: auto;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+                .reviewaggregate {
+                    float: left;
+                }
+                .compare {
+                    float: left;
+                    width: auto;
+                }
+                .buy {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    #divHistoricoNavegacao .list-products {
+        >li {
+            margin: 0px;
+            width: 24.75%;
+            text-align: center;
+        }
+    }
+}
+
+%m_body_normalize-listProducts {
+    #main {
+        #divHistoricoNavegacao .list-products.owl-carousel,
+        .vit-carousel {
+            >.owl-controls {
+                .owl-buttons {
+                    >div {
+                        background: none;
+                        width: 24px;
+                        height: 40px;
+                        &:before {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//NORMALIZE - BANNER ASSETS (ARROWS, BUTTONS and NUMBERS)
+// ====================================================================
+%g_body_normalize_banner-assets {
+    #main .banners {
+        position: relative;
+        .owl-controls {
+            @include transition();
+            @include opacity(0);
+            width: 100%;
+            .owl-pagination {
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                .owl-page {
+                    border: 1px solid #bbbdbf;
+                    @include border-radius(100%);
+                    margin: 5px 3px;
+                    span {
+                        background-color: #bbbdbf;
+                        margin: 2px;
+                    }
+                    .owl-numbers {
+                        @include flexbox(flex, column, nowrap, center, center, center);
+                        @include fonte($font-one, 400, 12px, #FFF);
+                        @include border-radius(100%);
+                        padding: 0;
+                    }
+                    &.active,
+                    &:hover {
+                        border-color: #777777;
+                        span {
+                            background-color: #777777;
+                        }
+                    }
+                }
+            }
+            .owl-buttons {
+                position: absolute;
+                width: 100%;
+                >div {
+                    @include opacity();
+                    background: transparent;
+                    text-indent: 0;
+                    font-size: 0px;
+                    &:hover:before {
+                        color: #505050;
+                    }
+                }
+                .owl-prev {
+                    position: absolute;
+                    left: 10px;
+                    &:before {
+                        @include set-icon($fa-var-chevron-left, 36px, 900, #000);
+                    }
+                }
+                .owl-next {
+                    right: 10px;
+                    left: auto;
+                    &:before {
+                        @include set-icon($fa-var-chevron-right, 36px, 900, #000);
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_body_normalize_banner-assets {
+    #main .banners {
+        .owl-controls {
+            .owl-pagination {
+                .owl-page {
+                    span:not(.owl-numbers) {
+                        width: 12px;
+                        height: 12px;
+                    }
+                    .owl-numbers {
+                        width: 20px;
+                        height: 20px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_body_normalize_banner-assets {
+    #main .banners {
+        .owl-controls {
+            .owl-pagination {
+                margin-top: -20px;
+                .owl-page {
+                    span:not(.owl-numbers) {
+                        width: 12px;
+                        height: 12px;
+                    }
+                    .owl-numbers {
+                        width: 12px;
+                        height: 12px;
+                    }
+                    &.active,
+                    &:hover {
+                        span {
+                            background-color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// BODY && NORMALIZE - COMPONENTS
+// ====================================================================
+%d_body_normalize-components{
+    @extend %g_body, %d_body;
+    @extend %g_body_normalize-inputs, %d_body_normalize-inputs;
+    @extend %g_body_normalize-buttons, %d_body_normalize-buttons;
+    @extend %g_body_normalize-headerFixed, %d_body_normalize-headerFixed;
+    @extend %g_body_normalize-listProducts, %d_body_normalize-listProducts;
+    @extend %g_body_normalize_banner-assets, %d_body_normalize_banner-assets;
+}
+
+%m_body_normalize-components{
+    @extend %g_body, %d_body;
+    @extend %g_body_normalize-inputs, %m_body_normalize-inputs;
+    @extend %g_body_normalize-buttons, %m_body_normalize-buttons;
+    @extend %g_body_normalize-headerFixed, %m_body_normalize-headerFixed;
+    @extend %g_body_normalize-listProducts, %m_body_normalize-listProducts;
+    @extend %g_body_normalize_banner-assets, %m_body_normalize_banner-assets;
+}

@@ -1,0 +1,80 @@
+@model LookDetailModel
+@{ var classCss = Model.Look.SkuGrid ? "look-with-grid" : String.Empty; }
+
+<div class="container @classCss">
+    @Include("general.bannerarea", Model.BannerArea1, ViewBag)
+    
+    @Include("general.bannerarea", Model.BannerArea1Mobile, ViewBag)
+
+    <div class="content">
+        @Include("general.breadcrumb", Model.Breadcrumb, ViewBag)
+
+        <div class="main-content">
+            <div class="main-look">
+		        <div id="info-product" class="hproduct">
+
+		            <div class="collum images">
+                        @Include("look.images", Model, ViewBag)
+
+                        @Include("look.socialmedia", Model, ViewBag)
+                    </div>
+                    
+
+                    @* Só Responsivo *@
+                    <div class="collum details onlyMobile"> 
+                        @Include("look.name", Model, ViewBag)
+                        @Include("look.brand", Model, ViewBag)
+                        @Include("look.rating", Model, ViewBag)
+                        <div class="responsive-prod-images"></div>
+                        @Include("look.prices", Model, ViewBag)
+                        @Include("look.stamps", Model, ViewBag)
+                        @Include("look.descriptionpreview", Model, ViewBag)
+                        @Include("look.tools", Model, ViewBag)
+                    </div>
+                    @* Fim Só Responsivo *@
+
+                </div>
+
+                <div class="aside">
+
+                    @* Só Desktop *@
+                    <div class="collum details onlyDesktop"> 
+                
+                        <div class="row">
+                            @Include("look.name", Model, ViewBag)
+                            @Include("look.rating", Model, ViewBag)
+                            @Include("look.brand", Model, ViewBag)
+                        </div>
+    
+                        <div class="col">
+                            @Include("look.prices", Model, ViewBag)
+                        </div>
+    
+                        <div class="col">
+                            @Include("look.stamps", Model, ViewBag)
+                            @Include("look.descriptionpreview", Model, ViewBag)
+                            @Include("look.tools", Model, ViewBag)
+                        </div>
+        
+                    </div>
+                    @* Fim Só Desktop *@
+
+                    @Include("look.products", Model, ViewBag)
+                </div>
+
+            </div>
+
+            @Include("look.longpage", Model, ViewBag)
+
+            @Include("look.AlsoSaw", Model, ViewBag)
+
+            @Include("look.description", Model, ViewBag)
+    
+            @Include("look.comments", Model, ViewBag)
+
+            @Include("general.navigationhistory", Model.NavigationHistory, ViewBag)
+
+            @Include("general.instagram", Model.Instagram, ViewBag)
+        </div>
+    </div>
+</div>

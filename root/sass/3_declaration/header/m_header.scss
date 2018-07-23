@@ -1,0 +1,14 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/core/core_header";
+@import "../../2_deploy/header";
+
+
+//DECLARATIONS
+//----------------------------------------------
+body #header{
+   @extend %m_core_header-components;
+}
+
+

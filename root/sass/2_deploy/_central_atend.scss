@@ -1,0 +1,161 @@
+//CENTRAL DE ATENDIMENTO - CORE 1 - CONFIG / DEPLOY
+//====================================================================
+$central-icon-color: #000;
+
+$central-title-font: $font-one;
+$central-title-color: #383838;
+
+$central-link-font: $font-one;
+$central-link-color: #383838;
+$central-link-color-hover: #000;
+
+$central-desc-font: $font-one;
+$central-desc-color: #000;
+
+//CENTRAL DE ATENDIMENTO - CONTAINER
+// ====================================================================
+%g_central_atend-container {
+    #main .nav {
+        li {
+            @include box-sizing();
+            @include transition();
+        }
+    }
+    &:not(.internal) {
+        #main .nav {
+            >ul {
+                @include flexbox(flex, row, wrap, space-between, inherit, flex-start);
+                @include box-sizing();
+                @include transition();
+                width: 100%;
+                padding: 10px;
+                >li {
+                    @media #{$res-xs} {
+                        width: 100%;
+                    }
+                    @media #{$res-sm} {
+                        width: calc(50% - 10px);
+                    }
+                    @media #{$res-md} {
+                        width: calc(50% - 10px);
+                    }
+                    @media #{$res-lg} {
+                        width: calc(33% - 10px);
+                    }
+                    @media #{$res-xl} {
+                        width: calc(25% - 20px);
+                    }
+                    height: auto;
+                    padding: 0px;
+                    margin: 10px 0px;
+                }
+            }
+        }
+    }
+    &.internal {
+        #main .nav>ul {
+            @include flexbox(flex, column, wrap, flex-start, flex-start, flex-start);
+            @include box-sizing();
+            width: 100%;
+            padding: 10px;
+        }
+    }
+}
+
+%d_central_atend-container {
+    .box {
+        .nav {
+            li {
+                width: calc(33% - 10px);
+                margin: 10px 0px;
+            }
+        }
+    }
+}
+
+%m_central_atend-container {
+    .box {
+        .nav {
+            li {
+                @media (max-width: 400px) {
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+                @media (min-width: 401px) {
+                    width: calc(50% - 10px);
+                    margin: 10px 0px;
+                }
+            }
+        }
+    }
+}
+
+//CENTRAL DE ATENDIMENTO - BOXES
+//====================================================================
+%g_central_atend-box {
+    #main .nav .box {
+        border: 1px solid $border-master-color;
+        padding: 0px;
+        background: transparent;
+        >div {
+            border: 0px;
+            padding: 0px;
+        }
+        h2 {
+            @include box-sizing();
+            padding: 10px;
+            border-bottom: 1px solid $border-master-color;
+            @include fonte($central-title-font, bold, 18px, $central-title-color);
+        }
+        li {
+            @include box-sizing();
+            width: 100%;
+            padding: 5px 15px;
+            margin: 0px;
+            a,
+            &.televendas {
+                @include fonte($central-link-font, 400, 14px, $central-link-color);
+                &:hover {
+                    @include fonte($central-link-font, 400, 14px, $central-link-color-hover);
+                    text-decoration: none;
+                }
+                &:before {
+                    @include set-icon($fa-var-chevron-right, 10px, 900, #000);
+                    margin-right: 5px;
+                }
+            }
+            &>span {
+                @include fonte($central-desc-font, 400, 12px, $central-desc-color);
+                @include box-sizing();
+                padding-left: 15px;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+%d_central_atend-box{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_central_atend-box{
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+
+//CENTRAL DE ATENDIMENTO - COMPONENTS
+//====================================================================
+%d_central_atend-components{
+    @extend %g_central_atend-container, %d_central_atend-container;
+    @extend %g_central_atend-box, %d_central_atend-box;
+}
+
+%m_central_atend-components{
+    @extend %g_central_atend-container, %m_central_atend-container;
+    @extend %g_central_atend-box, %m_central_atend-box;
+}

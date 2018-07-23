@@ -1,0 +1,201 @@
+@model FooterBaseModel
+
+
+    
+    <div class="col">
+
+        <ul class="menu">
+            @if (!string.IsNullOrWhiteSpace(Model.BlogUrl))
+            {
+                <li class="blog ico">
+                    <a href="@Model.BlogUrl" target="_blank">Blog <br />Empresa</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.FacebookUrl))
+            {
+                <li class="facebook ico">
+                    <a href="@Model.FacebookUrl" target="_blank">Facebook <br />Torne-se Fã!</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.TwitterUrl))
+            {
+                <li class="twitter ico">
+                    <a href="@Model.TwitterUrl" target="_blank">Twitter <br />Empresa</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.PinterestUrl))
+            {
+                <li class="pinterest-social ico">
+                    <a href="@Model.PinterestUrl" target="_blank">Pinterest <br />Empresa</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.TumblrUrl))
+            {
+                <li class="tumblr-social ico">
+                    <a href="@Model.TumblrUrl" target="_blank">Tumblr <br />Empresa</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.GooglePlusUrl))
+            {
+                <li class="googleplus-social ico">
+                    <a href="@Model.GooglePlusUrl" target="_blank">GooglePlus <br />Empresa</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.YoutubeUrl))
+            {
+                <li class="youtube-social ico">
+                    <a href="@Model.YoutubeUrl" target="_blank">Youtube <br />Empresa</a>
+                </li>
+            }
+            @if (!string.IsNullOrWhiteSpace(Model.InstagramUrl))
+            {
+                <li class="instagram-social ico">
+                    <a href="@Model.InstagramUrl" target="_blank">Instagram <br />Empresa</a>
+                </li>
+            }
+            <li>
+                <a href="@Url("~/institucionais/index.aspx")" rel="nofollow">
+                    Central de Atendimento
+                </a>
+            </li>
+            @if(Model.ShowExchangesReturns)
+            {
+            <li>
+                <a href="@Url("~/institucionais/PosCompra/TrocasDevolucoes.aspx")" rel="nofollow">
+                    Trocas e Devoluções
+                </a>
+            </li>
+            }
+            @if(Model.ShowSecureShopping)
+            {
+            <li>
+                <a href="@Url("~/institucionais/Antescompra/CompraSegura.aspx")" rel="nofollow">
+                    Compra Segura
+                </a>
+            </li>
+            }
+            <li>
+                <a href="@Url("~/institucionais/Comprando/ServicoEntrega.aspx")" rel="nofollow">
+                    Envio e Entrega
+                </a>
+            </li>
+            <li>
+                <a href="@Url("~/institucionais/AntesCompra/ComoNavegar.aspx")" rel="nofollow">
+                    Navegando e Comprando
+                </a>
+            </li>
+            <li>
+                <a href="@Url("~/institucionais/AntesCompra/NossasLojas.aspx")" rel="nofollow">
+                    Nossas Lojas
+                </a>
+            </li>
+            <li>
+                <a href="@Url("~/institucionais/faleconosco.aspx")" rel="nofollow">
+                    Fale Conosco
+                </a>
+            </li>
+            <li>
+                <a href="@Url("~/mapa-do-site.aspx")" rel="nofollow">
+                    Mapa do Site
+                </a>
+            </li>
+            @if(Model.ShowWhoWeAre)
+            {
+            <li>
+                <a href="@Url("~/institucionais/AntesCompra/QuemSomos.aspx")" rel="nofollow">
+                    Quem Somos
+                </a>
+            </li>
+            }
+           
+            @if(Model.ShowPrivacyPolicy)
+            {
+            <li>
+                <a href="@Url("~/institucionais/AntesCompra/PoliticaPrivacidade.aspx")" rel="nofollow">
+                    Politica de Privacidade
+                </a>
+            </li>
+            }
+            <li>
+                <a href="@Url("~/afiliados/index.aspx")" rel="nofollow">
+                    Afiliados
+                </a>
+            </li>
+            <li>
+                <a href="@Url("~/institucionais/faleconosco.aspx")" rel="nofollow">
+                    Duvidas sobre a loja?
+                </a>
+            </li>
+            @if(ViewBag.IsWholeSale == true)
+            {
+            <li>
+                <a href="@Url("~/institucionais/AntesDaCompra/Revendedor.aspx")" rel="nofollow">
+                    Revendedor
+                </a>
+            </li>
+            }
+        </ul>
+
+        <div class="info-cli">
+            <span>
+                IPSUN LOREN LOREN / Av. Francisco Matarazzo, 1500 - 6° andar - São Paulo – SP  CEP 05001-100 <br class="onlyDesktop" />
+                CNPJ: 00.000.000/0001-00 - Inscrição Estadual: 000.000.000.000 <br class="onlyDesktop" />
+                Telefone: (11) 0000-0000 / e-mail: sac@ipsunloren.com.br <br class="onlyDesktop" />
+            </span>
+        </div>
+
+    </div>
+
+    <div class="col">
+        
+        <div class="payment-method">
+            <h4 class="title">
+                FORMAS DE PAGAMENTO
+            </h4>
+            <ul class="payments">
+                <li class="fpay aura"></li>
+                <li class="fpay bb"></li>
+                <li class="fpay banrisul"></li>
+                <li class="fpay boleto"></li>
+                <li class="fpay bradesco"></li>
+                <li class="fpay dinners"></li>
+                <li class="fpay elo"></li>
+                <li class="fpay hipercard"></li>
+                <li class="fpay hsbc"></li>
+                <li class="fpay itau"></li>
+                <li class="fpay mastercard"></li>
+                <li class="fpay paypal"></li>
+                <li class="fpay visa"></li>
+                <li class="fpay amex"></li>
+            </ul>
+        </div>
+
+        <ul class="secure-seals">
+            <li>
+                <img src="@Url("~/static/locales/custom/img/selo-security-1.png")" alt="">
+            </li>
+            <li>
+                <img src="@Url("~/static/locales/custom/img/selo-security-2.png")" alt="">
+            </li>
+            <li>
+                <img src="@Url("~/static/locales/custom/img/selo-security-3.png")" alt="">
+            </li>
+        </ul>
+        
+        <div class="security">
+            <div class="info">
+                <div class="secure-shield">
+                    <div>
+                        <strong>COMPRA</strong>
+                        <span>100% SEGURA</span>
+                    </div>
+                </div>
+                <div class="secure-info">
+                    Esse site garante a privacidade das informações de seus clientes, máxima confiabilidade e segurança.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

@@ -1,0 +1,17 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/core/core_footer";
+@import "../../2_deploy/footer";
+
+//DECLARATIONS
+//----------------------------------------------
+body #footer{
+    @extend %g_core_footer-container, %m_core_footer-container;
+    @extend %g_core_footer-menu, %m_core_footer-menu;
+    @extend %g_core_footer-infoCli, %m_core_footer-infoCli;
+    @extend %g_core_footer-payments, %m_core_footer-payments;
+    @extend %g_core_footer-security, %m_core_footer-security;
+    @extend %g_core_footer-copy, %m_core_footer-copy;
+    @extend %g_core_footer-footerBuy, %m_core_footer-footerBuy;
+}

@@ -1,0 +1,279 @@
+//FILTRO VERTICAL - CONTAINERS
+// ====================================================================
+%g_filtro_vertical-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_vertical-container {
+    width: 200px;
+    margin-top: 7px;
+    .block,
+    .filters,
+    .newsletter,
+    .b-specialstore {
+        background: #FFF;
+        @extend %helper_box-border;
+        margin-bottom: 10px;
+        >ul,
+        >ul>li,
+        fieldset>ul {
+            margin: 0px;
+            background-image: none;
+        }
+        fieldset>ul,
+        >ul>li>ul {
+            padding-left: 10px;
+        }
+        >ul>li>ul>li {
+            padding-left: 0px;
+        }
+    }
+}
+
+%m_filtro_vertical-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO VERTICAL - TITULOS
+// ====================================================================
+%g_filtro_vertical-titulos {
+    .filters .title,
+    .block .title,
+    .banners .title .ico {
+        @include flexbox(flex, row, wrap, flex-start, center, flex-start);
+        @include fonte($font-one, bold, 14px, #000);
+        text-transform: uppercase;
+        line-height: initial;
+        span {
+            padding: 0px;
+            background: none;
+        }
+    }
+}
+
+%d_filtro_vertical-titulos {
+    .filters .title,
+    .block .title,
+    .banners .title {
+        @include box-sizing;
+        border-bottom: 1px solid #CCC;
+        background: #FFF;
+        padding: 7px 10px;
+        margin: 0px;
+    }
+    .banners .title .ico {
+        padding: 0px;
+        background: none;
+    }
+}
+
+%m_filtro_vertical-titulos {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO VERTICAL - LINKS / SUBTITLES
+// ====================================================================
+%g_filtro_vertical-itens {
+    #pFilters,
+    .block>ul>li>span {
+        @include fonte($font-one, normal, 13px, rgb(20, 20, 20));
+        text-transform: uppercase;
+    }
+    .nav .filters .type,
+    .block>ul>li>ul>.sub {
+        @include fonte($font-one, normal, 12px, rgb(39, 39, 39));
+    }
+    .nav .filters .item,
+    .block a,
+    #main .aside .block li span {
+        @include fonte($font-one, normal, 12px, rgb(88, 88, 88));
+    }
+    .nav .filters .delete {
+        background: none;
+        font-size: 0px;
+        &:before {
+            @include set-icon($fa-var-times-circle, 14px, 900, #000);
+            display: block;
+        }
+    }
+}
+
+%d_filtro_vertical-itens {
+    .block a,
+    .block li span {
+        background: none;
+    }
+    #pFilters,
+    .block>ul>li>span {
+        @include box-sizing;
+        margin: 0px;
+        padding: 10px;
+    }
+    .nav .filters .type,
+    .block>ul>li>ul>.sub {
+        @include box-sizing;
+        background: none;
+        margin: 0px;
+        padding-left: 0px;
+    }
+    .nav .filters .item,
+    .block a,
+    #main .aside .block li span {
+        padding-left: 5px;
+        margin: 5px;
+    }
+}
+
+%m_filtro_vertical-itens {
+    #pFilters,
+    .block>ul>li>span:before {
+        @include set-icon($fa-var-plus-square, 14, 900, rgb(88, 88, 88));
+    }
+
+    .block ul > li li a::before{
+        @include set-icon($fa-var-square, 16, 400, rgb(88, 88, 88));
+    }
+
+    .filters>ul li span.item::before,
+    .catalog-filters .filters>ul li span.item::before,
+    .filters fieldset>ul li span.item::before{
+        @include set-icon($fa-var-check-square, 16, 400, rgb(88, 88, 88));
+    }
+}
+
+//FILTRO VERTICAL - SKU's
+// ====================================================================
+%g_filtro_vertical-skus {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_vertical-skus {
+    .skuFiltro {
+        .filterBlock {
+            @include flexbox(flex, row, wrap, flex-start, flex-start, flex-start);
+            padding: 10px;
+            li {
+                a {
+                    margin: 0px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+%m_filtro_vertical-skus {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO VERTICAL - NEWSLETTER
+// ====================================================================
+%g_filtro_vertical-newsletter {
+    .newsletter {
+        >span {
+            @include fonte($font-one, bold, 14px, rgb(59, 59, 59));
+            text-transform: uppercase;
+        }
+        >em {
+            @include fonte($font-one, 400, 12px, rgb(114, 114, 114));
+        }
+    }
+}
+
+%d_filtro_vertical-newsletter {
+    .newsletter {
+        @include box-sizing;
+        width: 100%;
+        >span {
+            display: block;
+            padding: 5px 0px;
+        }
+        >em {
+            display: block;
+            padding: 5px 0px;
+        }
+        .field {
+            margin: 0px;
+            input {
+                @include box-sizing;
+                padding: 10px;
+                width: 100%;
+            }
+        }
+        .btn {
+            width: 100%;
+            margin: 0px;
+        }
+    }
+}
+
+%m_filtro_vertical-newsletter {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO VERTICAL - BANNERS
+// ====================================================================
+%g_filtro_vertical-banners {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_filtro_vertical-banners {
+    .b-specialstore ul {
+        img {
+            margin: 0px auto;
+        }
+    }
+    .b-left {
+        >ul {
+            li {
+                width: 100%;
+            }
+            .owl-item {
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+%m_filtro_vertical-banners {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//FILTRO VERTICAL - COMPONENTS
+// ====================================================================
+%d_filtro_vertical-components{
+    @extend %g_filtro_vertical-container, %d_filtro_vertical-container;
+    @extend %g_filtro_vertical-titulos, %d_filtro_vertical-titulos;
+    @extend %g_filtro_vertical-itens, %d_filtro_vertical-itens;
+    @extend %g_filtro_vertical-skus, %d_filtro_vertical-skus;
+    @extend %g_filtro_vertical-newsletter, %d_filtro_vertical-newsletter;
+    @extend %g_filtro_vertical-banners, %d_filtro_vertical-banners;
+}
+
+%m_filtro_vertical-components{
+    @extend %g_filtro_vertical-container, %m_filtro_vertical-container;
+    @extend %g_filtro_vertical-titulos, %m_filtro_vertical-titulos;
+    @extend %g_filtro_vertical-itens, %m_filtro_vertical-itens;
+    @extend %g_filtro_vertical-skus, %m_filtro_vertical-skus;
+    @extend %g_filtro_vertical-newsletter, %m_filtro_vertical-newsletter;
+    @extend %g_filtro_vertical-banners, %m_filtro_vertical-banners;
+}

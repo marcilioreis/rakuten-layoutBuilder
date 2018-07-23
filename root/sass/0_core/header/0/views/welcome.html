@@ -1,0 +1,30 @@
+@model WelcomeBaseModel
+
+<span class="welcome">
+    <span id="DataCompleta"></span>                
+    @if(Model.HasNameCookie)
+    { 
+        <span id="identificacao">
+            @Raw("Olá")
+            <strong>@Model.UserName</strong> - <a href="javascript:ExcluiCookieLogin();" title="Sair" rel="nofollow">Sair</a>
+        </span>
+        @* POINTS *@
+        @Include("points", Model, ViewBag)
+    }
+    else
+    {
+        <span id="identificacao">
+            <strong>Novo usuário? </strong>
+            <a href="@Url("~/logincadastro.aspx")" title="Revendedor" rel="nofollow">Login</a>
+             | <a href="@UrlSecure("/cadastro/index.aspx")" title="Cadastre-se" rel="nofollow">Cadastre-se</a>
+            @if (Model.ShowWholesaleLink)
+            {
+                @:| <a href="@Url("~/cadastro/index.aspx?rev=s")" title="Revendedor" rel="nofollow">Revendedor</a>
+            }
+        </span>
+    }
+</span>
+
+
+
+

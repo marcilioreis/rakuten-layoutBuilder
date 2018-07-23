@@ -1,0 +1,719 @@
+// BASKET - BANNER PROMO
+// ====================================================================
+%g_basket-bannerPromo {
+    #banner_promocoes_atingir_pnlBannerPromocoesAtingir {
+        .orbit-wrapper{
+			background: #7d7d7d;
+			@include box-sizing();
+			height: 80px !important;
+			margin: 0 auto;
+			#banner-basket{
+				position: relative;
+			}
+			#banner-basket, .promo{
+                background: #7d7d7d;
+				@include box-sizing();
+				@include fonte($font-one, normal, 14px, rgb(255, 255, 255));
+				text-align: center;
+				z-index: 1;
+			}
+			.orbit-bullets{
+				bottom: 25px;
+				li{
+					background: rgb(109, 109, 109);
+					border: 1px solid rgb(0, 0, 0);
+					&.active{
+						background-color: rgb(255, 255, 255);
+						border: 1px solid rgb(109, 109, 109);
+					}
+				}
+			}
+		}
+    }
+}
+
+%d_basket-bannerPromo {
+	#banner_promocoes_atingir_pnlBannerPromocoesAtingir{
+        margin-bottom: 10px;
+		.orbit-wrapper{
+            width: $page-w !important;
+			#banner-basket{
+				top: 10px;
+			}
+			#banner-basket, .promo{
+                height: 60px;
+				line-height: 26px;
+				width: $page-w - 100px !important;
+			}
+			.orbit-bullets{
+				right: 20px;
+				z-index: 1;
+				li{
+					width: 24px;
+					height: 24px;
+					margin: 0px 3px;
+					line-height: 24px;
+					&.active{
+						margin: 0px 3px;
+					}
+				}
+			}
+		}
+	}
+}
+
+%m_basket-bannerPromo {
+    #banner_promocoes_atingir_pnlBannerPromocoesAtingir{
+		margin-top: 20px;
+		.orbit-wrapper{
+			width: 100% !important;
+			#banner-basket{
+				top: 0px;
+			}
+			#banner-basket, .promo{
+				height: 79px !important;
+				line-height: 20px;
+				left: 0;
+				padding: 5px;
+				width: 89% !important;
+			}
+			.orbit-bullets{
+				right: 5px;
+				li{
+					height: 22px;
+					margin: 0px 5px;
+					line-height: 21px;
+					width: 22px;
+					&.active{
+						margin: 0px 3px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// BASKET - BUTTONS
+// ====================================================================
+%g_basket-buttons {
+    #lblAssociateList {
+        @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+	}
+}
+
+%d_basket-buttons {
+	#main {
+		#hypBuyToList, .buttons-basket .buy-more {
+			min-width: 210px;
+		}
+		#buy-to-list, .buttons-basket{
+			margin: 0px;
+			padding: 10px 0px;
+		}
+	}
+}
+
+%m_basket-buttons {
+    #main {
+		#hypBuyToList, #lblAssociateList, #lnkCoupon, #lnkCancelCoupon {
+			width: 100%;
+		}
+		#lnkCalculateShipping{
+			margin-top: 5px;
+		}
+	}
+}
+
+// BASKET - TABLE HEAD
+// ====================================================================
+%g_basket-tableHead {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_basket-tableHead {
+	#main .basket {
+		table thead{
+			tr{
+				th{
+					background: transparent;
+					border-bottom: 1px solid #ddd;
+					@include fonte($font-one, 500, 15px, rgb(0, 0, 0));
+					text-transform: none;
+				}
+			}
+		}
+	}
+}
+
+%m_basket-tableHead {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BASKET - TABLE BODY
+// ====================================================================
+%g_basket-tableBody {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_basket-tableBody {
+	#main .basket {
+		table tbody{
+			tr{
+				td{
+					background: transparent;
+					border-bottom: 1px solid #ddd;
+					&:last-child{
+						border-left: 1px solid #ddd;
+					}
+				}
+				&.even{
+					td{
+						background: #f7f7f7;
+					}
+				}
+			}
+		}
+	}
+}
+
+%m_basket-tableBody {
+    #main .basket {
+		table tbody{
+			tr{
+				td{
+					&:before{
+						@include fonte($font-one, 500, 15px, rgb(0, 0, 0));
+					}
+				}
+			}
+		}
+	}
+}
+
+// BASKET - TABLE BODY - PRODUCT
+// ====================================================================
+%g_basket-product {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_basket-product {
+	#main .product {
+		.figure .url img{
+			width: 90px;
+		}
+	}
+}
+
+%m_basket-product {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BASKET - TABLE BODY - DESCRIPTION
+// ====================================================================
+%g_basket-description {
+    #main .description {
+		.details{
+			.name{
+				@include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+			}
+			.cod, .brand{
+				@include fonte($font-one, 500, 11px, rgb(102, 102, 102));
+			}
+			.skus{
+				@include fonte($font-one, 500, 13px, rgb(0, 0, 0));
+				margin-top: 5px;
+			}
+		}
+		.stamp{
+			margin-top: 15px;
+		}
+	}
+}
+
+%d_basket-description {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_basket-description {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BASKET - TABLE BODY - QUANTITY
+// ====================================================================
+%g_basket-quantity {
+    #main .quantity {
+		>div {
+			a {
+				background: none;
+				background-color: #fff;
+				border: 1px solid #aaa;
+				line-height: 30px;
+				height: 30px;
+				width: 20px;
+				&:before{
+					display: block;
+					text-align: center;
+				}
+				&.minus {
+					border-right: 0px;
+					margin-right: 0px;
+					&:before{
+						@include set-icon($fa-var-minus, 12px, 900, rgb(0, 0, 0));
+					}
+				}
+				&.plus {
+					border-left: 0px;
+					margin-left: 0px;
+					&:before{
+						@include set-icon($fa-var-plus, 12px, 900, rgb(0, 0, 0));
+					}
+				}
+				&:hover{
+					background-color: #000;
+					text-decoration: none;
+					&:before{
+						color: #fff
+					}
+				}
+			}
+			input {
+				border: 1px solid #aaa;
+				@include fonte($font-one, 500, 13px, rgb(0, 0, 0));
+				margin: 0px;
+				outline: none;
+				height: 32px;
+				width: 35px;
+			}
+		}
+	}
+}
+
+%d_basket-quantity {
+	#main .quantity {
+		>div {
+			width: 80px;
+		}
+	}
+}
+
+%m_basket-quantity {
+    #main .quantity {
+		span{
+			font-size: 0;
+			a{
+				font-size: 0;
+				vertical-align: top;
+				&:after {
+					content: '';
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+// BASKET - TABLE BODY - DELETE
+// ====================================================================
+%g_basket-delete {
+	#main .delete a {
+		background: none;
+		&:after{
+			display: block;
+			@include set-icon($fa-var-trash-alt, 18px, 900, rgb(0, 0, 0));
+		}
+		&:hover{
+			&:after{
+				color: rgb(102, 102, 102);
+			}
+		}
+	}
+}
+
+%d_basket-delete {
+	#main .delete a {
+		line-height: 6px;
+	}
+}
+
+%m_basket-delete {
+    #remover_este_bloco {
+        display: none;
+	}
+}
+
+// BASKET - TABLE BODY - UNIT VALUE (VALOR UNITÁRIO)
+// ====================================================================
+%g_basket-unit-value {
+	#main .unit-value {
+		.regular{
+			@include fonte($font-one, 500, 12px, rgb(128, 128, 128));
+		}
+		.price.sale{
+			@include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+		}
+	}
+}
+
+%d_basket-unit-value {
+	#remover_este_bloco {
+        display: none;
+	}
+}
+
+%m_basket-unit-value {
+    #remover_este_bloco {
+        display: none;
+	}
+}
+
+// BASKET - TABLE BODY - SUBTOTAL
+// ====================================================================
+%g_basket-subtotal {
+	#main .subtotal {
+		.regular{
+			@include fonte($font-one, 600, 12px, rgb(128, 128, 128));
+		}
+		.price.sale{
+			@include fonte($font-one, 600, 14px, rgb(0, 0, 0));
+		}
+	}
+}
+
+%d_basket-subtotal {
+	#remover_este_bloco {
+        display: none;
+	}
+}
+
+%m_basket-subtotal {
+    #remover_este_bloco {
+        display: none;
+	}
+}
+
+// BASKET - TABLE FOOT
+// ====================================================================
+%g_basket-tableFoot {
+    #main .basket {
+		table tfoot{
+			tr{
+				td{
+					background: transparent;
+				}
+			}
+		}
+	}
+}
+
+%d_basket-tableFoot {
+	#main .basket {
+		table tfoot{
+			tr{
+				td{
+					border-bottom: 1px solid #ddd;
+					&:last-child:not(#tdStamps){
+						border-left: 1px solid #ddd;
+					}
+				}
+				&.even{
+					td{
+						background: #f7f7f7;
+					}
+				}
+			}
+		}
+	}
+}
+
+%m_basket-tableFoot {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BASKET - TABLE FOOT - INFO SUBTOTAL/TOTAL
+// ====================================================================
+%g_basket-info {
+    #main .info {
+		.title {
+			@include fonte($font-one, 500, 15px, rgb(0, 0, 0));
+		}
+		.subtotal, .value {
+			@include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+			.converted-price{
+				display: none;
+			}
+		}
+	}
+}
+
+%d_basket-info {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_basket-info {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BASKET - TABLE FOOT - DELIVERY
+// ====================================================================
+%g_basket-delivery {
+    #main .delivery {
+		.title {
+			@include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+		}
+		.subtotal {
+			@include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+		}
+		&.first{
+			#tdZipCode, .subtotal{
+				.options-tit{
+					@include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+					text-transform: none;
+				}
+				.options{
+					label{
+						@include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+						line-height: 20px;
+						vertical-align: bottom;
+					}
+				}
+				.form{
+					input[type="text"]{
+						@include fonte($font-one, 500, 12px, rgb(0, 0, 0));
+					}
+				}
+			}
+		}
+		&.toHide{
+			#tdStores{
+				dt{
+					@include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+				}
+				.store-address{
+					@include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+					line-height: 20px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+%d_basket-delivery {
+	#main .delivery {
+		&.first{
+			#tdZipCode, .subtotal{
+				border-top: inherit;
+				border-bottom: 0;
+				.form{
+					input[type="text"]{
+						width: 120px;
+					}
+				}
+			}
+		}
+		&.toHide{
+			#tdStores{
+				dt{
+					line-height: 40px;
+				}
+				dd{
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+}
+
+%m_basket-delivery {
+    #main .delivery {
+		&.first{
+			#tdZipCode, .subtotal{
+				.options-tit{
+					margin-bottom: 15px;
+				}
+				.options{
+					dd{
+						display: inline-block;
+					}
+				}
+				.form{
+					input[type="text"]{
+						width: 100%;
+					}
+				}
+			}
+		}
+		&.toHide{
+			#tdStores{
+				#ddlStores{
+					padding-left: 5px;
+    				width: 100%;
+				}
+			}
+		}
+	}
+}
+
+// BASKET - TABLE FOOT - COUPON
+// ====================================================================
+%g_basket-coupon {
+    #main .coupon {
+		td#tdCoupon, td#tdCouponInUse, .subtotal{
+			.form{
+				span{
+					@include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+				}
+			}
+		}
+		.subtotal{
+			#lblCoupon{
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				padding: 5px;
+				&.coupon-off{
+					background: #b4160e;
+					@include fonte($font-one, 600, 14px, rgb(255, 255, 255));
+				}
+				&.coupon-ok{
+					background: #0e7e05;
+					@include fonte($font-one, 600, 14px, rgb(255, 255, 255));
+					line-height: 30px;
+				}
+			}
+		}
+	}
+}
+
+%d_basket-coupon {
+	#main .coupon {
+		td#tdCoupon, td#tdCouponInUse, .subtotal{
+			border-top: 1px solid #ddd;
+			.form{
+				span{
+					text-align: left;
+					margin-top: 0;
+					width: 220px;
+				}
+				#txtCoupon{
+					text-transform: uppercase;
+				}
+			}
+		}
+		#tdCoupon{
+			.form{
+				span{
+					line-height: 40px;
+				}
+			}
+		}
+		td#tdCouponInUse{
+			.form{
+				span{
+					line-height: 18px;
+				}
+			}
+		}
+		.subtotal{
+			width: 155px;
+			#lblCoupon{
+				&.coupon-off{
+					line-height: 15px;
+				}
+			}
+
+		}
+	}
+}
+
+%m_basket-coupon {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// BASKET - TABLE FOOT - STAMPS
+// ====================================================================
+%g_basket-stamps {
+	#main #trStamps {
+		td#tdStamps{
+			text-align: center;
+		}
+	}
+}
+
+%d_basket-stamps {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_basket-stamps {
+    #main #trStamps {
+		td#tdStamps{
+			padding: 0px;
+		}
+	}
+}
+
+// BASKET - DECLARATIONS
+// ====================================================================
+%d_basket-components{
+	@extend %g_basket-bannerPromo, %d_basket-bannerPromo;
+    @extend %g_basket-buttons, %d_basket-buttons;
+    @extend %g_basket-tableHead, %d_basket-tableHead;
+
+    @extend %g_basket-tableBody, %d_basket-tableBody;
+    @extend %g_basket-product, %d_basket-product;
+    @extend %g_basket-description, %d_basket-description;
+    @extend %g_basket-quantity, %d_basket-quantity;
+    @extend %g_basket-delete, %d_basket-delete;
+    @extend %g_basket-unit-value, %d_basket-unit-value;
+    @extend %g_basket-subtotal, %d_basket-subtotal;
+
+    @extend %g_basket-tableFoot, %d_basket-tableFoot;
+    @extend %g_basket-info, %d_basket-info;
+    @extend %g_basket-delivery, %d_basket-delivery;
+    @extend %g_basket-coupon, %d_basket-coupon;
+    @extend %g_basket-stamps, %d_basket-stamps;
+}
+
+%m_basket-components{
+	@extend %g_basket-bannerPromo, %m_basket-bannerPromo;
+    @extend %g_basket-buttons, %m_basket-buttons;
+    @extend %g_basket-tableHead, %m_basket-tableHead;
+    
+    @extend %g_basket-tableBody, %m_basket-tableBody;
+    @extend %g_basket-product, %m_basket-product;
+    @extend %g_basket-description, %m_basket-description;
+    @extend %g_basket-quantity, %m_basket-quantity;
+    @extend %g_basket-delete, %m_basket-delete;
+    @extend %g_basket-unit-value, %m_basket-unit-value;
+    @extend %g_basket-subtotal, %m_basket-subtotal;
+    
+    @extend %g_basket-tableFoot, %m_basket-tableFoot;
+    @extend %g_basket-info, %m_basket-info;
+    @extend %g_basket-delivery, %m_basket-delivery;
+    @extend %g_basket-coupon, %m_basket-coupon;
+    @extend %g_basket-stamps, %m_basket-stamps;
+}

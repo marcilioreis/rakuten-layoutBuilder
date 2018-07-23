@@ -1,0 +1,10 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/confirmation";
+
+//DECLARATIONS
+//----------------------------------------------
+body.op-confirmation {
+    @extend %d_confirmation-components;    
+}

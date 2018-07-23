@@ -1,0 +1,43 @@
+//BUTTOM DEFAULT
+// ====================================================================
+%helper_bt{
+    background-color: #6e6e6e;
+    font-family: $font-one;
+    color: #FFF;
+    &:hover{
+        background-color: #3f3f3f;
+    }
+}
+
+%helper_bt--alt{
+    background-color: #a3a3a3;
+    font-family: $font-one;
+    color: #FFF;
+    &:hover{
+        background-color: #585858;
+    }
+}
+
+
+//BORDER DEFAULT
+// ====================================================================
+%helper_box-border{
+   border: 1px solid #CCC;
+}
+
+
+//DISPLAY CLASS
+// ====================================================================
+.onlyMobile,
+%onlyMobile{
+    @media #{$bp-desktop} {
+        display: none !important;
+    }
+}
+.onlyDesktop,
+%onlyDesktop{
+    @media #{$bp-mobile} {
+        display: none !important;
+    }
+}
+

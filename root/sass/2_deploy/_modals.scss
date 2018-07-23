@@ -1,0 +1,183 @@
+//MODALS - CONTAINER
+// ====================================================================
+%g_modals-container {
+    #fancybox-wrap {
+        border: none;
+    }
+    #fancybox-close-2 {
+        background: none;
+        width: 22px;
+        height: 22px;
+        &:before {
+            @include set-icon($fa-var-times-circle, 22px, 900, rgb(85, 85, 85));
+        }
+    }
+}
+
+%d_modals-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_modals-container {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//MODALS - AVALIE ESTE PRODUTO
+// ====================================================================
+%g_modals-rate {
+    &.rate {
+        .form .field.rating {
+            width: 100%;
+            label {
+                @include flexbox(flex, row, wrap, flex-start, center, flex-start);
+                width: 100%;
+                >* {
+                    @include box-sizing;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    line-height: inherit;
+                }
+                >span:not(.validacao) {
+                    @include order(1);
+                }
+                >div {
+                    @include order(2);
+                }
+                >select {
+                    @include order(3);
+                }
+                >.validacao {
+                    @include order(4);
+                    padding-left: 0px;
+                    width: 100%;
+                    position: inherit;
+                }
+            }
+        }
+        .actions .btn{
+            padding: 0px 10px;
+        }
+    }
+}
+
+%d_modals-rate {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_modals-rate {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//MODALS - FRETE
+// ====================================================================
+%g_modals-delivery {
+    &.consult-delivery {
+        #pnlHomeDelivery{
+           .form.cep{
+                @include flexbox(flex, row, nowrap, flex-start, flex-end, flex-end);
+                > *{
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+                #txtZipCode,
+                #btnCalculateShipping{
+                    height: 40px;
+                }
+                #txtZipCode{
+                    width: 92% !important;
+                }
+                #btnCalculateShipping{
+                    width: 150px;
+                }
+           }
+        }
+    }
+}
+
+%d_modals-delivery {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_modals-delivery {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//MODALS - INDICAÇÃO
+// ====================================================================
+%g_modals-indique {
+    &.indicate-friend{
+       .actions{
+           #send{
+               width: 190px;
+           }
+       } 
+    }
+}
+
+%d_modals-indique {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_modals-indique {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//MODALS - ALTERAÇÃO DE SENHA
+// ====================================================================
+%g_modals-alterarSenha {
+    &.alterarSenha{
+       .collum{
+           > fieldset{
+               padding: 0px;
+           }
+       } 
+    }
+}
+
+%d_modals-alterarSenha {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_modals-alterarSenha {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//MODALS - DECLARATION
+// ====================================================================
+%d_modals-components{
+    @extend %g_modals-container, %d_modals-container;
+    @extend %g_modals-rate, %d_modals-rate;
+    @extend %g_modals-delivery, %d_modals-delivery;
+    @extend %g_modals-indique, %d_modals-indique;
+    @extend %g_modals-alterarSenha, %d_modals-alterarSenha;
+}
+
+%d_modals-components{
+    @extend %g_modals-container, %m_modals-container;
+    @extend %g_modals-rate, %m_modals-rate;
+    @extend %g_modals-delivery, %m_modals-delivery;
+    @extend %g_modals-indique, %m_modals-indique;
+    @extend %g_modals-alterarSenha, %m_modals-alterarSenha;
+}

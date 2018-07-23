@@ -1,0 +1,13 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/core/core_look";
+@import "../../2_deploy/look";
+//DECLARATIONS
+//----------------------------------------------
+body.lookDetalhe {
+    //CORE
+    @extend %d_core_look-components;
+    //IMPLANTACAO
+    @extend %d_look-components;
+}

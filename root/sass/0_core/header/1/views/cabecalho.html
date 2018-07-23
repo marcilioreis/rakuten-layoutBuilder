@@ -1,0 +1,198 @@
+@model HeadBaseModel
+<div class="wrapper">
+    <div id="header">
+        <div id="scrollingDiv" style="display: none">
+            <div class="tab-open">
+            </div>
+            <div class="comment-section">
+                <div class="fb-container">
+                    <div class="inner"></div>
+                    <a href="@Url("catalogofacebook.aspx")" class="see-more">Veja os + comentados</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+                <div class="cont-top">
+                    
+                    <div class="cont-wrapper">
+                        @Include("welcome", Model.Welcome, ViewBag)
+
+                        <ul class="help">
+
+                            @if (Model.SubscriptionModuleEnabled)
+                            {
+                                <li>
+                                    <a href="@Url(Model.SubscriptionPlanLink)">
+                                        Planos de Assinatura
+                                    </a>
+                                </li>
+                            }
+                            
+                            @if (Model.GiftModuleEnabled)
+                            {
+                                <li><a href="@Url(Model.GiftVouchersLink)">Vale-presente</a></li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Url("institucionais/AntesCompra/NossasLojas.aspx")">Nossas Lojas </a>
+                                </li>
+                            }
+
+                            <li>
+                                <a href="@Url("institucionais/")">Central de Atendimento </a>
+                            </li>
+
+                            <li>
+                                <a id="hypMinhaConta" href="@UrlSecure("/minhaconta.aspx")">
+                                    Minha Conta
+                                </a>
+                            </li>
+
+                            @if (Model.GiftModuleEnabled)
+                            {
+                                <li>
+                                    <a href="@Url("institucionais/AntesCompra/NossasLojas.aspx")">Nossas Lojas </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Url("institucionais/AntesCompra/PoliticaPrivacidade.aspx")">Política de privacidade </a>
+                                </li>
+                            }
+
+                            <li>
+                                <span class="tel">Televendas: @Model.Phone</span>
+                            </li>
+
+                            @if(!string.IsNullOrWhiteSpace(Model.StoreName))
+                            {
+                                <li>
+                                    @Model.StoreName
+                                </li>
+                            }
+
+                            <li>
+                                <a id="hypMeusPedidos" href="@UrlSecure("/meuspedidos/index.aspx")">
+                                    <strong>Meus Pedidos</strong>
+                                </a>
+                            </li>
+
+                            @if (Model.GiftModuleEnabled)
+                            {
+                                <li>
+                                    <a href="@Url("institucionais/AntesCompra/PoliticaPrivacidade.aspx")">Política de privacidade </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>&nbsp;</li>
+                            }
+                            @if (!IsEmpty(Model.ChatUrl))
+                            {
+                                <li>
+                                    <a href="@Model.ChatUrl">Atendimento Online</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>&nbsp;</li>
+                            }
+                            <li>
+                                <a href="@Url(Model.ListUrl)">Listas</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                       
+                </div>
+
+                <div class="cont-middle">
+                    <div class="cont-wrapper">
+
+                        <div id="logo">
+                            @if (ViewBag.IsHome)
+                            {
+                                <h1>
+                                    <a rel="home" href="@Url()" title="@ViewBag.StoreName">
+                                        <img src="@Url(String.Format("{0}?{1}", Model.LogoUrl, DateTime.Now.ToString("yyyyMMddHHmmssfff")))" alt="@ViewBag.StoreName" title="@ViewBag.StoreName" />
+                                        <span>@ViewBag.StoreName</span>
+                                    </a>
+                                </h1>
+                            }
+                            else
+                            {
+                                <a rel="home" href="@Url()" title="@ViewBag.StoreName">
+                                    <img src="@Url(String.Format("{0}?{1}", Model.LogoUrl, DateTime.Now.ToString("yyyyMMddHHmmssfff")))" alt="@ViewBag.StoreName" title="@ViewBag.StoreName" />
+                                    <span>@ViewBag.StoreName</span>
+                                </a>
+                            }
+                        </div>
+
+                        <fieldset id="header_busca_container" class="search">
+                            <legend>Busca</legend>
+                            <label for="cabecalho_txtBusca">
+                                Digite o que voce procura:
+                            </label>
+                            @if (ViewBag.AdvancedSearchEnabled)
+                            {
+                                <span>em</span>
+                                <select id="cabecalho_DropLojas" title="LOJAS">
+                                    @foreach (var store in Model.Stores)
+                                    {
+                                        <option value="@store.Value">@store.Key</option>
+                                    }
+                                </select>   
+                            }
+
+                            @if (Model.SLISearchModuleEnabled)
+                            {
+                                <input type="text" id="sli_search_1" onkeydown="javascript:return fnTrapKD(event,this)" value="Digite o que você procura" default-text="Digite o que você procura" class="placeholder ico" />  
+                            }
+                            else
+                            {
+                                <input type="text" id="cabecalho_txtBusca" value="Digite o que você procura" default-text="Digite o que você procura" class="placeholder ico" />
+                            }
+                            <a id="cabecalho_Buscar_Topo" class="@string.Concat("btn ir", ViewBag.CssClassSearch)" href="#" title="Buscar" rel="nofollow">Buscar</a>
+                        </fieldset>
+            
+                        <div class="car">
+                            <p>
+                                <a class="basket" href="@UrlSecure("basket/index.aspx")">
+                                    <span class="title">Minhas Compras</span>
+                                    <span class="itens">
+                                        <label id="cabecalho_lblResumoCesta">
+                                            <span class="basket-count-number @(Model.SummaryBasketItemsCount == 0 ? "zero-item" : "")">@(Model.SummaryBasketItemsCount > 0 ? Model.SummaryBasketItemsCount.ToString() : "0")</span>
+                                            <span class="basket-count-label">@Model.SummaryBasketItemsInfo</span>
+                                        </label>
+                                        @*<label id="cabecalho_lblResumoWishList">@Model.WishListItemsText</label>*@
+                                    </span>
+                                </a>
+                            </p>
+                            @if (Model.SummaryBasketEnabled)
+                            {
+                                <div class="mini-car" id="divSummaryBasket">
+                                    @Include("summaryBasket", Model, ViewBag)
+                                </div>
+                            }
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="cont-bottom">
+                    <div class="cont-wrapper">
+                        @Include("horizontalCategories", Model, ViewBag)
+                    </div>
+                </div>                    
+            
+        </div>
+    </div>
+
+    @*FILTRO AVANÇADO*@
+    @if (Model.AdvancedSearchFilterEnabled) 
+    {
+        @Include("advancedSearchFilter", Model, ViewBag)
+    }        
+        

@@ -1,0 +1,11 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/login";
+
+
+//DECLARATIONS
+//----------------------------------------------
+body.loginpage{
+    @extend %d_login-components;
+}

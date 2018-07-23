@@ -1,0 +1,75 @@
+//VITRINE
+// ====================================================================
+%g_vitrine {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_vitrine {
+    #main {
+        .section {
+            &.vitrine-1 {
+                width: 100%;
+            }
+            .list-products {
+                >li {
+                    width: 24.7%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+%m_vitrine {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//VITRINE - SEE-MORE
+// ====================================================================
+%g_vitrine-seeMore {
+    #main {
+        .see-category {
+            em {
+                @include fonte($font-one, bold, 14px, #000);
+            }
+            @include fonte($font-one, bold, 14px, #000);
+            text-transform: uppercase;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+%d_vitrine-seeMore {
+    #main {
+        .see-category {
+            @include box-sizing;
+            @extend %helper_box-border;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+%m_vitrine-seeMore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//VITRINE - COMPONENTS
+// ====================================================================
+%d_vitrine-components{
+    @extend %g_vitrine, %d_vitrine;
+    @extend %g_vitrine-seeMore, %d_vitrine-seeMore;
+}
+
+%m_vitrine-components{
+    @extend %g_vitrine, %m_vitrine;
+    @extend %g_vitrine-seeMore, %m_vitrine-seeMore;
+}

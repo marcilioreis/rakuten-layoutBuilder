@@ -1,0 +1,215 @@
+// PEDIDOS - TEXT
+// ====================================================================
+%g_pedidos-text {
+    #main {
+        #panCentro {
+            h1{
+                @include fonte($font-one, 500, 28px, rgb(0, 0, 0));
+            }
+            p, span, label, li{
+                @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+            }
+            .number{
+                strong{
+                    @include fonte($font-one, 500, 40px, rgb(0, 0, 0));
+                }
+            }
+            a:not(.btn){
+                @include fonte($font-one, 500, 14px, rgb(100, 100, 100));
+            }
+            .title {
+                strong {
+                    @include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+                }
+            }
+        }
+    }
+}
+
+%d_pedidos-text {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pedidos-text {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// PEDIDOS - INPUTS
+// ====================================================================
+%g_pedidos-inputs {
+    #main {
+        #panCentro {
+            label{
+                input[type="radio"]{
+                    border: 0;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    outline: none;
+                    padding: 0px;
+                    height: 20px;
+                    width: 20px;
+                    &:before{
+                        display: block;
+                        @include set-icon($fa-var-circle, 20px, 400, rgb(0, 0, 0));
+                    }
+                    &:checked{
+                        &:before{
+                            display: block;
+                            @include set-icon($fa-var-check-circle, 20px, 400, rgb(0, 0, 0));
+                        }
+                    }
+                }
+                span{
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
+
+%d_pedidos-inputs {
+	#main {
+        #panCentro {
+            label{
+                display: inline-block;
+                margin-right: 5px;
+                vertical-align: middle;
+                input[type="radio"]{
+                    margin-top: 0px;
+                }
+                span{
+                    margin: 0px;
+                }
+            }
+            #txtCodPedido {
+                display: inline-block;
+                float: none;
+                vertical-align: middle;
+            }
+            .search-date{
+                width: 500px;
+                .date {
+                    display: inline-block;
+                    float: none;
+                    vertical-align: middle;
+                    span{
+                        line-height: 40px;
+                        margin-top: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+%m_pedidos-inputs {
+    #main {
+        #panCentro {
+            input{
+                @include border-radius(0);
+            }
+            label{
+                input[type="radio"]{
+                    left: 15px;
+                    top: 5px;
+                }
+                span{
+                    margin-left: 5px;
+                }
+            }
+            #txtCodPedido {
+                margin: 5px auto;
+                display: block;
+                width: 90%;
+            }
+            .date{
+                text-align: center;
+                .day, .month {
+                    width: 20%;
+                }
+                .year{
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+// PEDIDOS - BUTTONS
+// ====================================================================
+%g_pedidos-buttons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_pedidos-buttons {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pedidos-buttons {
+    #main {
+		#btnPesquisar {
+            @include border-radius(0);
+			@extend %helper_bt;
+		}
+	}
+}
+
+// PEDIDOS - RESULT
+// ====================================================================
+%g_pedidos-result {
+    #main {
+        #panCentro {
+            th{
+                span{
+                    @include fonte($font-one, 700, 15px, rgb(0, 0, 0));
+                }
+            }
+            td{
+                @include fonte($font-one, 500, 14px, rgb(0, 0, 0));
+            }
+        }
+    }
+}
+
+%d_pedidos-result {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_pedidos-result {
+    #main {
+        #panCentro {
+            td{
+                &:before{
+                    @include fonte($font-one, 700, 14px, rgb(0, 0, 0));
+                }
+            }
+        }
+    }
+}
+
+// PEDIDOS - COMPONENTS
+// ====================================================================
+%d_pedidos-components{
+    @extend %g_pedidos-text, %d_pedidos-text;
+    @extend %g_pedidos-inputs, %d_pedidos-inputs;
+    @extend %g_pedidos-buttons, %d_pedidos-buttons;
+    @extend %g_pedidos-result, %d_pedidos-result;
+}
+
+%m_pedidos-components{
+    @extend %g_pedidos-text, %m_pedidos-text;
+    @extend %g_pedidos-inputs, %m_pedidos-inputs;
+    @extend %g_pedidos-buttons, %m_pedidos-buttons;
+    @extend %g_pedidos-result, %m_pedidos-result;
+}

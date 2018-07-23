@@ -1,0 +1,28 @@
+// QUICKVIEW - CONTAINERS
+// ====================================================================
+%d_quickview-containers {
+    #fancybox-wrap.fancybox-quickview{
+        width: $page-w !important;
+        margin-left: -($page-w / 2) !important;
+        left: 50% !important;
+        #fancybox-content{
+            @include box-sizing();
+            width: 100% !important;
+        }
+    }
+ }
+ 
+ // QUICKVIEW - FAB-COD
+ // ====================================================================
+ %d_quickview-fabcod{
+     &.quickview #main .fab-cod {
+         width: 100%;
+     }
+ }
+ 
+ // QUICKVIEW - COMPONENTS
+ // ====================================================================
+ %d_quickview-components{
+    @extend %d_quickview-containers;
+    @extend %d_quickview-fabcod;
+ }

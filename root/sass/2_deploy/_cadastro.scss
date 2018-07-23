@@ -1,0 +1,268 @@
+//CADASTRO - CONTAINERS 
+//====================================================================
+%g_cadastro-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_cadastro-containers {
+    #main {
+        .main-content {
+            @include flexbox(flex, column, wrap, flex-start, flex-start, flex-start);
+            >.banners {
+                @include order(1);
+            }
+            >h1 {
+                @include order(2);
+            }
+            >.atention {
+                @include order(3);
+            }
+            >.form {
+                @include order(4);
+            }
+        }
+        .atention {
+            @include box-sizing();
+            width: 100%;
+            margin: 10px 0px;
+            padding: 0px 20px;
+        }
+        .form {
+            padding: 0px;
+            margin: 0px;
+            @include flexbox(flex, row, wrap, space-between, initial, flex-start);
+            #form_container {
+                width: 100%;
+                .person {
+                    background: transparent;
+                    @extend %helper_box-border;
+                    min-height: unset;
+                    width: auto;
+                    box-sizing: border-box;
+                    margin-left: 20px;
+                }
+            }
+            .dados,
+            .endereco {
+                @include box-sizing();
+                width: calc(50% - 20px);
+                margin: 10px;
+                border: 0px;
+                .box {
+                    padding: 0px;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
+
+%m_cadastro-containers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//CADASTRO - BOX FIELDS
+//====================================================================
+%g_cadastro-fields {
+    #main {
+        .field {
+            >label>p>span {
+                @include fonte($font-one, 400, 12px, #000);
+            }
+            &.nasc .date {
+                @include flexbox(flex, row, wrap, space-between, initial, flex-start);
+                width: 100%;
+                &:before,
+                &:after {
+                    display: none;
+                }
+                .day,
+                .month {
+                    width: 25%;
+                }
+                .year {
+                    width: 45%;
+                }
+            }
+            &.input-tel,
+            &.input-cel {
+                @include flexbox(flex, row, wrap, space-between, initial, flex-start);
+                .ddd {
+                    width: 30%;
+                }
+                .number {
+                    width: 65%;
+                }
+            }
+            .validacao {
+                position: inherit;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+%d_cadastro-fields {
+    #main {
+        .field {
+            transition: all 0.5s ease;
+            position: inherit;
+            height: auto;
+            float: left;
+            min-height: 75px;
+            width: calc(33% - 20px);
+            margin: 10px;
+            overflow: hidden;
+            @media (max-width: 1140px) {
+                &.fl.input-cep {
+                    width: 20%;
+                }
+                &.fl.ender {
+                    width: 71%;
+                }
+            }
+            @media (min-width: 1141px) {
+                width: calc(33% - 20px);
+                margin: 10px;
+                &.fl.ender {
+                    width: 63%;
+                }
+            }
+            .ie.fl {
+                margin: 0px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+%m_cadastro-fields {
+    #main {
+        .field {
+            >label>p>span {
+                font-size: 16px;
+            }
+            @include box-sizing;
+            label {
+                width: 100%;
+            }
+            >p {
+                width: 100%;
+            }
+            .phone {
+                @include flexbox(flex, row, wrap, space-between, initial, flex-start);
+                width: 100%;
+                padding: 0px;
+                input {
+                    position: inherit;
+                }
+            }
+        }
+    }
+}
+
+//CADASTRO - INPUTS
+//====================================================================
+%g_cadastro-inputs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_cadastro-inputs {
+    #main {
+        input[type="password"],
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+        }
+    }
+}
+
+%m_cadastro-inputs {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//CADASTRO - DADOS ADICIONAIS
+//====================================================================
+%g_cadastro-dadosAdicionais {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_cadastro-dadosAdicionais {
+    #box_cadastro_dadosadicionais {
+        width: 100%;
+        text-align: right;
+        padding: 0px 23px;
+        height: 25px;
+        margin: 0px;
+        .newsletter {
+            margin: 0px;
+            width: 100%;
+            padding: 0px;
+        }
+    }
+}
+
+%m_cadastro-dadosAdicionais {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//CADASTRO - ACTIONS
+//====================================================================
+%g_cadastro-actions {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_cadastro-actions {
+    #main .actions {
+        width: 100%;
+        text-align: right;
+        padding: 0px 23px;
+        #formcadastro_btnSalvar {
+            @include reset-position;
+            float: none;
+            width: 250px;
+            height: 50px;
+            margin-left: auto;
+        }
+    }
+}
+
+%m_cadastro-actions {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//CADASTRO - COMPONENTS
+//====================================================================
+%d_cadastro-components{
+    @extend %g_cadastro-containers, %d_cadastro-containers;
+    @extend %g_cadastro-fields, %d_cadastro-fields;
+    @extend %g_cadastro-inputs, %d_cadastro-inputs;
+    @extend %g_cadastro-dadosAdicionais, %d_cadastro-dadosAdicionais;
+    @extend %g_cadastro-actions, %d_cadastro-actions;
+}
+
+%m_cadastro-components{
+    @extend %g_cadastro-containers, %m_cadastro-containers;
+    @extend %g_cadastro-fields, %m_cadastro-fields;
+    @extend %g_cadastro-inputs, %m_cadastro-inputs;
+    @extend %g_cadastro-dadosAdicionais, %m_cadastro-dadosAdicionais;
+    @extend %g_cadastro-actions, %m_cadastro-actions;
+}

@@ -1,0 +1,10 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/pedido_detalhe";
+
+//DECLARATIONS
+//----------------------------------------------
+body.meuspedidos {
+    @extend %d_pedido_detalhe-components;
+}

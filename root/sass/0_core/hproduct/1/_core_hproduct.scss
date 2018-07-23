@@ -1,0 +1,512 @@
+//HPRODUCT
+// ====================================================================
+%g_core_hproduct {
+    .hproduct {
+        @include box-sizing();
+        @include transition();
+        border: 1px solid transparent;
+        display: inherit;
+        margin: 0px auto;
+    }
+}
+
+%d_core_hproduct {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct {
+    > li > .hproduct{
+        width: 100%;
+    }
+}
+
+//HPRODUCT - FOTO
+// ====================================================================
+%g_core_hproduct-photo {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_hproduct-photo {
+    .hproduct .figure {
+        @include flexbox(flex, row-reverse, nowrap, center, center, center);
+        width: 100%;
+        .photo {
+            @include box-sizing();
+            height: auto;
+        }
+    }
+}
+
+%m_core_hproduct-photo {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - QUICKVIEW BUTTON
+// ====================================================================
+%g_core_hproduct-quickbutton {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_hproduct-quickbutton {
+    .hproduct .quick-look-container {
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+        @media all and (-ms-high-contrast: none) {
+            width: 100%;
+            left: 0%;
+            top: 48%;
+            text-align: center;
+        }
+        .bt-quick-look {
+            @include transition();
+            margin: 0px auto;
+        }
+    }
+}
+
+%m_core_hproduct-quickbutton {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - TOOLS (CAROUSEL)
+// ====================================================================
+%g_core_hproduct-tools {
+    .tools {
+        @include box-sizing;
+        width: 100%;
+        margin: 10px 0;
+        position: relative;
+        .skus {
+            &:not(.owl-carousel) {
+                @include flexbox(flex, row, nowrap, center, center, center);
+            }
+            &.owl-carousel{
+                padding: 0px 20px;
+                width: calc(100% - 40px);
+            }
+
+            >li {
+                margin: 0px 5px;
+            }
+           
+            li{
+                @include box-sizing;
+                width: auto;
+                height: auto;
+                border: 1px solid transparent;
+                padding: 0px;
+                &:hover{
+                    border-color: #505050;
+                } 
+            }
+
+            li a,
+            img {
+                @include box-sizing;
+                width: 30px;
+                height: 30px;
+                border: 0px;
+            }
+        }
+        .owl-wrapper-outer {
+            width: 100%;
+            overflow: hidden;
+            .owl-wrapper {
+                .owl-item {
+                    text-align: center;
+                    >li {
+                        width: auto;
+                        float: none;
+                    }
+                }
+            }
+        }
+        .owl-theme .owl-controls {
+            @include box-sizing;
+            width: 100%;
+            left: 0px;
+            margin-top: 0px;
+            .owl-buttons {
+                @include box-sizing;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                >div {
+                    @include opacity();
+                    background: transparent;
+                    text-indent: 0;
+                    font-size: 0px;
+                    top: 0px;
+                    width: 15px;
+                    height: 25px;
+                    &:hover:before {
+                        color: #505050;
+                    }
+                }
+                .owl-prev {
+                    left: 0px;
+                    &:before {
+                        @include set-icon($fa-var-chevron-left, 24px, 900, #000);
+                    }
+                }
+                .owl-next {
+                    right: 0px;
+                    left: auto;
+                    &:before {
+                        @include set-icon($fa-var-chevron-right, 24px, 900, #000);
+                    }
+                }
+            }
+        }
+    }
+}
+
+%d_core_hproduct-tools {
+    .tools {
+        .skus {
+            padding: 0px 20px;
+            width: calc(100% - 40px);
+        }
+        .owl-theme .owl-controls {
+            top: calc(50% - 9px);
+        }
+    }
+}
+
+%m_core_hproduct-tools {
+    .tools {
+        .skus {
+            &:not(.owl-carousel){
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+            }
+            padding: 0px 20px;
+            width: calc(100% - 40px);
+
+            li a,
+            img {
+                @include box-sizing;
+                width: 28px;
+                height: 28px;
+                border: 0px;
+            }
+        }
+        .owl-theme .owl-controls {
+            top: calc(50% - 12.5px);
+        }
+    }
+}
+
+//HPRODUCT - NAME
+// ====================================================================
+%g_core_hproduct-name {
+    .hproduct .name {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+%d_core_hproduct-name {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-name {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - OFFERS
+// ====================================================================
+%g_core_hproduct-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_hproduct-offers {
+    .hproduct .offers {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+%m_core_hproduct-offers {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - PRICE FROM
+// ====================================================================
+%g_core_hproduct-pricefrom {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_hproduct-pricefrom {
+    .hproduct .offers .regular,
+    #spanPrecoDe {
+        width: auto;
+        display: inline-block;
+        margin: 5px;
+        overflow: visible;
+    }
+}
+
+%m_core_hproduct-pricefrom {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - PRICE TO
+// ====================================================================
+%g_core_hproduct-priceto {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_hproduct-priceto {
+    .hproduct .offers .price.sale:not(.percent-a-vista),
+    #spanPrecoPor {
+        width: auto;
+        display: inline-block;
+        margin: 5px;
+        overflow: initial;
+    }
+}
+
+%m_core_hproduct-priceto {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - DESCONTO A VISTA
+// ====================================================================
+%g_core_hproduct-discount {
+    .hproduct .percent-a-vista {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+%d_core_hproduct-discount {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-discount {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - PARCELAMENTO
+// ====================================================================
+%g_core_hproduct-parcel {
+    .hproduct .parcel {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+%d_core_hproduct-parcel {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-parcel {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - SELOS
+// ====================================================================
+%g_core_hproduct-stamps {
+    .hproduct .stamp {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+%d_core_hproduct-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-stamps {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - TEXTO INDISPONIVEL
+// ====================================================================
+%g_core_hproduct-unavailable {
+    .hproduct .unavailable {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+%d_core_hproduct-unavailable {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-unavailable {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - REVIEWAGREGATE
+// ====================================================================
+%g_core_hproduct-reviewaggregate {
+    .hproduct .reviewaggregate {
+        @include flexbox(flex, row, nowrap, center, center, center);
+    }
+}
+
+%d_core_hproduct-reviewaggregate {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-reviewaggregate {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - COMPARATIVO
+// ====================================================================
+%g_core_hproduct-compare {
+    .hproduct .compare {
+        width: 100%;
+        span,
+        label,
+        input {
+            float: none;
+        }
+    }
+}
+
+%d_core_hproduct-compare {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-compare {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - BT-COMPRAR
+// ====================================================================
+%g_core_hproduct-buy {
+    .hproduct .buy {
+        @include transition();
+        margin: 0px auto;
+        float: none;
+    }
+}
+
+%d_core_hproduct-buy {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-buy {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - SEE-MORE (VITRINE)
+// ====================================================================
+%g_core_hproduct-seeMore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%d_core_hproduct-seeMore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_core_hproduct-seeMore {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+//HPRODUCT - COMPONENTS
+// ====================================================================
+%d_core_hproduct-components{
+    @extend %g_core_hproduct, %d_core_hproduct;
+    @extend %g_core_hproduct-photo, %d_core_hproduct-photo;
+    @extend %g_core_hproduct-quickbutton, %d_core_hproduct-quickbutton;
+    @extend %g_core_hproduct-tools, %d_core_hproduct-tools;
+    @extend %g_core_hproduct-name, %d_core_hproduct-name;
+    @extend %g_core_hproduct-offers, %d_core_hproduct-offers;
+    @extend %g_core_hproduct-pricefrom, %d_core_hproduct-pricefrom;
+    @extend %g_core_hproduct-priceto, %d_core_hproduct-priceto;
+    @extend %g_core_hproduct-discount, %d_core_hproduct-discount;
+    @extend %g_core_hproduct-parcel, %d_core_hproduct-parcel;
+    @extend %g_core_hproduct-stamps, %d_core_hproduct-stamps;
+    @extend %g_core_hproduct-unavailable, %d_core_hproduct-unavailable;
+    @extend %g_core_hproduct-reviewaggregate, %d_core_hproduct-reviewaggregate;
+    @extend %g_core_hproduct-compare, %g_core_hproduct-compare;
+    @extend %g_core_hproduct-buy, %d_core_hproduct-buy;
+    @extend %g_core_hproduct-seeMore, %d_core_hproduct-seeMore;
+}
+
+%m_core_hproduct-components{
+    @extend %g_core_hproduct, %m_core_hproduct;
+    @extend %g_core_hproduct-photo, %m_core_hproduct-photo;
+    @extend %g_core_hproduct-quickbutton, %m_core_hproduct-quickbutton;
+    @extend %g_core_hproduct-tools, %m_core_hproduct-tools;
+    @extend %g_core_hproduct-name, %m_core_hproduct-name;
+    @extend %g_core_hproduct-offers, %m_core_hproduct-offers;
+    @extend %g_core_hproduct-pricefrom, %m_core_hproduct-pricefrom;
+    @extend %g_core_hproduct-priceto, %m_core_hproduct-priceto;
+    @extend %g_core_hproduct-discount, %m_core_hproduct-discount;
+    @extend %g_core_hproduct-parcel, %m_core_hproduct-parcel;
+    @extend %g_core_hproduct-stamps, %m_core_hproduct-stamps;
+    @extend %g_core_hproduct-unavailable, %m_core_hproduct-unavailable;
+    @extend %g_core_hproduct-reviewaggregate, %m_core_hproduct-reviewaggregate;
+    @extend %g_core_hproduct-compare, %g_core_hproduct-compare;
+    @extend %g_core_hproduct-buy, %m_core_hproduct-buy;
+    @extend %g_core_hproduct-seeMore, %m_core_hproduct-seeMore;
+}

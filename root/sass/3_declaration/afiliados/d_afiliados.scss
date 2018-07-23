@@ -1,0 +1,15 @@
+//DEPENDENCES
+//----------------------------------------------
+@import "../../1_config/import";
+@import "../../2_deploy/afiliados";
+
+
+//DECLARATIONS
+//----------------------------------------------
+body.affiliates{
+
+    &.register{
+       @extend %d_afiliados-components;
+    }
+
+}

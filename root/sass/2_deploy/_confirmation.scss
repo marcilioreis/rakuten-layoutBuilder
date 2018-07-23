@@ -1,0 +1,188 @@
+// CONFIRMATION - ICONS
+// ====================================================================
+%g_confirmation-icons {
+    #pnlOPCheckout {
+        .confirmacao-pedido {
+            .confirm-title {
+                &:before {
+                    border: 5px solid rgb(170, 170, 170);
+                    border-radius: 30px;
+                    line-height: 30px;
+                    padding: 10px;
+                    text-align: center;
+                    top: 5px;
+                    height: 30px;
+                    width: 30px;
+                    @include set-icon($fa-var-check, 30px, 900, rgb(102, 102, 102));
+                }
+            }
+        }
+    }
+}
+
+%d_confirmation-icons {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_confirmation-icons {
+    #pnlOPCheckout {
+        .confirmacao-pedido {
+            .confirm-title {
+                &:before {
+                    top: 15px;
+                }
+            }
+        }
+    }
+}
+
+// CONFIRMATION - TITLES
+// ====================================================================
+%g_confirmation-tittle {
+    #pnlOPCheckout {
+        .confirmacao-pedido {
+            .confirm-title{
+                @include fonte($font-one, 700, 30px, rgb(102, 102, 102));
+                padding-top: 0;
+                text-transform: uppercase;
+            }
+            .num-pedido{
+                strong{
+                    @include fonte($font-one, 700, 34px, rgb(102, 102, 102));
+                }
+            }
+        }
+        .confirmacao-tipo .title-type,
+        .list-address .title-address,
+        .summary-confirm .summary-title {
+            @include fonte($font-one, 700, 18px, rgb(102, 102, 102));
+            padding-top: 0;
+            text-transform: uppercase;
+        }
+    }
+}
+
+%d_confirmation-tittle {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_confirmation-tittle {
+    #pnlOPCheckout {
+        .confirmacao-pedido {
+            .confirm-title{
+                font-size: 25px;
+            }
+        }
+        .confirmacao-tipo .title-type,
+        .list-address .title-address,
+        .summary-confirm .summary-title {
+            font-size: 16px;
+        }
+    }
+}
+
+// CONFIRMATION - BUTTONS
+// ====================================================================
+%g_confirmation-buttons {
+    #pnlOPCheckout {
+        .confirmacao-tipo {
+            .boleto-type {
+                .print-boleto {
+                    background: rgb(110, 110, 110);
+                }
+            }
+        }
+    }
+}
+
+%d_confirmation-buttons {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_confirmation-buttons {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CONFIRMATION - PRICES
+// ====================================================================
+%g_confirmation-prices {
+    #pnlOPCheckout {
+        .summary-confirm {
+            .total-price {
+                @include fonte($font-one, 500, 24px, rgb(102, 102, 102));
+                text-transform: uppercase;
+            }
+            .item-price.price{
+                @include fonte($font-one, 500, 12px, rgb(102, 102, 102));
+            }
+        }
+    }
+}
+
+%d_confirmation-prices {
+	#remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_confirmation-prices {
+    #pnlOPCheckout {
+        .summary-confirm .total-price {
+            font-size: 24px;
+        }
+    }
+}
+
+// CONFIRMATION - SOCIAL
+// ====================================================================
+%g_confirmation-social {
+    #pnlOPCheckout {
+        .summary-confirm {
+            .social-network {
+                text-align: center;
+                > span {
+                    padding: 5px;
+                    vertical-align: top;                                   
+                }
+            }
+        }
+    }
+}
+
+%d_confirmation-social {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+%m_confirmation-social {
+    #remover_este_bloco {
+        display: none;
+    }
+}
+
+// CONFIRMATION - COMPONENTS
+// ====================================================================
+%d_confirmation-components{
+    @extend %g_confirmation-icons, %d_confirmation-icons;
+    @extend %g_confirmation-tittle, %d_confirmation-tittle;
+    @extend %g_confirmation-buttons, %d_confirmation-buttons;
+    @extend %g_confirmation-prices, %d_confirmation-prices;
+    @extend %g_confirmation-social, %d_confirmation-social;
+}
+
+%m_confirmation-components{
+    @extend %g_confirmation-icons, %m_confirmation-icons;
+    @extend %g_confirmation-tittle, %m_confirmation-tittle;
+    @extend %g_confirmation-buttons, %m_confirmation-buttons;
+    @extend %g_confirmation-prices, %m_confirmation-prices;
+    @extend %g_confirmation-social, %m_confirmation-social;
+}
